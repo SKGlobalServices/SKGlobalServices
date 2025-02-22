@@ -76,7 +76,7 @@ export const Contact = () => {
                                 </Col>
                                 <Col xs={12} sm={6} className="px-1">
                                 <input
-                                        type="tel"
+                                        type="number"
                                         placeholder="Telefono celular"
                                         value={telefono}
                                         onChange={(e) => setTelefono(e.target.value)}

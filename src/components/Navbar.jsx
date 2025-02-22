@@ -30,9 +30,13 @@ export const NavBar = () => {
   return (
     <div className="navbar-with-video">
       <video className="video-background" autoPlay muted loop>
-        <source src={bannervideo} type="video/mp4" />
+        <source
+          src="https://skglobalservices.github.io/S&KGlobalServices/banner-video.mp4"
+          type="video/mp4"
+        />
         Tu navegador no soporta la etiqueta de video.
       </video>
+
       <section className="home" id="home">
         <Navbar expand="lg" className={scrolled ? "scrolled" : ""}>
           <Container>
@@ -75,7 +79,7 @@ export const NavBar = () => {
                   Contactanos
                 </Nav.Link>
               </Nav>
-              <span className="ms-auto">
+              <span className="ms-right">
                 <div className="social-icon">
                   <a
                     href="https://www.facebook.com"
@@ -93,12 +97,11 @@ export const NavBar = () => {
                   </a>
                 </div>
               </span>
-              <span>
-                <p>correo</p>
+              <span className="ms-auto">
+                <p>skglobalservices2024@gmail.com</p>
+                <p>telefono</p>
               </span>
-              <span>
-                <p>|telefono</p>
-              </span>
+              <span></span>
             </Navbar.Collapse>
           </Container>
         </Navbar>
