@@ -31,7 +31,7 @@ export const NavBar = () => {
     <div className="navbar-with-video">
       <video className="video-background" autoPlay muted loop>
         <source
-          src="https://skglobalservices.github.io/S&KGlobalServices/banner-video.mp4"
+          src="https://www.canva.com/design/DAGfyOqs8Og/fjeG5-ZaYZ-XbJ1-7nqa6g/watch?utm_content=DAGfyOqs8Og&utm_campaign=share_your_design&utm_medium=link2&utm_source=shareyourdesignpanel"
           type="video/mp4"
         />
         Tu navegador no soporta la etiqueta de video.
