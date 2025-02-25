@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/S&KGlobalServices/static/css/main.eb3f8cd0.css",
+    "main.js": "/S&KGlobalServices/static/js/main.976d8a2a.js",
+    "static/js/453.14561a7e.chunk.js": "/S&KGlobalServices/static/js/453.14561a7e.chunk.js",
+    "static/media/banner-videoR.mp4": "/S&KGlobalServices/static/media/banner-videoR.0d05f3ba1187e6a01a7f.mp4",
+    "static/media/logo.png": "/S&KGlobalServices/static/media/logo.7ca2de1ea3574466dedd.png",
+    "static/media/instagram_icon.png": "/S&KGlobalServices/static/media/instagram_icon.154eec4d4abc9b172f5c.png",
+    "static/media/facebook_icon.png": "/S&KGlobalServices/static/media/facebook_icon.2738d8d98ea4ab2ccd4a.png",
+    "static/media/CentraNo2-Bold.ttf": "/S&KGlobalServices/static/media/CentraNo2-Bold.2faff7f7d3fc92a2fcd9.ttf",
+    "static/media/CentraNo2-Medium.ttf": "/S&KGlobalServices/static/media/CentraNo2-Medium.f94be5b326d78bb32b95.ttf",
+    "static/media/CentraNo2-Book.ttf": "/S&KGlobalServices/static/media/CentraNo2-Book.2b143fa4b734a3584043.ttf",
+    "static/media/contact-img.svg": "/S&KGlobalServices/static/media/contact-img.87eac2b29352fa01abb2f9510ef6ac7e.svg",
+    "index.html": "/S&KGlobalServices/index.html",
+    "main.eb3f8cd0.css.map": "/S&KGlobalServices/static/css/main.eb3f8cd0.css.map",
+    "main.976d8a2a.js.map": "/S&KGlobalServices/static/js/main.976d8a2a.js.map",
+    "453.14561a7e.chunk.js.map": "/S&KGlobalServices/static/js/453.14561a7e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.eb3f8cd0.css",
+    "static/js/main.976d8a2a.js"
+  ]
+}
