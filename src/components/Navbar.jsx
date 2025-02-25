@@ -78,14 +78,14 @@ export const NavBar = () => {
               <span className="ms-right">
                 <div className="social-icon">
                   <a
-                    href="https://www.facebook.com"
+                    href="https://www.facebook.com/share/1DZbtW7Rzh/?mibextid=wwXIfr"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     <img src={facebookicon} alt="Facebook" />
                   </a>
                   <a
-                    href="https://www.instagram.com"
+                    href="https://www.instagram.com/skglobalservices_21?igsh=MXVndHd3czJzOHJoeQ%3D%3D&utm_source=qr"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -95,10 +95,9 @@ export const NavBar = () => {
               </span>
               <span className="ms-auto">
                 <p>skglobalservices2024@gmail.com</p>
-                <p className="ms-auto">telefono</p>
+                <p className="ms-auto">+297 746 8097</p>
               </span>
-              <span >
-              </span>
+              <span></span>
             </Navbar.Collapse>
           </Container>
         </Navbar>

@@ -294,13 +294,15 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .services {
   margin-top: 0;
   padding: 200px 0 100px 0;
-  background-color: #000;
+  background: 
+    radial-gradient(circle at top left, rgb(128, 54, 170) 5%, transparent 35%),
+    rgb(0, 0, 0);
+  background-blend-mode: normal;
   background-position: top center;
   background-size: cover;
   background-repeat: no-repeat;
-  border-bottom: #4A2FBD 3px solid;
-  box-shadow: #4A2FBD 1px 1px 10px 1px;
 }
+
 
 /* Estilos para textos, encabezados e imágenes dentro de .services */
 .services .tagline {
@@ -408,7 +410,8 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 /************ Contact Css ************/
 .contact {
   padding: 60px 0 200px 0;
-  background-color: #1d1d1d;
+  background: radial-gradient(circle at bottom right, rgb(47, 184, 189) 5%, transparent 35%),rgb(0, 0, 0);
+  background-blend-mode: normal;
   background-position: top center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -499,9 +502,9 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .footer {
   border-top: #4A2FBD 3px solid;
   box-shadow: #4A2FBD 1px 1px 10px 1px;
-  padding: 0 0 50px 0;
+  padding: 0 0 10px 0;
   padding-top: 1%;
-  background-color: rgb(37, 37, 37);
+  background-color: rgb(48, 48, 48);
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
