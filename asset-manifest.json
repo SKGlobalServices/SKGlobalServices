@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/SKGlobalServices/static/css/main.9ca04135.css",
+    "main.css": "/SKGlobalServices/static/css/main.b31e3fec.css",
     "main.js": "/SKGlobalServices/static/js/main.1017a89e.js",
     "static/js/453.0fe1c698.chunk.js": "/SKGlobalServices/static/js/453.0fe1c698.chunk.js",
     "static/media/banner-videoR.mp4": "/SKGlobalServices/static/media/banner-videoR.0d05f3ba1187e6a01a7f.mp4",
@@ -12,12 +12,12 @@
     "static/media/CentraNo2-Book.ttf": "/SKGlobalServices/static/media/CentraNo2-Book.2b143fa4b734a3584043.ttf",
     "static/media/contact-img.svg": "/SKGlobalServices/static/media/contact-img.87eac2b29352fa01abb2f9510ef6ac7e.svg",
     "index.html": "/SKGlobalServices/index.html",
-    "main.9ca04135.css.map": "/SKGlobalServices/static/css/main.9ca04135.css.map",
+    "main.b31e3fec.css.map": "/SKGlobalServices/static/css/main.b31e3fec.css.map",
     "main.1017a89e.js.map": "/SKGlobalServices/static/js/main.1017a89e.js.map",
     "453.0fe1c698.chunk.js.map": "/SKGlobalServices/static/js/453.0fe1c698.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9ca04135.css",
+    "static/css/main.b31e3fec.css",
     "static/js/main.1017a89e.js"
   ]
 }
