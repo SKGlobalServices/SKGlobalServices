@@ -3,7 +3,7 @@ import { Navbar, Nav, Container } from "react-bootstrap";
 import logo from "../assets/img/logo.png";
 import facebookicon from "../assets/img/facebook_icon.png";
 import instagramicon from "../assets/img/instagram_icon.png";
-import bannervideo from "../assets/img/banner-video.mp4";
+import bannervideo from "../assets/img/banner-videoR.mp4";
 
 export const NavBar = () => {
   const [activeLink, setActiveLink] = useState("home");
