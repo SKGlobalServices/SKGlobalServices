@@ -1,23 +1,24 @@
 {
   "files": {
-    "main.css": "/SKGlobalServices/static/css/main.01c32daa.css",
-    "main.js": "/SKGlobalServices/static/js/main.e6902244.js",
+    "main.css": "/SKGlobalServices/static/css/main.040c8933.css",
+    "main.js": "/SKGlobalServices/static/js/main.405e269b.js",
     "static/js/453.0fe1c698.chunk.js": "/SKGlobalServices/static/js/453.0fe1c698.chunk.js",
     "static/media/banner-videoR.mp4": "/SKGlobalServices/static/media/banner-videoR.0d05f3ba1187e6a01a7f.mp4",
     "static/media/logo.png": "/SKGlobalServices/static/media/logo.7ca2de1ea3574466dedd.png",
     "static/media/instagram_icon.png": "/SKGlobalServices/static/media/instagram_icon.154eec4d4abc9b172f5c.png",
+    "static/media/WhatsApp_icon.png": "/SKGlobalServices/static/media/WhatsApp_icon.30bc694149bc6d21e802.png",
     "static/media/facebook_icon.png": "/SKGlobalServices/static/media/facebook_icon.2738d8d98ea4ab2ccd4a.png",
     "static/media/CentraNo2-Bold.ttf": "/SKGlobalServices/static/media/CentraNo2-Bold.2faff7f7d3fc92a2fcd9.ttf",
     "static/media/CentraNo2-Medium.ttf": "/SKGlobalServices/static/media/CentraNo2-Medium.f94be5b326d78bb32b95.ttf",
     "static/media/CentraNo2-Book.ttf": "/SKGlobalServices/static/media/CentraNo2-Book.2b143fa4b734a3584043.ttf",
     "static/media/contact-img.svg": "/SKGlobalServices/static/media/contact-img.87eac2b29352fa01abb2f9510ef6ac7e.svg",
     "index.html": "/SKGlobalServices/index.html",
-    "main.01c32daa.css.map": "/SKGlobalServices/static/css/main.01c32daa.css.map",
-    "main.e6902244.js.map": "/SKGlobalServices/static/js/main.e6902244.js.map",
+    "main.040c8933.css.map": "/SKGlobalServices/static/css/main.040c8933.css.map",
+    "main.405e269b.js.map": "/SKGlobalServices/static/js/main.405e269b.js.map",
     "453.0fe1c698.chunk.js.map": "/SKGlobalServices/static/js/453.0fe1c698.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.01c32daa.css",
-    "static/js/main.e6902244.js"
+    "static/css/main.040c8933.css",
+    "static/js/main.405e269b.js"
   ]
 }
