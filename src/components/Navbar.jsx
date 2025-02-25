@@ -30,13 +30,9 @@ export const NavBar = () => {
   return (
     <div className="navbar-with-video">
       <video className="video-background" autoPlay muted loop>
-        <source
-          src="https://www.canva.com/design/DAGfyOqs8Og/fjeG5-ZaYZ-XbJ1-7nqa6g/watch?utm_content=DAGfyOqs8Og&utm_campaign=share_your_design&utm_medium=link2&utm_source=shareyourdesignpanel"
-          type="video/mp4"
-        />
+        <source src={bannervideo} type="video/mp4" />
         Tu navegador no soporta la etiqueta de video.
       </video>
-
       <section className="home" id="home">
         <Navbar expand="lg" className={scrolled ? "scrolled" : ""}>
           <Container>
@@ -99,9 +95,10 @@ export const NavBar = () => {
               </span>
               <span className="ms-auto">
                 <p>skglobalservices2024@gmail.com</p>
-                <p>telefono</p>
+                <p className="ms-auto">telefono</p>
               </span>
-              <span></span>
+              <span >
+              </span>
             </Navbar.Collapse>
           </Container>
         </Navbar>
