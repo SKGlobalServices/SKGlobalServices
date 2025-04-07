@@ -1,9 +1,15 @@
 {
   "files": {
-    "main.css": "/SKGlobalServices/static/css/main.6568da9d.css",
-    "main.js": "/SKGlobalServices/static/js/main.42685521.js",
+    "main.css": "/SKGlobalServices/static/css/main.ef603901.css",
+    "main.js": "/SKGlobalServices/static/js/main.0365670d.js",
     "static/js/453.0fe1c698.chunk.js": "/SKGlobalServices/static/js/453.0fe1c698.chunk.js",
-    "static/media/banner-videoR.mp4": "/SKGlobalServices/static/media/banner-videoR.0d05f3ba1187e6a01a7f.mp4",
+    "static/media/banner-videoR.mp4": "/SKGlobalServices/static/media/banner-videoR.6f8964e466efbdfc9934.mp4",
+    "static/media/app_mobile.png": "/SKGlobalServices/static/media/app_mobile.fd2e1541995256493623.png",
+    "static/media/facturacion.png": "/SKGlobalServices/static/media/facturacion.be774b8f10442e529059.png",
+    "static/media/desarrollo_web.png": "/SKGlobalServices/static/media/desarrollo_web.61faae49b9979b3dedb0.png",
+    "static/media/create_logo.png": "/SKGlobalServices/static/media/create_logo.56d8cd9676f8162026a2.png",
+    "static/media/img_ads.png": "/SKGlobalServices/static/media/img_ads.34d7ebe695a521f07f4a.png",
+    "static/media/creacion_empresarial.png": "/SKGlobalServices/static/media/creacion_empresarial.09b22bc4b45553f5f13e.png",
     "static/media/logo.png": "/SKGlobalServices/static/media/logo.7ca2de1ea3574466dedd.png",
     "static/media/instagram_icon.png": "/SKGlobalServices/static/media/instagram_icon.154eec4d4abc9b172f5c.png",
     "static/media/WhatsApp_icon.png": "/SKGlobalServices/static/media/WhatsApp_icon.30bc694149bc6d21e802.png",
@@ -13,12 +19,12 @@
     "static/media/CentraNo2-Book.ttf": "/SKGlobalServices/static/media/CentraNo2-Book.2b143fa4b734a3584043.ttf",
     "static/media/contact-img.svg": "/SKGlobalServices/static/media/contact-img.87eac2b29352fa01abb2f9510ef6ac7e.svg",
     "index.html": "/SKGlobalServices/index.html",
-    "main.6568da9d.css.map": "/SKGlobalServices/static/css/main.6568da9d.css.map",
-    "main.42685521.js.map": "/SKGlobalServices/static/js/main.42685521.js.map",
+    "main.ef603901.css.map": "/SKGlobalServices/static/css/main.ef603901.css.map",
+    "main.0365670d.js.map": "/SKGlobalServices/static/js/main.0365670d.js.map",
     "453.0fe1c698.chunk.js.map": "/SKGlobalServices/static/js/453.0fe1c698.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6568da9d.css",
-    "static/js/main.42685521.js"
+    "static/css/main.ef603901.css",
+    "static/js/main.0365670d.js"
   ]
 }
