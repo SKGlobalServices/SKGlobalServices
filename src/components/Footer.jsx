@@ -14,14 +14,14 @@ export const Footer = () => {
           <Col sm={6} className="text-center text-sn-end">
             <div className="social-icon">
               <a
-                href="https://www.facebook.com"
+                href="https://www.facebook.com/people/SK-Global-Services/61573197338873/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <img src={facebookicon} alt="Facebook" />
               </a>
               <a
-                href="https://www.instagram.com"
+                href="https://www.instagram.com/skglobalservices_21?igsh=MXVndHd3czJzOHJoeQ%3D%3D&utm_source=qr"
                 target="_blank"
                 rel="noopener noreferrer"
               >

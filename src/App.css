@@ -1,19 +1,19 @@
 /************ Custom Font ************/
 @font-face {
   font-family: Centra;
-  src: url('./assets/font/CentraNo2-Bold.ttf');
+  src: url("./assets/font/CentraNo2-Bold.ttf");
   font-weight: 700;
 }
 
 @font-face {
   font-family: Centra;
-  src: url('./assets/font/CentraNo2-Medium.ttf');
+  src: url("./assets/font/CentraNo2-Medium.ttf");
   font-weight: 500;
 }
 
 @font-face {
   font-family: Centra;
-  src: url('./assets/font/CentraNo2-Book.ttf');
+  src: url("./assets/font/CentraNo2-Book.ttf");
   font-weight: 400;
 }
 
@@ -35,7 +35,7 @@ body {
   position: relative;
   background-color: #121212 !important;
   color: #fff !important;
-  font-family: 'Centra', sans-serif !important;
+  font-family: "Centra", sans-serif !important;
 }
 
 h1,
@@ -80,7 +80,7 @@ select:focus {
   outline: none;
 }
 
-@media (min-width:1700px) {
+@media (min-width: 1700px) {
   main .container {
     max-width: 100%;
     padding: 0 150px;
@@ -122,14 +122,12 @@ nav.navbar {
   height: 100vh;
   object-fit: cover;
   z-index: -1;
-  transform: scale(1.05); 
 }
-
 
 nav.navbar.scrolled {
   padding: 0px 0;
   background-color: rgba(12, 12, 12, 90%);
-  border-bottom: #4A2FBD 2px solid;
+  border-bottom: #4a2fbd 2px solid;
 }
 
 nav.navbar a.navbar-brand {
@@ -265,7 +263,7 @@ nav.navbar .navbar-toggler-icon:before {
   background-color: #fff;
   top: 0;
   left: 0;
-  content: '';
+  content: "";
   z-index: 2;
   transition: all 300ms linear;
 }
@@ -290,104 +288,19 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   border-color: transparent;
 }
 
-/************ Services Css ************/
-.services {
-  margin-top: 0;
-  padding: 200px 0 100px 0;
-  background: 
-    radial-gradient(circle at top left, rgb(128, 54, 170) 5%, transparent 35%),
-    rgb(0, 0, 0);
-  background-blend-mode: normal;
-  background-position: top center;
-  background-size: cover;
-  background-repeat: no-repeat;
+/************ Services ************/
+
+ @keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-
-/* Estilos para textos, encabezados e imágenes dentro de .services */
-.services .tagline {
-  font-weight: 700;
-  letter-spacing: 1px;
-  padding: 8px 10px;
-  background: linear-gradient(90.21deg, rgba(170, 54, 124, 0.5) -5.91%, rgba(74, 47, 189, 0.5) 111.58%);
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  font-size: 20px;
-  margin-bottom: 80px;
-  display: inline-block;
-}
-
-.services h1 {
-  font-size: 50px;
-  font-weight: 700;
-  letter-spacing: 0.8px;
-  line-height: 1;
-  margin-bottom: 20px;
-  display: block;
-}
-
-.services p {
-  color: #B8B8B8;
-  font-size: 18px;
-  letter-spacing: 0.8px;
-  line-height: 1.5em;
-  width: 96%;
-}
-
-.services img {
-  width: 300px;
-  border-radius: 50%;
-  box-shadow: 10px 10px 10px #4A2FBD;
-}
-
-/*************** Efecto Flip ***************/
-/* Quita la altura forzada; permitimos que el contenedor se ajuste */
-.btn-card:hover {
-  color: #fff;
-  background-color: #4A2FBD;
-  border-color: #fff;
-  transition: 100ms;
-}
-.flip-container {
-  perspective: 1000px; /* Efecto 3D */
-  width: 100%;
-  /* height: auto por defecto */
-}
-
-/* Asignamos una altura mínima para cada tarjeta,
-   de modo que las filas no se monten entre sí */
-.flip-card {
-  position: relative;
-  width: 100%;
-  min-height: 400px; /* Ajusta según el contenido */
-  transition: transform 0.6s;
-  transform-style: preserve-3d;
-  margin-bottom: 50px;
-}
-
-/* Al añadir la clase .flipped, rotamos la tarjeta */
-.flip-container.flipped .flip-card {
-  transform: rotateY(180deg);
-    color: #fff;
-}
-
-/* Ambas caras ocupan el 100% del .flip-card */
-.flip-card-front,
-.flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  backface-visibility: hidden; /* Oculta la cara posterior */
-}
-
-/* Cara trasera rotada 180° */
-.flip-card-back {
-  transform: rotateY(180deg);
-  margin-top: 25%;
-}
-
-/*************** Animaciones y extras ***************/
 @keyframes updown {
   0% {
     transform: translateY(-20px);
@@ -400,17 +313,107 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   }
 }
 
+.services {
+  margin-top: 0;
+  padding: 100px 0 1px 0;
+  background: radial-gradient(
+      circle at top left,
+      rgb(128, 54, 170) 5%,
+      transparent 35%
+    ),
+    rgb(0, 0, 0);
+  background-blend-mode: normal;
+  background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  animation: fadeInUp 1.2s ease-in-out;
+}
+
+.services img {
+  width: 300px;
+  border-radius: 4%;
+  box-shadow: 10px 10px 10px rgb(47, 184, 189);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.services img:hover {
+  transform: scale(1.05);
+  box-shadow: 10px 10px 15px rgb(47, 184, 189);
+}
+
+.btn-card:hover {
+  color: #fff;
+  background-color: #4a2fbd;
+  border-color: #fff;
+  transition: 100ms;
+}
+
+.flip-container {
+  perspective: 1000px; /* Efecto 3D */
+  width: 100%;
+}
+
+.flip-card {
+  position: relative;
+  width: 100%;
+  min-height: 400px;
+  margin-bottom: 50px;
+  transition: transform 0.6s ease, box-shadow 0.3s ease;
+  transform-style: preserve-3d;
+}
+
+.flip-container.flipped .flip-card {
+  transform: rotateY(180deg);
+  color: #fff;
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+  margin-top: 20%;
+}
+
+.card-title,
+.card-text {
+  color: #585858;
+}
+
+.card-text {
+  font-size: 1.125rem;
+  letter-spacing: 0.8px;
+  line-height: 1.6;
+  margin-bottom: 1.2em;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.btn-card:hover .card-title,
+.btn-card:hover .card-text {
+  color: #fff;
+}
+
 .txt-rotate > .wrap {
   border-right: 0.08em solid #665;
 }
 
-
-
-
 /************ Contact Css ************/
 .contact {
-  padding: 60px 0 200px 0;
-  background: radial-gradient(circle at bottom right, rgb(47, 184, 189) 5%, transparent 35%),rgb(0, 0, 0);
+  padding: 120px 0 150px 0;
+  background: radial-gradient(
+      circle at bottom right,
+      rgb(47, 184, 189) 5%,
+      transparent 35%
+    ),
+    rgb(0, 0, 0);
   background-blend-mode: normal;
   background-position: top center;
   background-size: cover;
@@ -484,7 +487,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 .contact form button::before {
   content: "";
-  background: #4A2FBD;
+  background: #4a2fbd;
   width: 0;
   height: 100%;
   position: absolute;
@@ -498,10 +501,16 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   width: 100%;
 }
 
+button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+
 /************ Footer Css ************/
 .footer {
-  border-top: #4A2FBD 3px solid;
-  box-shadow: #4A2FBD 1px 1px 10px 1px;
+  border-top: #4a2fbd 3px solid;
+  box-shadow: #4a2fbd 1px 1px 10px 1px;
   padding: 0 0 10px 0;
   padding-top: 1%;
   background-color: rgb(48, 48, 48);
@@ -517,11 +526,40 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .footer p {
   font-weight: 400;
   font-size: 14px;
-  color: #B8B8B8;
+  color: #b8b8b8;
   letter-spacing: 0.5px;
   margin-top: 20px;
 }
 
 .transparent-button {
   opacity: 0.5;
+}
+
+/************ Whatsapp ************/
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 35px; /* Ajusta según tu preferencia */
+  right: 35px;  /* Ajusta según tu preferencia */
+  z-index: 999;
+  width: 60px;
+  height: 60px;
+  background-color: #25d366; /* Color WhatsApp */
+  border-radius: 50%;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.whatsapp-float img {
+  width: 40px;  /* Ajusta el tamaño del ícono */
+  height: 40px;
+}
+
+/* Efecto hover */
+.whatsapp-float:hover {
+  background-color: #128c7e;
 }

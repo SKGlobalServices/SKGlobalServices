@@ -36,7 +36,7 @@ export const NavBar = () => {
       <section className="home" id="home">
         <Navbar expand="lg" className={scrolled ? "scrolled" : ""}>
           <Container>
-            <Navbar.Brand href="/">
+            <Navbar.Brand href="https://skglobalservices.github.io/SKGlobalServices/">
               <img src={logo} alt="Logo" />
             </Navbar.Brand>
 
@@ -78,7 +78,7 @@ export const NavBar = () => {
               <span className="ms-right">
                 <div className="social-icon">
                   <a
-                    href="https://www.facebook.com/share/1DZbtW7Rzh/?mibextid=wwXIfr"
+                    href="https://www.facebook.com/people/SK-Global-Services/61573197338873/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
