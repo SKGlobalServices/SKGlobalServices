@@ -7,11 +7,16 @@ export const Footer = () => {
   return (
     <footer className="footer" id="footer">
       <Container>
-        <Row className="align-item-center">
-          <Col sm={6}>
-            <img src={logo} alt="Logo" />
+        <Row className="align-items-center">
+          <Col xs={12} md={4} className="text-center text-md-start mb-4 mb-md-0">
+            <img src={logo} alt="Logo" className="footer-logo" />
           </Col>
-          <Col sm={6} className="text-center text-sn-end">
+          <Col xs={12} md={4} className="footer-links text-center mb-4 mb-md-0">
+            <a href="#home">Inicio</a>
+            <a href="#services">Servicios</a>
+            <a href="#contact">Contacto</a>
+          </Col>
+          <Col xs={12} md={4} className="text-center text-md-end">
             <div className="social-icon">
               <a
                 href="https://www.facebook.com/people/SK-Global-Services/61573197338873/"
@@ -28,7 +33,7 @@ export const Footer = () => {
                 <img src={instagramicon} alt="Instagram" />
               </a>
             </div>
-            <p>CopyRight 2025. All rights reserved.</p>
+            <p>Copyright 2025. Todos los derechos reservados.</p>
           </Col>
         </Row>
       </Container>
