@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import logo from "../assets/img/logo.png";
 import facebookicon from "../assets/img/facebook_icon.png";
@@ -8,6 +8,11 @@ import bannervideo from "../assets/img/banner-videoR.mp4";
 export const NavBar = () => {
   const [activeLink, setActiveLink] = useState("home");
   const [scrolled, setScrolled] = useState(false);
+  const [copySuccess, setCopySuccess] = useState({
+    email: false,
+    phone: false,
+  });
+  const copyTimeout = useRef(null);
 
   useEffect(() => {
     const onScroll = () => {
@@ -25,6 +30,21 @@ export const NavBar = () => {
 
   const onUpdateActiveLink = (value) => {
     setActiveLink(value);
+  };
+
+  const copyToClipboard = async (text, type) => {
+    try {
+      if (copyTimeout.current) {
+        clearTimeout(copyTimeout.current);
+      }
+      await navigator.clipboard.writeText(text);
+      setCopySuccess({ email: false, phone: false, [type]: true });
+      copyTimeout.current = setTimeout(() => {
+        setCopySuccess({ email: false, phone: false });
+      }, 2000);
+    } catch (err) {
+      console.error("Error al copiar: ", err);
+    }
   };
 
   return (
@@ -94,10 +114,27 @@ export const NavBar = () => {
                 </div>
               </span>
               <span className="ms-auto">
-                <p>skglobalservices2024@gmail.com</p>
-                <p className="ms-auto">+297 746 8097</p>
+                <div className="contact-info">
+                  <p 
+                    className="copyable-text"
+                    onClick={() => copyToClipboard('skglobalservices2024@gmail.com', 'email')}
+                  >
+                    skglobalservices2024@gmail.com
+                    <span className="tooltip">
+                      {copySuccess.email ? '¡Copiado!' : 'Click para copiar'}
+                    </span>
+                  </p>
+                  <p 
+                    className="copyable-text "
+                    onClick={() => copyToClipboard('+297 746 8097', 'phone')}
+                  >
+                    +297 746 8097
+                    <span className="tooltip">
+                      {copySuccess.phone ? '¡Copiado!' : 'Click para copiar'}
+                    </span>
+                  </p>
+                </div>
               </span>
-              <span></span>
             </Navbar.Collapse>
           </Container>
         </Navbar>

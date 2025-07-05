@@ -288,9 +288,54 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   border-color: transparent;
 }
 
+.contact-info {
+  text-align: right;
+}
+
+.copyable-text {
+  position: relative;
+  cursor: pointer;
+  margin: 0;
+  padding: 5px 0;
+}
+
+.copyable-text .tooltip {
+  visibility: hidden;
+  width: 140px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 110%;
+  left: 70%;
+  margin-left: -70px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 14px;
+}
+
+.copyable-text:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+.copyable-text .tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
 /************ Services ************/
 
- @keyframes fadeInUp {
+@keyframes fadeInUp {
   0% {
     opacity: 0;
     transform: translateY(40px);
@@ -349,7 +394,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 .flip-container {
-  perspective: 1000px; /* Efecto 3D */
+  perspective: 1000px;
   width: 100%;
 }
 
@@ -361,7 +406,6 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   transition: transform 0.6s ease, box-shadow 0.3s ease;
   transform-style: preserve-3d;
 }
-
 .flip-container.flipped .flip-card {
   transform: rotateY(180deg);
   color: #fff;
@@ -394,6 +438,40 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   margin-bottom: 1.2em;
   opacity: 0;
   animation: fadeInUp 0.8s ease forwards;
+}
+
+/* Responsive text adjustments */
+@media (max-width: 576px) {
+  .card-text {
+    font-size: 1rem;
+    line-height: 1.4;
+    margin-bottom: 1em;
+  }
+
+  .card-title {
+    font-size: 1.1rem;
+  }
+
+  .flip-card-front .card-body,
+  .flip-card-back .card-body {
+    padding: 15px;
+  }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+  .card-text {
+    font-size: 1.05rem;
+    line-height: 1.5;
+  }
+
+  .card-title {
+    font-size: 1.15rem;
+  }
+
+  .flip-card-front .card-body,
+  .flip-card-back .card-body {
+    padding: 18px;
+  }
 }
 
 .btn-card:hover .card-title,
@@ -506,7 +584,6 @@ button:disabled {
   cursor: not-allowed;
 }
 
-
 /************ Footer Css ************/
 .footer {
   border-top: #4a2fbd 3px solid;
@@ -540,7 +617,7 @@ button:disabled {
 .whatsapp-float {
   position: fixed;
   bottom: 35px; /* Ajusta según tu preferencia */
-  right: 35px;  /* Ajusta según tu preferencia */
+  right: 35px; /* Ajusta según tu preferencia */
   z-index: 999;
   width: 60px;
   height: 60px;
@@ -555,7 +632,7 @@ button:disabled {
 }
 
 .whatsapp-float img {
-  width: 40px;  /* Ajusta el tamaño del ícono */
+  width: 40px; /* Ajusta el tamaño del ícono */
   height: 40px;
 }
 
