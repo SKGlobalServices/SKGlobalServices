@@ -1,5 +1,6 @@
 import React from "react";
-import WhatsApp from "../assets/img/WhatsApp_icon.png";
+import WhatsApp from "../../../assets/img/WhatsApp_icon.png";
+import "./Whatsappbutton.css";
 
 function WhatsAppButton() {
   return (

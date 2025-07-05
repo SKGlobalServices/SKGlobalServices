@@ -4,6 +4,7 @@ import logo from "../assets/img/logo.png";
 import facebookicon from "../assets/img/facebook_icon.png";
 import instagramicon from "../assets/img/instagram_icon.png";
 import bannervideo from "../assets/img/banner-videoR.mp4";
+import { ScrollDownPrompt } from "./iu/ScrollDownPrompt/ScrollDownPrompt";
 
 export const NavBar = () => {
   const [activeLink, setActiveLink] = useState("home");
@@ -53,6 +54,7 @@ export const NavBar = () => {
         <source src={bannervideo} type="video/mp4" />
         Tu navegador no soporta la etiqueta de video.
       </video>
+      <ScrollDownPrompt />
       <section className="home" id="home">
         <Navbar expand="lg" className={scrolled ? "scrolled" : ""}>
           <Container>
@@ -115,22 +117,24 @@ export const NavBar = () => {
               </span>
               <span className="ms-auto">
                 <div className="contact-info">
-                  <p 
+                  <p
                     className="copyable-text"
-                    onClick={() => copyToClipboard('skglobalservices2024@gmail.com', 'email')}
+                    onClick={() =>
+                      copyToClipboard("skglobalservices2024@gmail.com", "email")
+                    }
                   >
                     skglobalservices2024@gmail.com
                     <span className="tooltip">
-                      {copySuccess.email ? '¡Copiado!' : 'Click para copiar'}
+                      {copySuccess.email ? "¡Copiado!" : "Click para copiar"}
                     </span>
                   </p>
-                  <p 
+                  <p
                     className="copyable-text "
-                    onClick={() => copyToClipboard('+297 746 8097', 'phone')}
+                    onClick={() => copyToClipboard("+297 746 8097", "phone")}
                   >
                     +297 746 8097
                     <span className="tooltip">
-                      {copySuccess.phone ? '¡Copiado!' : 'Click para copiar'}
+                      {copySuccess.phone ? "¡Copiado!" : "Click para copiar"}
                     </span>
                   </p>
                 </div>

@@ -5,7 +5,7 @@ import { NavBar } from './components/Navbar'
 import { Services } from './components/Services'
 import { Footer } from './components/Footer'
 import { Contact } from './components/Contact'
-import WhatsAppButton from './components/Whatsappbutton';
+import WhatsAppButton from './components/iu/Whatsappbutton/Whatsappbutton';
 
 function App() {
   return (
