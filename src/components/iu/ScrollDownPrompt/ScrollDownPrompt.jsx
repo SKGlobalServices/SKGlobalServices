@@ -1,21 +1,20 @@
 import React from "react";
 import { TypeAnimation } from "react-type-animation";
+import { useTranslation } from "react-i18next";
 import logo from "../../../assets/img/logo.png";
 import "./ScrollDownPrompt.css"; // Importa los estilos locales
 
 export const ScrollDownPrompt = () => {
+  const { t, i18n } = useTranslation(); 
+
+  const sequences = t("prompt.sequences");
+
   return (
     <div className="scroll-down-prompt">
       <img src={logo} alt="SK Global Services Logo" className="prompt-logo" />
       <TypeAnimation
-        sequence={[
-          "Innovación y Tecnología a tu Alcance",
-          2000,
-          "Soluciones Digitales para tu Negocio",
-          2000,
-          "Creamos el Futuro, Hoy",
-          2000,
-        ]}
+        key={i18n.language} 
+        sequence={sequences}
         wrapper="h1"
         speed={50}
         repeat={Infinity}
@@ -23,7 +22,7 @@ export const ScrollDownPrompt = () => {
       <div className="mouse-scroll-icon">
         <div className="mouse-wheel"></div>
       </div>
-      <p>Desliza para descubrir</p>
+      <p>{t("prompt.scroll")}</p>
     </div>
   );
 };

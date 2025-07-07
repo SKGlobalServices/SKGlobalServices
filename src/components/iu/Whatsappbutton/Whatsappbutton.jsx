@@ -1,8 +1,10 @@
 import React from "react";
 import WhatsApp from "../../../assets/img/WhatsApp_icon.png";
 import "./Whatsappbutton.css";
+import { useTranslation } from "react-i18next";
 
 function WhatsAppButton() {
+  const {t}  = useTranslation();
   return (
     <div className="whatsapp-float">
       <a
@@ -13,7 +15,7 @@ function WhatsAppButton() {
       >
         <img src={WhatsApp} alt="WhatsApp" />
       </a>
-      <span className="whatsapp-tooltip">¿Necesitas ayuda?</span>
+      <span className="whatsapp-tooltip">{t("whatsapp.tooltip")}</span>
     </div>
   );
 }

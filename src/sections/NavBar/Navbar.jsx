@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
-import { Navbar, Nav, Container } from "react-bootstrap";
+import { Navbar, Nav, Container, Button, ButtonGroup } from "react-bootstrap";
+import { useTranslation } from "react-i18next";
 import logo from "../../assets/img/logo.png";
 import facebookicon from "../../assets/img/facebook_icon.png";
 import instagramicon from "../../assets/img/instagram_icon.png";
@@ -8,6 +9,7 @@ import { ScrollDownPrompt } from "../../components/iu/ScrollDownPrompt/ScrollDow
 import "./Navbar.css";
 
 export const NavBar = () => {
+  const { t, i18n } = useTranslation();
   const [activeLink, setActiveLink] = useState("home");
   const [scrolled, setScrolled] = useState(false);
   const [copySuccess, setCopySuccess] = useState({
@@ -49,11 +51,15 @@ export const NavBar = () => {
     }
   };
 
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+  };
+
   return (
     <div className="navbar-with-video">
       <video className="video-background" autoPlay muted loop>
         <source src={bannervideo} type="video/mp4" />
-        Tu navegador no soporta la etiqueta de video.
+        {t("navbar.video_fallback")}
       </video>
       <ScrollDownPrompt />
       <section className="home" id="home">
@@ -73,7 +79,7 @@ export const NavBar = () => {
                   }
                   onClick={() => onUpdateActiveLink("home")}
                 >
-                  Inicio
+                  {t("navbar.home")}
                 </Nav.Link>
                 <Nav.Link
                   href="#services"
@@ -84,7 +90,7 @@ export const NavBar = () => {
                   }
                   onClick={() => onUpdateActiveLink("services")}
                 >
-                  Servicios
+                  {t("navbar.services")}
                 </Nav.Link>
                 <Nav.Link
                   href="#contact"
@@ -95,7 +101,7 @@ export const NavBar = () => {
                   }
                   onClick={() => onUpdateActiveLink("contact")}
                 >
-                  Contactanos
+                  {t("navbar.contact")}
                 </Nav.Link>
               </Nav>
               <span className="ms-right">
@@ -126,7 +132,7 @@ export const NavBar = () => {
                   >
                     skglobalservices2024@gmail.com
                     <span className="tooltip">
-                      {copySuccess.email ? "¡Copiado!" : "Click para copiar"}
+                      {copySuccess.email ? t("navbar.copy_success") : t("navbar.copy_prompt")}
                     </span>
                   </p>
                   <p
@@ -135,10 +141,15 @@ export const NavBar = () => {
                   >
                     +297 746 8097
                     <span className="tooltip">
-                      {copySuccess.phone ? "¡Copiado!" : "Click para copiar"}
+                      {copySuccess.phone ? t("navbar.copy_success") : t("navbar.copy_prompt")}
                     </span>
                   </p>
                 </div>
+                <ButtonGroup className="ms-3">
+                  <Button variant="outline-light" size="sm" onClick={() => changeLanguage('es')}>ES</Button>
+                  <Button variant="outline-light" size="sm" onClick={() => changeLanguage('en')}>EN</Button>
+                  <Button variant="outline-light" size="sm" onClick={() => changeLanguage('nl')}>NL</Button>
+                </ButtonGroup>
               </span>
             </Navbar.Collapse>
           </Container>

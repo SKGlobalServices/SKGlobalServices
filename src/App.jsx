@@ -6,7 +6,7 @@ import { Services } from './sections/Services/Services'
 import { Footer } from './sections/Footer/Footer'
 import { Contact } from './sections/Contact/Contact'
 import WhatsAppButton from './components/iu/Whatsappbutton/Whatsappbutton';
-// TODO: agregar traducciones al ingles, español, holandés
+// TODO: agregar traducciones al ingles, español, holanreact‑i18next dés
 function App() {
   return (
     <div className="App">

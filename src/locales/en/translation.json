@@ -1,0 +1,41 @@
+{
+  "prompt": {
+    "sequences": [
+      "Innovation and Technology at Your Fingertips",
+      "Digital Solutions for Your Business",
+      "We Create the Future, Today"
+    ],
+    "scroll": "Scroll to discover"
+  },
+  "navbar": {
+    "home": "Home",
+    "services": "Services",
+    "contact": "Contact Us",
+    "video_fallback": "Your browser does not support the video tag.",
+    "copy_success": "Copied!",
+    "copy_prompt": "Click to copy"
+  },
+  "services_section": {
+    "title": "Our Services"
+  },
+  "services_data": [
+    { "id": 1, "front_title": "Logo Creation", "front_text": "Unique logos for your brand", "back_title": "Logo Creation", "back_points": ["Boost your corporate image", "Creative and professional designs"] },
+    { "id": 2, "front_title": "Advertising Campaigns", "front_text": "Attract More Customers With Creative Campaigns", "back_title": "Advertising Campaigns", "back_points": ["Effective promotion of your business", "Advertising that generates results"] },
+    { "id": 3, "front_title": "Custom Billing System", "front_text": "Optimize your sales process", "back_title": "Custom Billing System", "back_points": ["Fast and secure invoice issuance", "Real-time inventory control", "Automatic and personalized reports"] },
+    { "id": 4, "front_title": "Web Page Development", "front_text": "Modern and easy-to-navigate sites", "back_title": "Web Page Development", "back_points": ["Stand out with a unique style", "Optimal user experience", "Online stores with secure payments and global reach."] },
+    { "id": 5, "front_title": "Mobile Applications", "front_text": "Development for Android and iOS", "back_title": "Mobile Applications", "back_points": ["Intuitive and secure apps", "Innovation for your business", "Custom solutions for any type of business."] },
+    { "id": 6, "front_title": "Business Systems Development", "front_text": "Automate processes and save time", "back_title": "Business Systems Development", "back_points": ["Control of billing and inventories", "Management of income and expenses in one place", "Systems tailored to your business", "Support and maintenance plans"] }
+  ],
+  "contact_section": {
+    "title": "Contact Us",
+    "form": { "first_name": "First Name", "last_name": "Last Name", "email": "Email Address", "phone": "Cell Phone", "message": "Message", "submit": "Send" },
+    "alert_success_title": "Message sent!", "alert_success_text": "Message sent successfully.", "alert_success_button": "OK",
+    "alert_error_title": "Error", "alert_error_text": "There was an error sending the message.", "alert_error_button": "Close"
+  },
+  "footer": {
+    "home": "Home", "services": "Services", "contact": "Contact", "copyright": "Copyright 2025. All rights reserved."
+  },
+  "whatsapp": {
+    "tooltip": "Need help?"
+  }
+}

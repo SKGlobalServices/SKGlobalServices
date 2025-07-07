@@ -3,8 +3,10 @@ import logo from "../../assets/img/logo.png";
 import facebookicon from "../../assets/img/facebook_icon.png";
 import instagramicon from "../../assets/img/instagram_icon.png";
 import "./Footer.css";
+import { useTranslation } from "react-i18next";
 
 export const Footer = () => {
+  const {t} = useTranslation();
   return (
     <footer className="footer" id="footer">
       <Container>
@@ -13,9 +15,9 @@ export const Footer = () => {
             <img src={logo} alt="Logo" className="footer-logo" />
           </Col>
           <Col xs={12} md={4} className="footer-links text-center mb-4 mb-md-0">
-            <a href="#home">Inicio</a>
-            <a href="#services">Servicios</a>
-            <a href="#contact">Contacto</a>
+            <a href="#home">{t("footer.home")}</a>
+            <a href="#services">{t("footer.services")}</a>
+            <a href="#contact">{t("footer.contact")}</a>
           </Col>
           <Col xs={12} md={4} className="text-center text-md-end">
             <div className="social-icon">
@@ -34,7 +36,7 @@ export const Footer = () => {
                 <img src={instagramicon} alt="Instagram" />
               </a>
             </div>
-            <p>Copyright 2025. Todos los derechos reservados.</p>
+            <p>{t("footer.copyright")}</p>
           </Col>
         </Row>
       </Container>
