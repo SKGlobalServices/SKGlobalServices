@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import db from "./firebase";
+import db from "../../services/firebase";
 import { collection, addDoc } from "firebase/firestore";
 import { Container, Row, Col } from "react-bootstrap";
-import contacting from "../assets/img/contact-img.svg";
+import contacting from "../../assets/img/contact-img.svg";
 import Swal from "sweetalert2";
+import "./Contact.css";
 
 export const Contact = () => {
   // Estados del formulario

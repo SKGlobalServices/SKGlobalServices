@@ -1,10 +1,11 @@
 import { useState, useEffect, useRef } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
-import logo from "../assets/img/logo.png";
-import facebookicon from "../assets/img/facebook_icon.png";
-import instagramicon from "../assets/img/instagram_icon.png";
-import bannervideo from "../assets/img/banner-videoR.mp4";
-import { ScrollDownPrompt } from "./iu/ScrollDownPrompt/ScrollDownPrompt";
+import logo from "../../assets/img/logo.png";
+import facebookicon from "../../assets/img/facebook_icon.png";
+import instagramicon from "../../assets/img/instagram_icon.png";
+import bannervideo from "../../assets/img/banner-videoR.mp4";
+import { ScrollDownPrompt } from "../../components/iu/ScrollDownPrompt/ScrollDownPrompt";
+import "./Navbar.css";
 
 export const NavBar = () => {
   const [activeLink, setActiveLink] = useState("home");

@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { NavBar } from './components/Navbar'
-import { Services } from './components/Services'
-import { Footer } from './components/Footer'
-import { Contact } from './components/Contact'
+import { NavBar } from './sections/NavBar/Navbar'
+import { Services } from './sections/Services/Services'
+import { Footer } from './sections/Footer/Footer'
+import { Contact } from './sections/Contact/Contact'
 import WhatsAppButton from './components/iu/Whatsappbutton/Whatsappbutton';
-
+// TODO: agregar traducciones al ingles, español, holandés
 function App() {
   return (
     <div className="App">

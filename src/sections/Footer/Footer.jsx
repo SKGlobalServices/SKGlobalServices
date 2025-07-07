@@ -1,7 +1,8 @@
 import { Col, Container, Row } from "react-bootstrap";
-import logo from "../assets/img/logo.png";
-import facebookicon from "../assets/img/facebook_icon.png";
-import instagramicon from "../assets/img/instagram_icon.png";
+import logo from "../../assets/img/logo.png";
+import facebookicon from "../../assets/img/facebook_icon.png";
+import instagramicon from "../../assets/img/instagram_icon.png";
+import "./Footer.css";
 
 export const Footer = () => {
   return (
