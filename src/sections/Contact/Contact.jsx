@@ -1,11 +1,14 @@
 import React, { useState } from "react";
-import db from "./firebase";
+import db from "../../services/firebase";
 import { collection, addDoc } from "firebase/firestore";
 import { Container, Row, Col } from "react-bootstrap";
-import contacting from "../assets/img/contact-img.svg";
+import contacting from "../../assets/img/contact-img.svg";
 import Swal from "sweetalert2";
+import "./Contact.css";
+import { useTranslation } from "react-i18next";
 
 export const Contact = () => {
+  const { t } = useTranslation();
   // Estados del formulario
   const [nombre, setNombre] = useState("");
   const [apellido, setApellido] = useState("");
@@ -28,10 +31,10 @@ export const Contact = () => {
 
       // Muestra alerta de éxito con SweetAlert2
       Swal.fire({
-        title: "¡Mensaje enviado!",
-        text: "Mensaje enviado exitosamente.",
+        title: t("contact.success.title"),
+        text: t("contact.success.text"),
         icon: "success",
-        confirmButtonText: "Aceptar",
+        confirmButtonText: t("contact.success.confirmButtonText"),
       });
 
       // Restablece los campos del formulario
@@ -43,10 +46,10 @@ export const Contact = () => {
     } catch (error) {
       // Muestra alerta de error con SweetAlert2
       Swal.fire({
-        title: "Error",
-        text: `Hubo un error al enviar mensaje: ${error.message}`,
+        title: t("contact.error.title"),
+        text: `${t("contact.error.text")}: ${error.message}`,
         icon: "error",
-        confirmButtonText: "Cerrar",
+        confirmButtonText: t("contact.error.confirmButtonText"),
       });
     }
   };
@@ -64,13 +67,13 @@ export const Contact = () => {
             <img src={contacting} alt="Contacto" />
           </Col>
           <Col md={6}>
-            <h2>Contáctanos</h2>
+            <h2>{t("contact_section.title")}</h2>
             <form onSubmit={handleSubmit}>
               <Row>
                 <Col xs={12} sm={6} className="px-1">
                   <input
                     type="text"
-                    placeholder="Nombre"
+                    placeholder={t("contact_section.form.first_name")}
                     value={nombre}
                     onChange={(e) => setNombre(e.target.value)}
                   />
@@ -78,7 +81,7 @@ export const Contact = () => {
                 <Col xs={12} sm={6} className="px-1">
                   <input
                     type="text"
-                    placeholder="Apellido"
+                    placeholder={t("contact_section.form.last_name")}
                     value={apellido}
                     onChange={(e) => setApellido(e.target.value)}
                   />
@@ -86,7 +89,7 @@ export const Contact = () => {
                 <Col xs={12} sm={6} className="px-1">
                   <input
                     type="email"
-                    placeholder="Correo electrónico"
+                    placeholder={t("contact_section.form.email")}
                     value={correo}
                     onChange={(e) => setCorreo(e.target.value)}
                   />
@@ -94,7 +97,7 @@ export const Contact = () => {
                 <Col xs={12} sm={6} className="px-1">
                   <input
                     type="number"
-                    placeholder="Teléfono celular"
+                    placeholder={t("contact_section.form.phone")}
                     value={telefono}
                     onChange={(e) => setTelefono(e.target.value)}
                   />
@@ -102,12 +105,12 @@ export const Contact = () => {
                 <Col xs={12} className="px-1">
                   <input
                     type="text"
-                    placeholder="Mensaje"
+                    placeholder={t("contact_section.form.message")}
                     value={mensaje}
                     onChange={(e) => setMensaje(e.target.value)}
                   />
                   <button type="submit" disabled={!isFormValid}>
-                    <span>Enviar</span>
+                    <span>{t("contact_section.form.submit")}</span>
                   </button>
                 </Col>
               </Row>

@@ -1,13 +1,22 @@
-import { useState, useEffect } from "react";
-import { Navbar, Nav, Container } from "react-bootstrap";
-import logo from "../assets/img/logo.png";
-import facebookicon from "../assets/img/facebook_icon.png";
-import instagramicon from "../assets/img/instagram_icon.png";
-import bannervideo from "../assets/img/banner-videoR.mp4";
+import { useState, useEffect, useRef } from "react";
+import { Navbar, Nav, Container, Button, ButtonGroup } from "react-bootstrap";
+import { useTranslation } from "react-i18next";
+import logo from "../../assets/img/logo.png";
+import facebookicon from "../../assets/img/facebook_icon.png";
+import instagramicon from "../../assets/img/instagram_icon.png";
+import bannervideo from "../../assets/img/banner-videoR.mp4";
+import { ScrollDownPrompt } from "../../components/iu/ScrollDownPrompt/ScrollDownPrompt";
+import "./Navbar.css";
 
 export const NavBar = () => {
+  const { t, i18n } = useTranslation();
   const [activeLink, setActiveLink] = useState("home");
   const [scrolled, setScrolled] = useState(false);
+  const [copySuccess, setCopySuccess] = useState({
+    email: false,
+    phone: false,
+  });
+  const copyTimeout = useRef(null);
 
   useEffect(() => {
     const onScroll = () => {
@@ -27,12 +36,32 @@ export const NavBar = () => {
     setActiveLink(value);
   };
 
+  const copyToClipboard = async (text, type) => {
+    try {
+      if (copyTimeout.current) {
+        clearTimeout(copyTimeout.current);
+      }
+      await navigator.clipboard.writeText(text);
+      setCopySuccess({ email: false, phone: false, [type]: true });
+      copyTimeout.current = setTimeout(() => {
+        setCopySuccess({ email: false, phone: false });
+      }, 2000);
+    } catch (err) {
+      console.error("Error al copiar: ", err);
+    }
+  };
+
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+  };
+
   return (
     <div className="navbar-with-video">
       <video className="video-background" autoPlay muted loop>
         <source src={bannervideo} type="video/mp4" />
-        Tu navegador no soporta la etiqueta de video.
+        {t("navbar.video_fallback")}
       </video>
+      <ScrollDownPrompt />
       <section className="home" id="home">
         <Navbar expand="lg" className={scrolled ? "scrolled" : ""}>
           <Container>
@@ -50,7 +79,7 @@ export const NavBar = () => {
                   }
                   onClick={() => onUpdateActiveLink("home")}
                 >
-                  Inicio
+                  {t("navbar.home")}
                 </Nav.Link>
                 <Nav.Link
                   href="#services"
@@ -61,7 +90,7 @@ export const NavBar = () => {
                   }
                   onClick={() => onUpdateActiveLink("services")}
                 >
-                  Servicios
+                  {t("navbar.services")}
                 </Nav.Link>
                 <Nav.Link
                   href="#contact"
@@ -72,7 +101,7 @@ export const NavBar = () => {
                   }
                   onClick={() => onUpdateActiveLink("contact")}
                 >
-                  Contactanos
+                  {t("navbar.contact")}
                 </Nav.Link>
               </Nav>
               <span className="ms-right">
@@ -94,10 +123,34 @@ export const NavBar = () => {
                 </div>
               </span>
               <span className="ms-auto">
-                <p>skglobalservices2024@gmail.com</p>
-                <p className="ms-auto">+297 746 8097</p>
+                <div className="contact-info">
+                  <p
+                    className="copyable-text"
+                    onClick={() =>
+                      copyToClipboard("skglobalservices2024@gmail.com", "email")
+                    }
+                  >
+                    skglobalservices2024@gmail.com
+                    <span className="tooltip">
+                      {copySuccess.email ? t("navbar.copy_success") : t("navbar.copy_prompt")}
+                    </span>
+                  </p>
+                  <p
+                    className="copyable-text "
+                    onClick={() => copyToClipboard("+297 746 8097", "phone")}
+                  >
+                    +297 746 8097
+                    <span className="tooltip">
+                      {copySuccess.phone ? t("navbar.copy_success") : t("navbar.copy_prompt")}
+                    </span>
+                  </p>
+                </div>
+                <ButtonGroup className="ms-3">
+                  <Button variant="outline-light" size="sm" onClick={() => changeLanguage('es')}>ES</Button>
+                  <Button variant="outline-light" size="sm" onClick={() => changeLanguage('en')}>EN</Button>
+                  <Button variant="outline-light" size="sm" onClick={() => changeLanguage('nl')}>NL</Button>
+                </ButtonGroup>
               </span>
-              <span></span>
             </Navbar.Collapse>
           </Container>
         </Navbar>

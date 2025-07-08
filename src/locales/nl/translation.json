@@ -1,0 +1,41 @@
+{
+  "prompt": {
+    "sequences": [
+      "Innovatie en Technologie binnen Handbereik",
+      "Digitale Oplossingen voor uw Bedrijf",
+      "Wij Creëren de Toekomst, Vandaag"
+    ],
+    "scroll": "Scroll om te ontdekken"
+  },
+  "navbar": {
+    "home": "Home",
+    "services": "Diensten",
+    "contact": "Contacteer Ons",
+    "video_fallback": "Uw browser ondersteunt de videotag niet.",
+    "copy_success": "Gekopieerd!",
+    "copy_prompt": "Klik om te kopiëren"
+  },
+  "services_section": {
+    "title": "Onze Diensten"
+  },
+  "services_data": [
+    { "id": 1, "front_title": "Logo Creatie", "front_text": "Unieke logo's voor uw merk", "back_title": "Logo Creatie", "back_points": ["Versterk uw bedrijfsimago", "Creatieve en professionele ontwerpen"] },
+    { "id": 2, "front_title": "Advertentiecampagnes", "front_text": "Trek Meer Klanten Aan Met Creatieve Campagnes", "back_title": "Advertentiecampagnes", "back_points": ["Effectieve promotie van uw bedrijf", "Reclame die resultaten oplevert"] },
+    { "id": 3, "front_title": "Aangepast Facturatiesysteem", "front_text": "Optimaliseer uw verkoopproces", "back_title": "Aangepast Facturatiesysteem", "back_points": ["Snelle en veilige factuuruitgifte", "Real-time voorraadbeheer", "Automatische en gepersonaliseerde rapporten"] },
+    { "id": 4, "front_title": "Webpagina Ontwikkeling", "front_text": "Moderne en gemakkelijk te navigeren sites", "back_title": "Webpagina Ontwikkeling", "back_points": ["Onderscheid u met een unieke stijl", "Optimale gebruikerservaring", "Webwinkels met veilige betalingen en wereldwijd bereik."] },
+    { "id": 5, "front_title": "Mobiele Applicaties", "front_text": "Ontwikkeling voor Android en iOS", "back_title": "Mobiele Applicaties", "back_points": ["Intuïtieve en veilige apps", "Innovatie voor uw bedrijf", "Maatwerkoplossingen voor elk type bedrijf."] },
+    { "id": 6, "front_title": "Ontwikkeling van Bedrijfssystemen", "front_text": "Automatiseer processen en bespaar tijd", "back_title": "Ontwikkeling van Bedrijfssystemen", "back_points": ["Controle over facturering en voorraden", "Beheer van inkomsten en uitgaven op één plek", "Systemen op maat van uw bedrijf", "Ondersteunings- en onderhoudsplannen"] }
+  ],
+  "contact_section": {
+    "title": "Contacteer Ons",
+    "form": { "first_name": "Voornaam", "last_name": "Achternaam", "email": "E-mailadres", "phone": "Mobiele Telefoon", "message": "Bericht", "submit": "Verstuur" },
+    "alert_success_title": "Bericht verzonden!", "alert_success_text": "Bericht succesvol verzonden.", "alert_success_button": "OK",
+    "alert_error_title": "Fout", "alert_error_text": "Er is een fout opgetreden bij het verzenden van het bericht.", "alert_error_button": "Sluiten"
+  },
+  "footer": {
+    "home": "Home", "services": "Diensten", "contact": "Contact", "copyright": "Copyright 2025. Alle rechten voorbehouden."
+  },
+  "whatsapp": {
+    "tooltip": "Hulp nodig?"
+  }
+}

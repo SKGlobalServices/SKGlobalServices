@@ -1,17 +1,25 @@
 import { Col, Container, Row } from "react-bootstrap";
-import logo from "../assets/img/logo.png";
-import facebookicon from "../assets/img/facebook_icon.png";
-import instagramicon from "../assets/img/instagram_icon.png";
+import logo from "../../assets/img/logo.png";
+import facebookicon from "../../assets/img/facebook_icon.png";
+import instagramicon from "../../assets/img/instagram_icon.png";
+import "./Footer.css";
+import { useTranslation } from "react-i18next";
 
 export const Footer = () => {
+  const {t} = useTranslation();
   return (
     <footer className="footer" id="footer">
       <Container>
-        <Row className="align-item-center">
-          <Col sm={6}>
-            <img src={logo} alt="Logo" />
+        <Row className="align-items-center">
+          <Col xs={12} md={4} className="text-center text-md-start mb-4 mb-md-0">
+            <img src={logo} alt="Logo" className="footer-logo" />
           </Col>
-          <Col sm={6} className="text-center text-sn-end">
+          <Col xs={12} md={4} className="footer-links text-center mb-4 mb-md-0">
+            <a href="#home">{t("footer.home")}</a>
+            <a href="#services">{t("footer.services")}</a>
+            <a href="#contact">{t("footer.contact")}</a>
+          </Col>
+          <Col xs={12} md={4} className="text-center text-md-end">
             <div className="social-icon">
               <a
                 href="https://www.facebook.com/people/SK-Global-Services/61573197338873/"
@@ -28,7 +36,7 @@ export const Footer = () => {
                 <img src={instagramicon} alt="Instagram" />
               </a>
             </div>
-            <p>CopyRight 2025. All rights reserved.</p>
+            <p>{t("footer.copyright")}</p>
           </Col>
         </Row>
       </Container>

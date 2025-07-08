@@ -1,0 +1,41 @@
+{
+  "prompt": {
+    "sequences": [
+      "Innovación y Tecnología a tu Alcance",
+      "Soluciones Digitales para tu Negocio",
+      "Creamos el Futuro, Hoy"
+    ],
+    "scroll": "Desliza para descubrir"
+  },
+  "navbar": {
+    "home": "Inicio",
+    "services": "Servicios",
+    "contact": "Contáctanos",
+    "video_fallback": "Tu navegador no soporta la etiqueta de video.",
+    "copy_success": "¡Copiado!",
+    "copy_prompt": "Click para copiar"
+  },
+  "services_section": {
+    "title": "Nuestros Servicios"
+  },
+  "services_data": [
+    { "id": 1, "front_title": "Creación De Logos", "front_text": "Logotipos únicos para tu marca", "back_title": "Creación De Logo", "back_points": ["Potencia tu imagen corporativa", "Diseños creativos y profesionales"] },
+    { "id": 2, "front_title": "Anuncios Publicitarios", "front_text": "Atrae Más Clientes Con Campañas Creativas", "back_title": "Anuncios Publicitarios", "back_points": ["Promoción efectiva de tu negocio", "Publicidad que genera resultados"] },
+    { "id": 3, "front_title": "Sistema De Facturación Personalizado", "front_text": "Optimiza tu proceso de ventas", "back_title": "Sistema De Facturación Personalizado", "back_points": ["Emisión rápida y segura de facturas", "Control de inventario en tiempo real", "Reportes automáticos y personalizados"] },
+    { "id": 4, "front_title": "Desarrollo De Pagina Web", "front_text": "Sitios modernos y fáciles de navegar", "back_title": "Desarrollo De Pagina Web", "back_points": ["Destaca con un estilo único", "Experiencia de usuario óptima", "Tiendas virtuales con pagos seguros y alcance global."] },
+    { "id": 5, "front_title": "Aplicaciónes Moviles", "front_text": "Desarrollo para Android e iOS", "back_title": "Aplicacións Moviles", "back_points": ["Apps intuitivas y seguras", "Innovación para tu negocio", "Soluciones personalizadas para cualquier tipo de negocio."] },
+    { "id": 6, "front_title": "Desarrollo De Sistemas Empresariales", "front_text": "Automatiza procesos y ahorra tiempo", "back_title": "Desarrollo De Sistemas Empresariales", "back_points": ["Control de facturación e inventarios", "Gestión de ingresos y gastos en un solo lugar", "Sistemas a la medida de tu negocio", "Planes de soporte y mantenimiento"] }
+  ],
+  "contact_section": {
+    "title": "Contáctanos",
+    "form": { "first_name": "Nombre", "last_name": "Apellido", "email": "Correo electrónico", "phone": "Teléfono celular", "message": "Mensaje", "submit": "Enviar" },
+    "alert_success_title": "¡Mensaje enviado!", "alert_success_text": "Mensaje enviado exitosamente.", "alert_success_button": "Aceptar",
+    "alert_error_title": "Error", "alert_error_text": "Hubo un error al enviar el mensaje.", "alert_error_button": "Cerrar"
+  },
+  "footer": {
+    "home": "Inicio", "services": "Servicios", "contact": "Contacto", "copyright": "Copyright 2025. Todos los derechos reservados."
+  },
+  "whatsapp": {
+    "tooltip": "¿Necesitas ayuda?"
+  }
+}
