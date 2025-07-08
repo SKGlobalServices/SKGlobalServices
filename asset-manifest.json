@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/SKGlobalServices/static/css/main.ef603901.css",
-    "main.js": "/SKGlobalServices/static/js/main.0365670d.js",
+    "main.css": "/SKGlobalServices/static/css/main.18dcb75d.css",
+    "main.js": "/SKGlobalServices/static/js/main.e2762206.js",
     "static/js/453.0fe1c698.chunk.js": "/SKGlobalServices/static/js/453.0fe1c698.chunk.js",
     "static/media/banner-videoR.mp4": "/SKGlobalServices/static/media/banner-videoR.6f8964e466efbdfc9934.mp4",
     "static/media/app_mobile.png": "/SKGlobalServices/static/media/app_mobile.fd2e1541995256493623.png",
@@ -19,12 +19,12 @@
     "static/media/CentraNo2-Book.ttf": "/SKGlobalServices/static/media/CentraNo2-Book.2b143fa4b734a3584043.ttf",
     "static/media/contact-img.svg": "/SKGlobalServices/static/media/contact-img.87eac2b29352fa01abb2f9510ef6ac7e.svg",
     "index.html": "/SKGlobalServices/index.html",
-    "main.ef603901.css.map": "/SKGlobalServices/static/css/main.ef603901.css.map",
-    "main.0365670d.js.map": "/SKGlobalServices/static/js/main.0365670d.js.map",
+    "main.18dcb75d.css.map": "/SKGlobalServices/static/css/main.18dcb75d.css.map",
+    "main.e2762206.js.map": "/SKGlobalServices/static/js/main.e2762206.js.map",
     "453.0fe1c698.chunk.js.map": "/SKGlobalServices/static/js/453.0fe1c698.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ef603901.css",
-    "static/js/main.0365670d.js"
+    "static/css/main.18dcb75d.css",
+    "static/js/main.e2762206.js"
   ]
 }
