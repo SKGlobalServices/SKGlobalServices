@@ -1,11 +1,10 @@
 import { useState, useEffect, useRef } from "react";
 import { Navbar, Nav, Container, Button, ButtonGroup } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 import logo from "../../assets/img/logo.png";
 import facebookicon from "../../assets/img/facebook_icon.png";
 import instagramicon from "../../assets/img/instagram_icon.png";
-import bannervideo from "../../assets/img/banner-videoR.mp4";
-import { ScrollDownPrompt } from "../../components/iu/ScrollDownPrompt/ScrollDownPrompt";
 import "./Navbar.css";
 
 export const NavBar = () => {
@@ -56,105 +55,101 @@ export const NavBar = () => {
   };
 
   return (
-    <div className="navbar-with-video">
-      <video className="video-background" autoPlay muted loop>
-        <source src={bannervideo} type="video/mp4" />
-        {t("navbar.video_fallback")}
-      </video>
-      <ScrollDownPrompt />
-      <section className="home" id="home">
-        <Navbar expand="lg" className={scrolled ? "scrolled" : ""}>
-          <Container>
-            <Navbar.Brand href="https://skglobalservices.github.io/SKGlobalServices/">
-              <img src={logo} alt="Logo" />
-            </Navbar.Brand>
+    <section className="home" id="home">
+      <Navbar expand="lg" className={scrolled ? "scrolled" : ""}>
+        <Container>
+          <Navbar.Brand as={Link} to="/">
+            <img src={logo} alt="Logo" />
+          </Navbar.Brand>
 
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            <Navbar.Collapse id="basic-navbar-nav">
-              <Nav>
-                <Nav.Link
-                  href="#home"
-                  className={
-                    activeLink === "home" ? "active navbar-link" : "navbar-link"
-                  }
-                  onClick={() => onUpdateActiveLink("home")}
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav>
+              <Nav.Link
+                as={Link}
+                to="/#home"
+                className={
+                  activeLink === "home" ? "active navbar-link" : "navbar-link"
+                }
+                onClick={() => onUpdateActiveLink("home")}
+              >
+                {t("navbar.home")}
+              </Nav.Link>
+              <Nav.Link
+                as={Link}
+                to="/#services"
+                className={
+                  activeLink === "services"
+                    ? "active navbar-link"
+                    : "navbar-link"
+                }
+                onClick={() => onUpdateActiveLink("services")}
+              >
+                {t("navbar.services")}
+              </Nav.Link>
+              <Nav.Link
+                as={Link}
+                to="/#contact"
+                className={
+                  activeLink === "contact"
+                    ? "active navbar-link"
+                    : "navbar-link"
+                }
+                onClick={() => onUpdateActiveLink("contact")}
+              >
+                {t("navbar.contact")}
+              </Nav.Link>
+            </Nav>
+            <span className="ms-right">
+              <div className="social-icon">
+                <a
+                  href="https://www.facebook.com/people/SK-Global-Services/61573197338873/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  {t("navbar.home")}
-                </Nav.Link>
-                <Nav.Link
-                  href="#services"
-                  className={
-                    activeLink === "services"
-                      ? "active navbar-link"
-                      : "navbar-link"
-                  }
-                  onClick={() => onUpdateActiveLink("services")}
+                  <img src={facebookicon} alt="Facebook" />
+                </a>
+                <a
+                  href="https://www.instagram.com/skglobalservices_21?igsh=MXVndHd3czJzOHJoeQ%3D%3D&utm_source=qr"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  {t("navbar.services")}
-                </Nav.Link>
-                <Nav.Link
-                  href="#contact"
-                  className={
-                    activeLink === "contact"
-                      ? "active navbar-link"
-                      : "navbar-link"
+                  <img src={instagramicon} alt="Instagram" />
+                </a>
+              </div>
+            </span>
+            <span className="ms-auto">
+              <div className="contact-info">
+                <p
+                  className="copyable-text"
+                  onClick={() =>
+                    copyToClipboard("skglobalservices2024@gmail.com", "email")
                   }
-                  onClick={() => onUpdateActiveLink("contact")}
                 >
-                  {t("navbar.contact")}
-                </Nav.Link>
-              </Nav>
-              <span className="ms-right">
-                <div className="social-icon">
-                  <a
-                    href="https://www.facebook.com/people/SK-Global-Services/61573197338873/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <img src={facebookicon} alt="Facebook" />
-                  </a>
-                  <a
-                    href="https://www.instagram.com/skglobalservices_21?igsh=MXVndHd3czJzOHJoeQ%3D%3D&utm_source=qr"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <img src={instagramicon} alt="Instagram" />
-                  </a>
-                </div>
-              </span>
-              <span className="ms-auto">
-                <div className="contact-info">
-                  <p
-                    className="copyable-text"
-                    onClick={() =>
-                      copyToClipboard("skglobalservices2024@gmail.com", "email")
-                    }
-                  >
-                    skglobalservices2024@gmail.com
-                    <span className="tooltip">
-                      {copySuccess.email ? t("navbar.copy_success") : t("navbar.copy_prompt")}
-                    </span>
-                  </p>
-                  <p
-                    className="copyable-text "
-                    onClick={() => copyToClipboard("+297 746 8097", "phone")}
-                  >
-                    +297 746 8097
-                    <span className="tooltip">
-                      {copySuccess.phone ? t("navbar.copy_success") : t("navbar.copy_prompt")}
-                    </span>
-                  </p>
-                </div>
-                <ButtonGroup className="ms-3">
-                  <Button variant="outline-light" size="sm" onClick={() => changeLanguage('es')}>ES</Button>
-                  <Button variant="outline-light" size="sm" onClick={() => changeLanguage('en')}>EN</Button>
-                  <Button variant="outline-light" size="sm" onClick={() => changeLanguage('nl')}>NL</Button>
-                </ButtonGroup>
-              </span>
-            </Navbar.Collapse>
-          </Container>
-        </Navbar>
-      </section>
-    </div>
+                  skglobalservices2024@gmail.com
+                  <span className="tooltip">
+                    {copySuccess.email ? t("navbar.copy_success") : t("navbar.copy_prompt")}
+                  </span>
+                </p>
+                <p
+                  className="copyable-text "
+                  onClick={() => copyToClipboard("+297 746 8097", "phone")}
+                >
+                  +297 746 8097
+                  <span className="tooltip">
+                    {copySuccess.phone ? t("navbar.copy_success") : t("navbar.copy_prompt")}
+                  </span>
+                </p>
+              </div>
+              <ButtonGroup className="ms-3">
+                <Button variant="outline-light" size="sm" onClick={() => changeLanguage('es')}>ES</Button>
+                <Button variant="outline-light" size="sm" onClick={() => changeLanguage('en')}>EN</Button>
+                <Button variant="outline-light" size="sm" onClick={() => changeLanguage('nl')}>NL</Button>
+              </ButtonGroup>
+            </span>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+    </section>
   );
 };

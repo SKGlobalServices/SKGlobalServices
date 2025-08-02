@@ -12,11 +12,12 @@ export const ScrollDownPrompt = () => {
   return (
     <div className="scroll-down-prompt">
       <img src={logo} alt="SK Global Services Logo" className="prompt-logo" />
+      <h1>SK Global Services</h1>
       <TypeAnimation
-        key={i18n.language} 
+        key={i18n.language}
         sequence={sequences}
-        wrapper="h1"
-        speed={50}
+        wrapper="h2"
+        speed={150}
         repeat={Infinity}
       />
       <div className="mouse-scroll-icon">

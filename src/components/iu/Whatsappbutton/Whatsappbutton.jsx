@@ -3,7 +3,7 @@ import WhatsApp from "../../../assets/img/WhatsApp_icon.png";
 import "./Whatsappbutton.css";
 import { useTranslation } from "react-i18next";
 
-function WhatsAppButton() {
+export const Whatsappbutton = () => {
   const {t}  = useTranslation();
   return (
     <div className="whatsapp-float">
@@ -19,5 +19,3 @@ function WhatsAppButton() {
     </div>
   );
 }
-
-export default WhatsAppButton;
