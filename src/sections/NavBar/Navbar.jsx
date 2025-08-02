@@ -58,7 +58,7 @@ export const NavBar = () => {
     <section className="home" id="home">
       <Navbar expand="lg" className={scrolled ? "scrolled" : ""}>
         <Container>
-          <Navbar.Brand as={Link} to="/">
+          <Navbar.Brand as={Link} to="/SKGlobalServices">
             <img src={logo} alt="Logo" />
           </Navbar.Brand>
 

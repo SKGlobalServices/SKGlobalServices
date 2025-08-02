@@ -7,7 +7,7 @@ import {ScrollToTop} from './components/iu/ScrollToTop';
 
 function App() {
   return (
-    <Router basename="/">
+    <Router basename="/SKGlobalServices">
       <ScrollToTop />
       <div className="App">
         <Routes>
