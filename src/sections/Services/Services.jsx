@@ -13,7 +13,7 @@ export const Services = () => {
         <p className="text-center">{t("services_section.description")}</p>
         <ServicesList />
         <div className="mt-5 text-center">
-          <Button variant="primary" size="lg" className="button_primary">
+          <Button variant="primary" size="lg" className="button_primary" href="#contact">
             {t("services_section.quote_button")}
           </Button>
         </div>
