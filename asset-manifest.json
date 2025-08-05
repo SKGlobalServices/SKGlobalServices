@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/SKGlobalServices/static/css/main.18dcb75d.css",
-    "main.js": "/SKGlobalServices/static/js/main.e2762206.js",
+    "main.css": "/SKGlobalServices/static/css/main.fbdae4c2.css",
+    "main.js": "/SKGlobalServices/static/js/main.07b08c83.js",
     "static/js/453.0fe1c698.chunk.js": "/SKGlobalServices/static/js/453.0fe1c698.chunk.js",
     "static/media/banner-videoR.mp4": "/SKGlobalServices/static/media/banner-videoR.6f8964e466efbdfc9934.mp4",
     "static/media/app_mobile.png": "/SKGlobalServices/static/media/app_mobile.fd2e1541995256493623.png",
@@ -18,13 +18,16 @@
     "static/media/CentraNo2-Medium.ttf": "/SKGlobalServices/static/media/CentraNo2-Medium.f94be5b326d78bb32b95.ttf",
     "static/media/CentraNo2-Book.ttf": "/SKGlobalServices/static/media/CentraNo2-Book.2b143fa4b734a3584043.ttf",
     "static/media/contact-img.svg": "/SKGlobalServices/static/media/contact-img.87eac2b29352fa01abb2f9510ef6ac7e.svg",
+    "static/media/revicons.eot": "/SKGlobalServices/static/media/revicons.a77de540a38981833f9e.eot",
+    "static/media/revicons.ttf": "/SKGlobalServices/static/media/revicons.57fd05d4ae650374c8de.ttf",
+    "static/media/revicons.woff": "/SKGlobalServices/static/media/revicons.e8746a624ed098489406.woff",
     "index.html": "/SKGlobalServices/index.html",
-    "main.18dcb75d.css.map": "/SKGlobalServices/static/css/main.18dcb75d.css.map",
-    "main.e2762206.js.map": "/SKGlobalServices/static/js/main.e2762206.js.map",
+    "main.fbdae4c2.css.map": "/SKGlobalServices/static/css/main.fbdae4c2.css.map",
+    "main.07b08c83.js.map": "/SKGlobalServices/static/js/main.07b08c83.js.map",
     "453.0fe1c698.chunk.js.map": "/SKGlobalServices/static/js/453.0fe1c698.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.18dcb75d.css",
-    "static/js/main.e2762206.js"
+    "static/css/main.fbdae4c2.css",
+    "static/js/main.07b08c83.js"
   ]
 }
