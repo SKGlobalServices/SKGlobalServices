@@ -24,8 +24,8 @@
 }
 
 .services {
-  margin-top: 0;
-  padding: 100px 0 1px 0;
+  margin-top: -0;
+  padding: 100px 0 50px 0;
   background: radial-gradient(
       circle at top left,
       rgb(128, 54, 170) 5%,
@@ -39,111 +39,19 @@
   animation: fadeInUp 1.2s ease-in-out;
 }
 
-.services img {
-  width: 300px;
-  border-radius: 4%;
-  box-shadow: 10px 10px 10px rgb(47, 184, 189);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.services h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
 }
 
-.services img:hover {
-  transform: scale(1.05);
-  box-shadow: 10px 10px 15px rgb(47, 184, 189);
-}
-
-.btn-card:hover {
-  color: #fff;
-  background-color: #4a2fbd;
-  border-color: #fff;
-  transition: 100ms;
-}
-
-.flip-container {
-  perspective: 1000px;
-  width: 100%;
-}
-
-.flip-card {
-  position: relative;
-  width: 100%;
-  min-height: 400px;
-  margin-bottom: 50px;
-  transition: transform 0.6s ease, box-shadow 0.3s ease;
-  transform-style: preserve-3d;
-}
-.flip-container.flipped .flip-card {
-  transform: rotateY(180deg);
-  color: #fff;
-}
-
-.flip-card-front,
-.flip-card-back {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-}
-
-.flip-card-back {
-  transform: rotateY(180deg);
-  margin-top: 20%;
-}
-
-.card-title,
-.card-text {
-  color: #585858;
-}
-
-.card-text {
-  font-size: 1.125rem;
-  letter-spacing: 0.8px;
-  line-height: 1.6;
-  margin-bottom: 1.2em;
-  opacity: 0;
-  animation: fadeInUp 0.8s ease forwards;
-}
-
-/* Responsive text adjustments */
-@media (max-width: 576px) {
-  .card-text {
-    font-size: 1rem;
-    line-height: 1.4;
-    margin-bottom: 1em;
+@media (max-width: 768px) {
+  .services {
+    background: linear-gradient(
+        to bottom,
+        rgba(128, 54, 170, 0.5) 0%,
+        transparent 50%
+      ),
+      rgb(0, 0, 0);
   }
-
-  .card-title {
-    font-size: 1.1rem;
-  }
-
-  .flip-card-front .card-body,
-  .flip-card-back .card-body {
-    padding: 15px;
-  }
-}
-
-@media (min-width: 577px) and (max-width: 768px) {
-  .card-text {
-    font-size: 1.05rem;
-    line-height: 1.5;
-  }
-
-  .card-title {
-    font-size: 1.15rem;
-  }
-
-  .flip-card-front .card-body,
-  .flip-card-back .card-body {
-    padding: 18px;
-  }
-}
-
-.btn-card:hover .card-title,
-.btn-card:hover .card-text {
-  color: #fff;
-}
-
-.txt-rotate > .wrap {
-  border-right: 0.08em solid #665;
 }

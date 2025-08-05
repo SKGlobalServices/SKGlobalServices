@@ -15,19 +15,29 @@
 
 .scroll-down-prompt .prompt-logo {
   width: 200px;
-  margin-bottom: 20px;
+  margin-bottom: 15px; 
 }
 
 .scroll-down-prompt h1 {
+  font-size: 5rem;
+  font-weight: 700;
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
+  margin-bottom: 20px;
+  height: auto;
+  min-height: 50px;
+}
+
+.scroll-down-prompt .react-type-animation {
   font-size: 2.5rem;
   font-weight: 700;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
   margin-bottom: 30px;
-  height: 100px; /* Altura fija para evitar saltos de layout */
+  height: 100px;
+  display: block;
 }
 
 .scroll-down-prompt p {
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 500;
   letter-spacing: 1px;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
@@ -75,9 +85,15 @@
 
 @media (max-width: 768px) {
   .scroll-down-prompt h1 {
+    font-size: 2.2rem;
+    min-height: 40px;
+  }
+
+  .scroll-down-prompt .react-type-animation {
     font-size: 1.8rem;
     height: 80px;
   }
+
   .scroll-down-prompt .prompt-logo {
     width: 150px;
   }

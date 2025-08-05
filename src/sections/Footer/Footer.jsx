@@ -1,9 +1,10 @@
-import { Col, Container, Row } from "react-bootstrap";
+import { Col, Container, Nav, Row } from "react-bootstrap";
 import logo from "../../assets/img/logo.png";
 import facebookicon from "../../assets/img/facebook_icon.png";
 import instagramicon from "../../assets/img/instagram_icon.png";
 import "./Footer.css";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
 export const Footer = () => {
   const {t} = useTranslation();
@@ -15,9 +16,27 @@ export const Footer = () => {
             <img src={logo} alt="Logo" className="footer-logo" />
           </Col>
           <Col xs={12} md={4} className="footer-links text-center mb-4 mb-md-0">
-            <a href="#home">{t("footer.home")}</a>
-            <a href="#services">{t("footer.services")}</a>
-            <a href="#contact">{t("footer.contact")}</a>
+            <Link
+                as={Link}
+                to="/#home"
+                className="navbar-link"
+              >
+                {t("navbar.home")}
+              </Link>
+              <Link
+                as={Link}
+                to="/#services"
+                className="navbar-link"
+              >
+                {t("navbar.services")}
+              </Link>
+              <Link
+                as={Link}
+                to="/#contact"
+                className="navbar-link"
+              >
+                {t("navbar.contact")}
+              </Link>
           </Col>
           <Col xs={12} md={4} className="text-center text-md-end">
             <div className="social-icon">
