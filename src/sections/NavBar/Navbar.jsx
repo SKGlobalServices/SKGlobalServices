@@ -133,9 +133,9 @@ export const NavBar = () => {
                 </p>
                 <p
                   className="copyable-text "
-                  onClick={() => copyToClipboard("+297 746 8097", "phone")}
+                  onClick={() => copyToClipboard("+297 741 5171", "phone")}
                 >
-                  +297 746 8097
+                  +
                   <span className="tooltip">
                     {copySuccess.phone ? t("navbar.copy_success") : t("navbar.copy_prompt")}
                   </span>
