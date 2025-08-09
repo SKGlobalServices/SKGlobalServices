@@ -1,0 +1,59 @@
+/* -------- Footer (CSS Module) -------- */
+.footer {
+  padding: 50px 0;
+  background: linear-gradient(90.21deg, #121212 -5.91%, #1c113a 111.58%);
+  border-top: 2px solid #4a2fbd;
+}
+
+.footerLogo {
+  width: 150px;
+  height: auto;
+}
+
+.footerLinks {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.footerLink {
+  color: #b8b8b8;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s ease-in-out;
+  text-decoration: none;
+}
+
+.footerLink:hover {
+  color: #ffffff;
+}
+
+.socialIcon {
+  margin-bottom: 15px;
+}
+
+.socialIcon img {
+  width: 32px;
+  height: 32px;
+  margin: 0 6px;
+}
+
+.copy {
+  font-weight: 400;
+  font-size: 14px;
+  color: #b8b8b8;
+  letter-spacing: 0.5px;
+  margin-top: 0;
+}
+
+@media (max-width: 767px) {
+  .footerLogo {
+    margin-bottom: 20px;
+  }
+  .footerLinks {
+    margin-bottom: 20px;
+  }
+  .copy {
+    margin-top: 15px;
+  }
+}

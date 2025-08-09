@@ -1,0 +1,263 @@
+{
+  "hero": {
+    "title": "S&K Global Services",
+    "typed1": "Desarrollo web",
+    "typed2": "Facturación",
+    "typed3": "Publicidad digital",
+    "scroll_hint": "Desliza para descubrir"
+  },
+  "prompt": {
+    "sequences": [
+      "Innovación y Tecnología a tu Alcance  ",
+      "Soluciones Digitales para tu Negocio  ",
+      "Creamos el Futuro, Hoy  "
+    ],
+    "scroll": "Desliza para descubrir"
+  },
+  "navbar": {
+    "home": "Inicio",
+    "services": "Servicios",
+    "contact": "Contáctanos",
+    "video_fallback": "Tu navegador no soporta la etiqueta de video.",
+    "copy_success": "¡Copiado!",
+    "copy_prompt": "Click para copiar"
+  },
+  "services_section": {
+    "title": "Nuestros Servicios",
+    "description": "Ofrecemos una amplia gama de servicios para ayudarte a construir tu presencia digital.",
+    "quote_button": "Solicita tu cotización",
+    "learn_more": "Saber más"
+  },
+  "service_page": {
+    "not_found": "Servicio no encontrado",
+    "go_back_home": "Volver al inicio",
+    "start_project_button": "Comienza tu Proyecto",
+    "our_services_title": "Nuestros Servicios de",
+    "other_services_title": "Explora Nuestros Otros Servicios"
+  },
+  "services_data": [
+    {
+      "id": 1,
+      "front_title": "Desarrollo web",
+      "front_text": "Tu presencia online empieza con un sitio web profesional. Sitios corporativos, informativos y tiendas en línea.",
+      "page_title": "Desarrollo de Páginas Web",
+      "page_description": "Tu presencia online empieza con un sitio web profesional. Creamos sitios corporativos, informativos y tiendas en línea con diseño responsive, moderno y centrado en resultados. Integramos soluciones de pago, WhatsApp, pedidos en línea y más, ideal para restaurantes, negocios locales y tiendas virtuales.",
+      "features": [
+        {
+          "title": "Diseño Personalizado",
+          "description": "Creamos un diseño único y profesional que refleja la identidad de tu marca."
+        },
+        {
+          "title": "Tiendas en Línea",
+          "description": "Desarrollamos e-commerce robustos con carritos de compra y pasarelas de pago seguras."
+        },
+        {
+          "title": "Optimización SEO",
+          "description": "Aseguramos que tu sitio web esté optimizado para motores de búsqueda, aumentando tu visibilidad."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "front_title": "Sistemas empresariales",
+      "front_text": "Software a medida para automatizar procesos clave. Facturación electrónica, ventas y reportes.",
+      "page_title": "Sistemas Empresariales Personalizados",
+      "page_description": "Desarrollamos software a medida para automatizar procesos clave en tu negocio. Implementamos sistemas de facturación electrónica, ventas, reportes y control de inventarios y finanzas en un solo lugar. Adaptado completamente al flujo de tu negocio (ERP personalizado), especial para restaurantes, comercios, clínicas, etc.",
+      "features": [
+        {
+          "title": "Automatización de Procesos",
+          "description": "Simplifica tareas repetitivas y reduce errores con un sistema diseñado para tu flujo de trabajo."
+        },
+        {
+          "title": "Control Total",
+          "description": "Gestiona inventario, finanzas y reportes desde una única plataforma centralizada."
+        },
+        {
+          "title": "Facturación Electrónica",
+          "description": "Emite facturas electrónicas de forma rápida y segura, cumpliendo con la normativa local."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "front_title": "Aplicaciones móviles",
+      "front_text": "Lleva tu empresa al bolsillo de tus clientes. Apps para Android e iOS con pedidos, notificaciones y pagos.",
+      "page_title": "Desarrollo de Aplicaciones Móviles",
+      "page_description": "Lleva tu negocio al siguiente nivel con una aplicación móvil para Android e iOS. Desarrollamos apps intuitivas y seguras para gestionar pedidos, enviar notificaciones push, procesar pagos y mucho más.",
+      "features": [
+        {
+          "title": "Nativas y Multiplataforma",
+          "description": "Creamos apps optimizadas para cada sistema operativo o soluciones híbridas."
+        },
+        {
+          "title": "Experiencia de Usuario Superior",
+          "description": "Diseñamos interfaces atractivas y fáciles de usar."
+        },
+        {
+          "title": "Conectadas a tus Sistemas",
+          "description": "Integramos la app con tu página web o sistema de gestión existente."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "front_title": "Plataformas educativas",
+      "front_text": "Aprende y enseña con tecnología. Administración de cursos, usuarios, evaluaciones y certificados automáticos.",
+      "page_title": "Plataformas Educativas",
+      "page_description": "Impulsa el aprendizaje con nuestras plataformas educativas personalizadas. Administra cursos, usuarios y evaluaciones, emite certificados automáticos e integra contenido multimedia. Ofrecemos accesos diferenciados para estudiantes, profesores y coordinadores.",
+      "features": [
+        {
+          "title": "Gestión de Contenido",
+          "description": "Sube y organiza videos, documentos y evaluaciones de forma sencilla."
+        },
+        {
+          "title": "Seguimiento del Progreso",
+          "description": "Monitorea el avance de los estudiantes y genera reportes detallados."
+        },
+        {
+          "title": "Certificación Automática",
+          "description": "Emite certificados personalizados al completar los cursos."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "front_title": "Sistemas de facturación",
+      "front_text": "Sistemas que crean y envían cotizaciones, contratos y reportes con un clic, en formato PDF o Excel.",
+      "page_title": "Generación Automática de Documentos",
+      "page_description": "Automatiza la creación y envío de documentos importantes. Nuestros sistemas generan cotizaciones, contratos y reportes con un solo clic, exportándolos a formatos PDF o Excel para tu comodidad.",
+      "features": [
+        {
+          "title": "Generación Masiva",
+          "description": "Crea cientos de documentos personalizados a partir de plantillas."
+        },
+        {
+          "title": "Envío Automático",
+          "description": "Programa el envío de facturas o reportes por correo electrónico."
+        },
+        {
+          "title": "Integración con Datos",
+          "description": "Conecta con tus bases de datos o APIs para poblar los documentos."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "front_title": "Desarrollo de APIs e integraciones",
+      "front_text": "Conecta tus plataformas y simplifica procesos. APIs REST seguras y documentadas para escalar y automatizar.",
+      "page_title": "Desarrollo de APIs e Integraciones",
+      "page_description": "Conecta todas tus herramientas y plataformas para simplificar tus procesos. Desarrollamos APIs REST seguras, escalables y bien documentadas, permitiendo la automatización e integración con pasarelas de pago, hojas de cálculo, CRMs y más.",
+      "features": [
+        {
+          "title": "APIs RESTful Seguras",
+          "description": "Desarrollamos APIs robustas siguiendo los mejores estándares de seguridad."
+        },
+        {
+          "title": "Documentación Clara",
+          "description": "Entregamos documentación completa para facilitar la integración y el mantenimiento."
+        },
+        {
+          "title": "Automatización de Flujos",
+          "description": "Conecta sistemas para automatizar tareas y mejorar la eficiencia."
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "front_title": "Automatización de procesos",
+      "front_text": "Bots, scripts y sistemas que trabajan por ti. Ahorra tiempo en tareas repetitivas y optimiza tu flujo de trabajo.",
+      "page_title": "Automatización de Procesos Empresariales",
+      "page_description": "Ahorra tiempo y reduce costos con nuestros bots, scripts y sistemas que trabajan por ti. Automatizamos el envío de correos, la generación de PDFs, la sincronización con Google Sheets y otras tareas repetitivas.",
+      "features": [
+        {
+          "title": "Integración con Google Suite",
+          "description": "Automatiza tareas en Sheets, Docs y Gmail para optimizar tu flujo de trabajo."
+        },
+        {
+          "title": "Bots Personalizados",
+          "description": "Desarrollamos bots que realizan tareas específicas según tus necesidades."
+        },
+        {
+          "title": "Sincronización de Datos",
+          "description": "Mantenemos tus datos sincronizados entre diferentes plataformas de forma automática."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "front_title": "Anuncios publicitarios",
+      "front_text": "Promociona tu marca de forma efectiva. Campañas visuales que captan la atención para medios digitales e impresos.",
+      "page_title": "Diseño de Anuncios Publicitarios",
+      "page_description": "Promociona tu marca de forma efectiva con campañas visuales que captan la atención. Diseñamos banners, flyers y artes para medios digitales e impresos, aplicando una estrategia visual centrada en atraer clientes.",
+      "features": [
+        {
+          "title": "Diseño para Redes Sociales",
+          "description": "Creamos contenido visual optimizado para Instagram, Facebook y otras plataformas."
+        },
+        {
+          "title": "Material para Impresión",
+          "description": "Diseñamos flyers, brochures y banners listos para imprenta."
+        },
+        {
+          "title": "Campañas de Emailing",
+          "description": "Desarrollamos plantillas de correo visualmente atractivas y efectivas."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "front_title": "Diseño de logos corporativos",
+      "front_text": "Crea una identidad fuerte y profesional. Logotipos únicos y memorables para impresión y digital.",
+      "page_title": "Diseño de Logos e Imagen Corporativa",
+      "page_description": "Crea una identidad de marca fuerte y profesional con nuestro servicio de diseño. Creamos logotipos únicos y memorables y los aplicamos en tarjetas, uniformes, documentos y más, entregando un diseño listo para impresión y digital.",
+      "features": [
+        {
+          "title": "Manual de Marca",
+          "description": "Entregamos una guía completa sobre cómo usar tu nuevo logo y paleta de colores."
+        },
+        {
+          "title": "Diseño de Papelería",
+          "description": "Creamos tarjetas de presentación, hojas membretadas y más."
+        },
+        {
+          "title": "Versatilidad de Formatos",
+          "description": "Te proporcionamos el logo en todos los formatos que necesitarás."
+        }
+      ]
+    }
+  ],
+  "contact": {
+    "title": "Contáctanos",
+    "subtitle": "¿Tienes algún proyecto en mente? Hablemos",
+    "form": {
+      "first_name": "Nombre",
+      "last_name": "Apellido",
+      "email": "Correo electrónico",
+      "phone": "Teléfono",
+      "message": "Mensaje",
+      "send_button": "Enviar mensaje",
+      "sending": "Enviando...",
+      "success_title": "¡Mensaje enviado!",
+      "success_text": "Gracias por contactarnos. Te responderemos pronto.",
+      "error_title": "Error",
+      "error_text": "Hubo un problema al enviar el mensaje. Inténtalo de nuevo.",
+      "validation": {
+        "first_name_required": "El nombre es requerido",
+        "last_name_required": "El apellido es requerido",
+        "email_required": "El correo es requerido",
+        "email_invalid": "Ingresa un correo válido",
+        "phone_required": "El teléfono es requerido",
+        "message_required": "El mensaje es requerido"
+      }
+    }
+  },
+  "footer": {
+    "home": "Inicio",
+    "services": "Servicios",
+    "contact": "Contacto",
+    "copyright": "Copyright 2025. Todos los derechos reservados."
+  },
+  "whatsapp": {
+    "tooltip": "¿Necesitas ayuda?"
+  }
+}
