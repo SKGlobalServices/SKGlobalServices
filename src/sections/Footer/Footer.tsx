@@ -36,7 +36,7 @@ export default function Footer() {
             className="text-center text-md-start mb-4 mb-md-0"
           >
             <Image
-              src="/img/logo.png"
+              src="/img/logo.webp"
               alt="Logo"
               className={styles.footerLogo}
               width={150}
@@ -80,7 +80,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
               >
                 <Image
-                  src="/img/facebook_icon.png"
+                  src="/img/facebook_icon.webp"
                   alt="Facebook"
                   width={24}
                   height={24}
@@ -92,7 +92,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
               >
                 <Image
-                  src="/img/instagram_icon.png"
+                  src="/img/instagram_icon.webp"
                   alt="Instagram"
                   width={24}
                   height={24}

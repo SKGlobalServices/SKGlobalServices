@@ -93,6 +93,7 @@
 }
 
 .copyableText {
+  color: white;
   position: relative;
   cursor: pointer;
   margin: 0;

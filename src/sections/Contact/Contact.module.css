@@ -15,7 +15,7 @@
 }
 
 .contact::before {
-  background: url("/img/color-sharp.png") no-repeat;
+  background: url("/img/color-sharp.webp") no-repeat;
   background-size: contain;
   width: 520px;
   height: 520px;
@@ -24,7 +24,7 @@
 }
 
 .contact::after {
-  background: url("/img/color-sharp2.png") no-repeat;
+  background: url("/img/color-sharp2.webp") no-repeat;
   background-size: contain;
   width: 560px;
   height: 560px;

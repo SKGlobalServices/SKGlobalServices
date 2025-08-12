@@ -62,23 +62,23 @@ export default function Navbar() {
     });
   };
 
-  const handleAnchorClick = (id: "home" | "services" | "contact") => (
-    e: React.MouseEvent<HTMLAnchorElement>
-  ) => {
-    e.preventDefault();
-    const el = document.getElementById(id);
-    const isHomePath = pathname === `/${locale}`;
+  const handleAnchorClick =
+    (id: "home" | "services" | "contact") =>
+    (e: React.MouseEvent<HTMLAnchorElement>) => {
+      e.preventDefault();
+      const el = document.getElementById(id);
+      const isHomePath = pathname === "/";
 
-    if (isHomePath && el) {
-      el.scrollIntoView({ behavior: "smooth", block: "start" });
-      history.replaceState(null, "", `#${id}`);
-      onUpdateActiveLink(id);
-      return;
-    }
+      if (isHomePath && el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+        history.replaceState(null, "", `#${id}`);
+        onUpdateActiveLink(id);
+        return;
+      }
 
-  // If not on home (e.g., service detail), go to the homepage with the anchor
-  router.push(`/#${id}`, { scroll: true });
-  };
+      // If not on home (e.g., service detail), go to the homepage with the anchor
+      router.push(`/#${id}`);
+    };
 
   return (
     <section className="home">
@@ -87,14 +87,9 @@ export default function Navbar() {
         className={`${styles.navbar} ${scrolled ? styles.scrolled : ""}`}
       >
         <Container>
-          <BsNavbar.Brand
-            as={Link}
-            href="/"
-            locale={locale}
-            className={styles.brand}
-          >
+          <BsNavbar.Brand as={Link} href="/" className={styles.brand}>
             <Image
-              src="/img/logo.png"
+              src="/img/logo.webp"
               alt="Logo"
               width={120}
               height={36}
@@ -142,7 +137,7 @@ export default function Navbar() {
                   rel="noopener noreferrer"
                 >
                   <Image
-                    src="/img/facebook_icon.png"
+                    src="/img/facebook_icon.webp"
                     alt="Facebook"
                     width={24}
                     height={24}
@@ -154,7 +149,7 @@ export default function Navbar() {
                   rel="noopener noreferrer"
                 >
                   <Image
-                    src="/img/instagram_icon.png"
+                    src="/img/instagram_icon.webp"
                     alt="Instagram"
                     width={24}
                     height={24}
@@ -164,7 +159,7 @@ export default function Navbar() {
             </span>
 
             <span className="ms-auto">
-              <div className={styles.contactInfo}>
+              <div className={styles.contactInp}>
                 <p
                   className={styles.copyableText}
                   onClick={() =>
@@ -192,12 +187,7 @@ export default function Navbar() {
                   variant="outline-light"
                   size="sm"
                   onClick={() => changeLanguage("es")}
-                  onMouseEnter={() =>
-                    startTransition(() =>
-                      router.prefetch(pathname, { locale: "es" })
-                    )
-                  }
-                  disabled={isPending && locale === "es"}
+                  disabled={isPending || locale === "es"}
                 >
                   ES
                 </Button>
@@ -205,12 +195,7 @@ export default function Navbar() {
                   variant="outline-light"
                   size="sm"
                   onClick={() => changeLanguage("en")}
-                  onMouseEnter={() =>
-                    startTransition(() =>
-                      router.prefetch(pathname, { locale: "en" })
-                    )
-                  }
-                  disabled={isPending && locale === "en"}
+                  disabled={isPending || locale === "en"}
                 >
                   EN
                 </Button>
@@ -218,30 +203,13 @@ export default function Navbar() {
                   variant="outline-light"
                   size="sm"
                   onClick={() => changeLanguage("nl")}
-                  onMouseEnter={() =>
-                    startTransition(() =>
-                      router.prefetch(pathname, { locale: "nl" })
-                    )
-                  }
-                  disabled={isPending && locale === "nl"}
+                  disabled={isPending || locale === "nl"}
                 >
                   NL
                 </Button>
               </ButtonGroup>
             </span>
           </BsNavbar.Collapse>
-          {/* Prefetch alternate locale routes for smoother instant switches */}
-          <span style={{ display: "none" }} aria-hidden>
-            <Link href={pathname || "/"} prefetch locale="es">
-              es
-            </Link>
-            <Link href={pathname || "/"} prefetch locale="en">
-              en
-            </Link>
-            <Link href={pathname || "/"} prefetch locale="nl">
-              nl
-            </Link>
-          </span>
         </Container>
       </BsNavbar>
     </section>

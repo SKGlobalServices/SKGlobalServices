@@ -130,7 +130,7 @@ export default function Contact() {
                   <Image
                     className={styles.contactImage}
                     src="/img/contact-img.svg"
-                    alt={t("image_alt")}
+                    alt="Contact Us"
                     width={640}
                     height={640}
                     priority={false}
