@@ -1,0 +1,57 @@
+/* Bootstrap CSS */
+@import "bootstrap/dist/css/bootstrap.min.css";
+
+/* Fuentes locales */
+@font-face {
+  font-family: "CentraNo2-Book";
+  src: url("/assets/font/CentraNo2-Book.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "CentraNo2-Medium";
+  src: url("/assets/font/CentraNo2-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "CentraNo2-Bold";
+  src: url("/assets/font/CentraNo2-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --brand-font: "CentraNo2-Book", system-ui, -apple-system, "Segoe UI", Roboto,
+    Arial, sans-serif;
+}
+html,
+body {
+  font-family: var(--brand-font);
+}
+
+/* Unified background for the whole site (based on Contact section) */
+html,
+body {
+  min-height: 100%;
+}
+body {
+  background: radial-gradient(
+      circle at 10% 0%,
+      rgba(128, 54, 170, 0.55) 0%,
+      rgba(128, 54, 170, 0) 38%
+    ),
+    radial-gradient(
+      circle at 100% 10%,
+      rgba(74, 47, 189, 0.45) 0%,
+      rgba(74, 47, 189, 0) 35%
+    ),
+    rgb(0, 0, 0);
+  background-blend-mode: normal;
+  background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}

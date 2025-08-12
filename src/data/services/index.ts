@@ -1,0 +1,1 @@
+export { servicesData } from "./servicesData";
