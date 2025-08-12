@@ -1,0 +1,98 @@
+.scrollDownPrompt {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  text-align: center;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeInPrompt 2s ease-in-out;
+  width: 90%;
+}
+
+.promptLogo {
+  width: 200px;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+.scrollDownPrompt h1 {
+  font-size: 5rem;
+  font-weight: 700;
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
+  margin-bottom: 20px;
+  min-height: 50px;
+}
+
+.reactTypeAnimation {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
+  margin-bottom: 30px;
+  height: 100px;
+  display: block;
+}
+
+.scrollDownPrompt p {
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+.mouseScrollIcon {
+  border: 2px solid #fff;
+  border-radius: 15px;
+  height: 40px;
+  width: 25px;
+  margin: 0 auto 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.mouseWheel {
+  width: 4px;
+  height: 8px;
+  background: #fff;
+  border-radius: 2px;
+  animation: scroll-wheel-animation 1.5s infinite;
+}
+
+@keyframes scroll-wheel-animation {
+  0% {
+    opacity: 1;
+    transform: translateY(5px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+}
+
+@keyframes fadeInPrompt {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 20px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+@media (max-width: 768px) {
+  .scrollDownPrompt h1 {
+    font-size: 2.2rem;
+    min-height: 40px;
+  }
+  .reactTypeAnimation {
+    font-size: 1.8rem;
+    height: 80px;
+  }
+  .promptLogo {
+    width: 150px;
+  }
+}
