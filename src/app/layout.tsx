@@ -1,20 +1,20 @@
-import "./globals.css";
 import type { Metadata } from "next";
-import BootstrapClient from "@/components/iu/BootstrapClient";
+import "./globals.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 export const metadata: Metadata = {
-  title: "S&K Global Services",
-  description: "Software y servicios",
-  icons: [{ rel: "icon", url: "/img/logo.png" }],
+  title: "SK Global Services",
+  description: "Professional services company",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+interface RootLayoutProps {
+  children: React.ReactNode;
+}
+
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body>
-        {children}
-        <BootstrapClient />
-      </body>
+    <html>
+      <body>{children}</body>
     </html>
   );
 }
