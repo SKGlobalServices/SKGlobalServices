@@ -1,1 +1,0 @@
-export { servicesData } from "./servicesData";
