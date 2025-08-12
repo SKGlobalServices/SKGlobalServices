@@ -26,7 +26,10 @@ export default function ServiceCard({
   return (
     <Col xs={12} sm={6} md={4} className="d-flex">
       <Link
-        href={`/service/${String(id)}`}
+        href={{
+          pathname: "/service/[id]",
+          params: { id: String(id) },
+        }}
         className="w-100 text-decoration-none"
         aria-label={`${title} - ${t("learn_more")}`}
       >

@@ -11,8 +11,8 @@ import ServiceCarousel from "./ServiceCarousel";
 import styles from "./ServicePage.module.css";
 import type { Locale } from "@/i18n/locales";
 import type { TranslatedService, UIService } from "@/types";
-import { Link } from "@/i18n/navigation";
 import { CardBody, CardText, CardTitle } from "react-bootstrap";
+
 // Next.js 15 typed routes: params/searchParams may be Promises
 type ParamsPromise = Promise<{ locale: Locale; id: string }>;
 
@@ -62,9 +62,9 @@ export default async function ServicePage({
         <Container>
           <Row className="align-items-center">
             <Col md={6}>
-              <Link href={`/#services`} className={styles.breadcrumbBack}>
+              <a href={`/${locale}#services`} className={styles.breadcrumbBack}>
                 ← Volver a servicios
-              </Link>
+              </a>
               <h1 className={styles.typographyH1}>{service.page_title}</h1>
               <p className={`${styles.typographyBody} mb-4`}>
                 {service.page_description}
@@ -72,7 +72,7 @@ export default async function ServicePage({
               <Button
                 variant="primary"
                 className={styles.buttonPrimary}
-                href={`/#contact`}
+                href={`/${locale}#contact`}
                 size="lg"
               >
                 {messages.service_page?.start_project_button ||

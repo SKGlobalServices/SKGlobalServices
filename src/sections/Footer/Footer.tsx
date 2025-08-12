@@ -1,14 +1,13 @@
 "use client";
 
 import { Container, Row, Col } from "react-bootstrap";
-import { useTranslations, useLocale } from "next-intl";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { usePathname, useRouter } from "@/i18n/navigation";
 import styles from "./Footer.module.css";
 
 export default function Footer() {
   const t = useTranslations("navbar");
-  const locale = useLocale();
   const pathname = usePathname();
   const router = useRouter();
 
@@ -17,13 +16,24 @@ export default function Footer() {
     (e: React.MouseEvent<HTMLAnchorElement>) => {
       e.preventDefault();
       const el = document.getElementById(id);
-      const isHomePath = pathname === `/${locale}`;
+      const isHomePath = pathname === "/";
+
       if (isHomePath && el) {
         el.scrollIntoView({ behavior: "smooth", block: "start" });
         history.replaceState(null, "", `#${id}`);
         return;
       }
-      router.push(`/#${id}`, { scroll: true });
+
+      // Si no estás en home, navega al home y luego al hash
+      router.push("/");
+      // El hash se manejará cuando la página se cargue
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth", block: "start" });
+          history.replaceState(null, "", `#${id}`);
+        }
+      }, 100);
     };
 
   return (

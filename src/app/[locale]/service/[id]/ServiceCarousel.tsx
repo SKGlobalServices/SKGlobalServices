@@ -30,7 +30,13 @@ export default function ServiceCarousel({ services, activeId }: Props) {
     >
       {services.map((s) => (
         <div key={s.id} className="px-2">
-          <Link href={`/service/${s.id}`} className="text-decoration-none">
+          <Link
+            href={{
+              pathname: "/service/[id]",
+              params: { id: String(s.id) },
+            }}
+            className="text-decoration-none"
+          >
             <Card
               className={`${styles.serviceCarouselCard} ${
                 String(s.id) === String(activeId ?? "")

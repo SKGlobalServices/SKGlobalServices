@@ -11,6 +11,7 @@ import {
 } from "react-bootstrap";
 import { useTranslations, useLocale } from "next-intl";
 import { Link, usePathname, useRouter } from "@/i18n/navigation";
+import { useParams } from "next/navigation";
 import styles from "./Navbar.module.css";
 
 export default function Navbar() {
@@ -18,6 +19,7 @@ export default function Navbar() {
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
+  const params = useParams();
 
   const [activeLink, setActiveLink] = useState<"home" | "services" | "contact">(
     "home"
@@ -56,9 +58,33 @@ export default function Navbar() {
   const changeLanguage = (lng: "es" | "en" | "nl") => {
     if (!pathname) return;
     const hash = typeof window !== "undefined" ? window.location.hash : "";
-    // Cambia el locale manteniendo la ruta actual y ancla, sin hacer scroll al top
+
     startTransition(() => {
-      router.replace(`${pathname}${hash}`, { locale: lng, scroll: false });
+      // Manejar diferentes tipos de rutas
+      if (pathname === "/") {
+        router.replace("/", { locale: lng, scroll: false });
+      } else if (pathname === "/service") {
+        router.replace("/service", { locale: lng, scroll: false });
+      } else if (pathname === "/service/[id]" && params?.id) {
+        router.replace(
+          { pathname: "/service/[id]", params: { id: String(params.id) } },
+          { locale: lng, scroll: false }
+        );
+      } else {
+        // Fallback: navegar al home en el nuevo idioma
+        router.replace("/", { locale: lng, scroll: false });
+      }
+
+      // Restaurar el hash después del cambio de locale
+      if (hash) {
+        setTimeout(() => {
+          window.history.replaceState(
+            null,
+            "",
+            `${window.location.pathname}${hash}`
+          );
+        }, 50);
+      }
     });
   };
 
@@ -77,7 +103,15 @@ export default function Navbar() {
       }
 
       // If not on home (e.g., service detail), go to the homepage with the anchor
-      router.push(`/#${id}`);
+      router.push("/");
+      // Manejar el scroll al elemento después de navegar
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth", block: "start" });
+          history.replaceState(null, "", `#${id}`);
+        }
+      }, 100);
     };
 
   return (
