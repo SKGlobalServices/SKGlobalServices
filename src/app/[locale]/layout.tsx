@@ -1,5 +1,5 @@
-import { NextIntlClientProvider } from "next-intl";
 import type { Locale } from "@/i18n/locales";
+import { LanguageProvider } from "@/i18n/LanguageContext";
 import Navbar from "@/sections/NavBar/Navbar";
 import Footer from "@/sections/Footer/Footer";
 import Whatsappbutton from "@/components/iu/Whatsappbutton/Whatsappbutton";
@@ -14,13 +14,15 @@ export default async function LocaleLayout({
   params: ParamsPromise;
 }) {
   const { locale } = await params;
-  const messages = (await import(`@/i18n/messages/${locale}.json`)).default;
+
   return (
-    <NextIntlClientProvider locale={locale} messages={messages}>
-      <Navbar />
-      <Whatsappbutton />
-      {children}
-      <Footer />
-    </NextIntlClientProvider>
+    <LanguageProvider initialLocale={locale} >
+      <div className="min-vh-100 d-flex flex-column">
+        <Navbar />
+        <Whatsappbutton />
+        <main className="flex-grow-1">{children}</main>
+        <Footer />
+      </div>
+    </LanguageProvider>
   );
 }

@@ -1,7 +1,7 @@
 "use client";
 
 import { Container, Button } from "react-bootstrap";
-import { useTranslations } from "next-intl";
+import { useTranslations } from "@/i18n/LanguageContext";
 import ServicesList from "@/components/services/ServicesList";
 import styles from "./Services.module.css";
 

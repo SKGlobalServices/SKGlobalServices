@@ -21,12 +21,29 @@ export async function generateStaticParams() {
   return servicesData.map((s) => ({ id: String(s.id) }));
 }
 
+// Helper function to get translations for server components
+async function getServiceTranslations(locale: Locale) {
+  const messages = (await import(`@/i18n/messages/${locale}.json`)).default;
+  return {
+    start_project_button:
+      messages.service_page?.start_project_button || "Iniciar proyecto",
+    our_services_title:
+      messages.service_page?.our_services_title || "Nuestros servicios de",
+    other_services_title:
+      messages.service_page?.other_services_title || "Otros servicios",
+    back_to_services:
+      messages.service_page?.back_to_services || "Volver a servicios",
+  };
+}
+
 export default async function ServicePage({
   params,
 }: {
   params: ParamsPromise;
 }) {
   const { locale, id } = await params;
+  const t = await getServiceTranslations(locale);
+
   // Buscar el servicio por ID
   const serviceImage = servicesData.find((s) => String(s.id) === String(id));
   if (!serviceImage) return notFound();
@@ -38,6 +55,7 @@ export default async function ServicePage({
       start_project_button?: string;
       our_services_title?: string;
       other_services_title?: string;
+      back_to_services?: string;
     };
   };
   const translatedServices: TranslatedService[] = messages?.services_data ?? [];
@@ -63,7 +81,7 @@ export default async function ServicePage({
           <Row className="align-items-center">
             <Col md={6}>
               <a href={`/${locale}#services`} className={styles.breadcrumbBack}>
-                ← Volver a servicios
+                ← {t.back_to_services}
               </a>
               <h1 className={styles.typographyH1}>{service.page_title}</h1>
               <p className={`${styles.typographyBody} mb-4`}>
@@ -75,8 +93,7 @@ export default async function ServicePage({
                 href={`/${locale}#contact`}
                 size="lg"
               >
-                {messages.service_page?.start_project_button ||
-                  "Iniciar proyecto"}
+                {t.start_project_button}
               </Button>
             </Col>
             <Col md={6}>
@@ -99,9 +116,7 @@ export default async function ServicePage({
         <Container>
           <div className="text-center mb-5">
             <h2 className={styles.typographyH2}>
-              {messages.service_page?.our_services_title ||
-                "Nuestros servicios de"}{" "}
-              {service.front_title}
+              {t.our_services_title} {service.front_title}
             </h2>
           </div>
           <Row>
@@ -128,7 +143,7 @@ export default async function ServicePage({
       <section className={styles.carouselSection}>
         <Container>
           <h2 className={`text-center ${styles.typographyH2} mb-5`}>
-            {messages.service_page?.other_services_title || "Otros servicios"}
+            {t.other_services_title}
           </h2>
           <ServiceCarousel services={otherServices} activeId={id} />
         </Container>

@@ -1,7 +1,7 @@
 "use client";
 
 import { Container, Row, Col } from "react-bootstrap";
-import { useTranslations } from "next-intl";
+import { useTranslations } from "@/i18n/LanguageContext";
 import Image from "next/image";
 import { usePathname, useRouter } from "@/i18n/navigation";
 import styles from "./Footer.module.css";

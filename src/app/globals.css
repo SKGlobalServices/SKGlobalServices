@@ -33,11 +33,6 @@ body {
   font-family: var(--brand-font);
 }
 
-/* Unified background for the whole site (based on Contact section) */
-html,
-body {
-  min-height: 100%;
-}
 body {
   background: radial-gradient(
       circle at 10% 0%,
@@ -49,7 +44,7 @@ body {
       rgba(74, 47, 189, 0.45) 0%,
       rgba(74, 47, 189, 0) 35%
     ),
-    rgb(0, 0, 0);
+    rgb(0, 0, 0) !important;
   background-blend-mode: normal;
   background-position: top center;
   background-size: cover;

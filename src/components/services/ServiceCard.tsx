@@ -1,7 +1,7 @@
 "use client";
 
 import { Card, Col } from "react-bootstrap";
-import { useTranslations } from "next-intl";
+import { useTranslations } from "@/i18n/LanguageContext";
 import styles from "./ServiceCard.module.css";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";

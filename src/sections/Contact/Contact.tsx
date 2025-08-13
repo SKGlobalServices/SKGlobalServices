@@ -3,7 +3,7 @@
 import { useState, useRef } from "react";
 import { Container, Row, Col, Form, Button, Spinner } from "react-bootstrap";
 import Image from "next/image";
-import { useTranslations } from "next-intl";
+import { useTranslations } from "@/i18n/LanguageContext";
 import emailjs from "@emailjs/browser";
 import Swal from "sweetalert2";
 import styles from "./Contact.module.css";

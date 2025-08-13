@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useTranslations } from "next-intl";
+import { useTranslations } from "@/i18n/LanguageContext";
 import styles from "./Whatsappbutton.module.css";
 
 const PHONE = "2977415171";
@@ -17,9 +17,14 @@ export default function Whatsappbutton() {
         rel="noopener noreferrer"
         aria-label="WhatsApp"
       >
-  <Image src="/img/WhatsApp_icon.png" alt="WhatsApp" width={40} height={40} />
+        <Image
+          src="/img/WhatsApp_icon.webp"
+          alt="WhatsApp"
+          width={40}
+          height={40}
+        />
       </a>
-      <span className={styles.whatsappTooltip}>{t("tooltip", { defaultValue: "Write to us on WhatsApp" })}</span>
+      <span className={styles.whatsappTooltip}>{t("tooltip")}</span>
     </div>
   );
 }

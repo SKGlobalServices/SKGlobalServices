@@ -5,6 +5,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 export const metadata: Metadata = {
   title: "SK Global Services",
   description: "Professional services company",
+  icons: {
+    icon: "./img/favicon.ico",
+  }
 };
 
 interface RootLayoutProps {
@@ -13,7 +16,7 @@ interface RootLayoutProps {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html>
+    <html lang="en" suppressHydrationWarning>
       <body>{children}</body>
     </html>
   );

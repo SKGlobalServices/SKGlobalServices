@@ -1,20 +1,28 @@
 /* -------- Navbar (CSS Module) -------- */
 .navbar {
-  padding: 5px 0;
+  padding: 8px 0;
   position: fixed;
   width: 100%;
   top: 0;
   z-index: 9999;
   transition: 0.32s ease-in-out;
-  justify-content: center;
   background-color: rgba(12, 12, 12, 0.3);
   backdrop-filter: saturate(180%) blur(6px);
 }
 
 .scrolled {
-  padding: 0px 0;
+  padding: 5px 0;
   background-color: rgba(12, 12, 12, 0.9);
   border-bottom: #4a2fbd 2px solid;
+}
+
+/* Brand/Logo */
+.brand {
+  transition: transform 0.3s ease;
+}
+
+.brand:hover {
+  transform: scale(1.05);
 }
 
 .brand img {
@@ -23,73 +31,95 @@
   height: auto;
 }
 
+/* Navigation Links */
 .navbarLink {
   color: #fff !important;
   letter-spacing: 0.8px;
-  padding: 0 25px;
-  font-size: 18px;
+  padding: 8px 20px !important;
+  font-size: 16px;
   opacity: 0.75;
-  font-weight: bold;
+  font-weight: 500;
   text-decoration: none;
+  transition: all 0.3s ease;
+  border-radius: 6px;
+  margin: 0 4px;
 }
 
 .navbarLink:hover,
 .navbarLink.active {
   opacity: 1;
+  background-color: rgba(74, 47, 189, 0.2);
+  transform: translateY(-1px);
 }
 
-.msRight {
-  display: inline-block;
-  margin-left: 14px;
+/* Desktop Social Icons */
+.desktopOnly {
+  gap: 20px;
 }
 
 .socialIcon {
-  display: inline-block;
-  margin-left: 14px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
 }
 
-.socialIcon a {
-  width: 42px;
-  height: 42px;
-  background: rgba(217, 217, 217, 0.1);
-  display: inline-flex;
+.socialLink {
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
   border-radius: 50%;
-  margin-right: 6px;
   align-items: center;
   justify-content: center;
-  line-height: 1;
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
   position: relative;
+  overflow: hidden;
 }
 
-.socialIcon a::before {
+.socialLink::before {
   content: "";
-  width: 42px;
-  height: 42px;
   position: absolute;
-  background-color: #ffffff;
-  border-radius: 50%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #4a2fbd, #8036aa);
   transform: scale(0);
-  transition: 0.3s ease-in-out;
+  transition: transform 0.3s ease;
+  border-radius: 50%;
 }
 
-.socialIcon a:hover::before {
+.socialLink:hover::before {
   transform: scale(1);
 }
 
-.socialIcon :global(img) {
-  width: 70%;
-  z-index: 1;
-  transition: 0.3s ease-in-out;
+.socialLink:hover {
+  border-color: #4a2fbd;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(74, 47, 189, 0.3);
 }
 
-.socialIcon a:hover :global(img) {
-  filter: saturate(100%);
+.socialLink img {
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s ease;
+  filter: brightness(1.2) contrast(1.1);
+  opacity: 0.9;
 }
 
+.socialLink:hover img {
+  filter: brightness(1) invert(0);
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+/* Contact Info Desktop */
 .contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
   text-align: right;
-  color: #fff;
 }
 
 .copyableText {
@@ -97,25 +127,38 @@
   position: relative;
   cursor: pointer;
   margin: 0;
-  padding: 5px 0;
+  padding: 6px 12px;
+  font-size: 13px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-weight: 500;
+}
+
+.copyableText:hover {
+  background: rgba(74, 47, 189, 0.3);
+  border-color: #4a2fbd;
+  transform: translateY(-1px);
 }
 
 .tooltip {
   visibility: hidden;
-  width: 140px;
-  background-color: #555;
+  width: 120px;
+  background-color: rgba(0, 0, 0, 0.9);
   color: #fff;
   text-align: center;
   border-radius: 6px;
-  padding: 5px 0;
+  padding: 8px;
   position: absolute;
-  z-index: 1;
-  bottom: 110%;
-  left: 70%;
-  margin-left: -70px;
+  z-index: 1000;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%);
   opacity: 0;
   transition: opacity 0.3s;
-  font-size: 14px;
+  font-size: 11px;
+  border: 1px solid #4a2fbd;
 }
 
 .copyableText:hover .tooltip {
@@ -123,25 +166,97 @@
   opacity: 1;
 }
 
-.navbar :global(.navbar-toggler:active),
+/* Language Selector */
+.languageSelector {
+  display: flex;
+  align-items: center;
+}
+
+.langBtn {
+  border: 2px solid rgba(255, 255, 255, 0.4) !important;
+  color: white !important;
+  background: rgba(255, 255, 255, 0.15) !important;
+  transition: all 0.3s ease !important;
+  font-weight: 600 !important;
+  min-width: 42px !important;
+  font-size: 13px !important;
+}
+
+.langBtn:hover {
+  background: rgba(74, 47, 189, 0.6) !important;
+  border-color: #4a2fbd !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 2px 8px rgba(74, 47, 189, 0.3) !important;
+}
+
+.langBtn.activeLang {
+  background: linear-gradient(45deg, #4a2fbd, #8036aa) !important;
+  border-color: #4a2fbd !important;
+  color: white !important;
+  box-shadow: 0 2px 12px rgba(74, 47, 189, 0.4) !important;
+}
+
+.langBtn:disabled {
+  opacity: 1 !important;
+}
+
+/* Mobile Styles */
+.mobileOnly {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 15px;
+}
+
+.mobileContactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  width: 100%;
+}
+
+.mobileContact {
+  color: white;
+  cursor: pointer;
+  padding: 10px 15px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-size: 15px;
+  text-align: center;
+  width: 100%;
+  max-width: 280px;
+  font-weight: 500;
+}
+
+.mobileContact:hover {
+  background: rgba(74, 47, 189, 0.3);
+  border-color: #4a2fbd;
+  transform: translateY(-1px);
+}
+
+/* Custom Navbar Toggler */
+.navbarToggler {
+  border: none !important;
+  padding: 4px 8px !important;
+}
+
 .navbar :global(.navbar-toggler:focus) {
-  outline: none;
-  box-shadow: none;
+  box-shadow: none !important;
 }
 
 .navbar :global(.navbar-toggler-icon) {
-  width: 24px;
-  height: 17px;
+  width: 25px;
+  height: 18px;
   background-image: none;
   position: relative;
   border-bottom: 2px solid #fff;
-  transition: all 300ms linear;
-  top: -2px;
+  transition: all 300ms ease;
 }
 
 .navbar :global(.navbar-toggler-icon::after),
 .navbar :global(.navbar-toggler-icon::before) {
-  width: 24px;
+  width: 25px;
   position: absolute;
   height: 2px;
   background-color: #fff;
@@ -149,7 +264,7 @@
   left: 0;
   content: "";
   z-index: 2;
-  transition: all 300ms linear;
+  transition: all 300ms ease;
 }
 
 .navbar :global(.navbar-toggler-icon::after) {
@@ -172,4 +287,85 @@
 
 .navbar :global(.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon) {
   border-color: transparent;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 991.98px) {
+  .navbar {
+    padding: 10px 0;
+  }
+
+  .scrolled {
+    padding: 8px 0;
+  }
+
+  .navbarLink {
+    padding: 12px 20px !important;
+    margin: 2px 0;
+    font-size: 18px;
+  }
+
+  .languageSelector {
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .navbar :global(.navbar-collapse) {
+    background: rgba(12, 12, 12, 0.95);
+    border-radius: 12px;
+    margin-top: 10px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
+
+@media (max-width: 767.98px) {
+  .brand img {
+    width: 100px;
+    height: auto;
+  }
+
+  .navbarLink {
+    font-size: 16px;
+    padding: 10px 15px !important;
+  }
+
+  .mobileContact {
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+
+  .mobileSocialLink {
+    width: 40px;
+    height: 40px;
+  }
+
+  .langBtn {
+    min-width: 38px !important;
+    font-size: 12px !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .navbar {
+    padding: 8px 0;
+  }
+
+  .brand img {
+    width: 90px;
+  }
+
+  .mobileContact {
+    font-size: 12px;
+    max-width: 250px;
+  }
+
+  .navbarLink {
+    font-size: 15px;
+  }
+
+  .langBtn {
+    min-width: 36px !important;
+    font-size: 11px !important;
+  }
 }

@@ -1,6 +1,6 @@
 {
   "hero": {
-    "title": "S&K Global Services",
+    "title": "SK Global Services",
     "typed1": "Desarrollo web",
     "typed2": "Facturación",
     "typed3": "Publicidad digital",
@@ -31,6 +31,7 @@
   "service_page": {
     "not_found": "Servicio no encontrado",
     "go_back_home": "Volver al inicio",
+    "back_to_services": "Volver a servicios",
     "start_project_button": "Comienza tu Proyecto",
     "our_services_title": "Nuestros Servicios de",
     "other_services_title": "Explora Nuestros Otros Servicios"

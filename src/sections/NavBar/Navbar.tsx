@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState, useTransition } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import {
   Navbar as BsNavbar,
@@ -9,17 +9,20 @@ import {
   Button,
   ButtonGroup,
 } from "react-bootstrap";
-import { useTranslations, useLocale } from "next-intl";
+import {
+  useTranslations,
+  useLocale,
+  useLanguage,
+} from "@/i18n/LanguageContext";
 import { Link, usePathname, useRouter } from "@/i18n/navigation";
-import { useParams } from "next/navigation";
 import styles from "./Navbar.module.css";
 
 export default function Navbar() {
   const t = useTranslations("navbar");
   const locale = useLocale();
+  const { changeLanguage } = useLanguage();
   const router = useRouter();
   const pathname = usePathname();
-  const params = useParams();
 
   const [activeLink, setActiveLink] = useState<"home" | "services" | "contact">(
     "home"
@@ -30,7 +33,6 @@ export default function Navbar() {
     phone: false,
   });
   const copyTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const [isPending, startTransition] = useTransition();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -55,37 +57,8 @@ export default function Navbar() {
     }
   };
 
-  const changeLanguage = (lng: "es" | "en" | "nl") => {
-    if (!pathname) return;
-    const hash = typeof window !== "undefined" ? window.location.hash : "";
-
-    startTransition(() => {
-      // Manejar diferentes tipos de rutas
-      if (pathname === "/") {
-        router.replace("/", { locale: lng, scroll: false });
-      } else if (pathname === "/service") {
-        router.replace("/service", { locale: lng, scroll: false });
-      } else if (pathname === "/service/[id]" && params?.id) {
-        router.replace(
-          { pathname: "/service/[id]", params: { id: String(params.id) } },
-          { locale: lng, scroll: false }
-        );
-      } else {
-        // Fallback: navegar al home en el nuevo idioma
-        router.replace("/", { locale: lng, scroll: false });
-      }
-
-      // Restaurar el hash después del cambio de locale
-      if (hash) {
-        setTimeout(() => {
-          window.history.replaceState(
-            null,
-            "",
-            `${window.location.pathname}${hash}`
-          );
-        }, 50);
-      }
-    });
+  const handleLanguageChange = (lng: "es" | "en" | "nl") => {
+    changeLanguage(lng);
   };
 
   const handleAnchorClick =
@@ -104,14 +77,23 @@ export default function Navbar() {
 
       // If not on home (e.g., service detail), go to the homepage with the anchor
       router.push("/");
-      // Manejar el scroll al elemento después de navegar
-      setTimeout(() => {
+      onUpdateActiveLink(id);
+
+      // Manejar el scroll al elemento después de navegar con el hash
+      const checkAndScroll = () => {
         const element = document.getElementById(id);
         if (element) {
-          element.scrollIntoView({ behavior: "smooth", block: "start" });
-          history.replaceState(null, "", `#${id}`);
+          setTimeout(() => {
+            element.scrollIntoView({ behavior: "smooth", block: "start" });
+            history.replaceState(null, "", `#${id}`);
+          }, 150);
+        } else {
+          // Si el elemento no existe aún, intentar nuevamente
+          setTimeout(checkAndScroll, 100);
         }
-      }, 100);
+      };
+
+      setTimeout(checkAndScroll, 200);
     };
 
   return (
@@ -131,9 +113,12 @@ export default function Navbar() {
             />
           </BsNavbar.Brand>
 
-          <BsNavbar.Toggle aria-controls="basic-navbar-nav" />
+          <BsNavbar.Toggle
+            aria-controls="basic-navbar-nav"
+            className={styles.navbarToggler}
+          />
           <BsNavbar.Collapse id="basic-navbar-nav">
-            <Nav>
+            <Nav className="me-auto">
               <Nav.Link
                 href="#home"
                 className={`${styles.navbarLink} ${
@@ -161,40 +146,112 @@ export default function Navbar() {
               >
                 {t("contact")}
               </Nav.Link>
-            </Nav>
-
-            <span className={styles.msRight}>
-              <div className={styles.socialIcon}>
+              <div className={`${styles.socialIcon} d-none d-lg-flex`}>
                 <a
                   href="https://www.facebook.com/people/SK-Global-Services/61573197338873/"
                   target="_blank"
                   rel="noopener noreferrer"
+                  className={styles.socialLink}
+                  aria-label="Facebook"
                 >
                   <Image
                     src="/img/facebook_icon.webp"
                     alt="Facebook"
-                    width={24}
-                    height={24}
+                    width={20}
+                    height={20}
                   />
                 </a>
                 <a
                   href="https://www.instagram.com/skglobalservices_21?igsh=MXVndHd3czJzOHJoeQ%3D%3D&utm_source=qr"
                   target="_blank"
                   rel="noopener noreferrer"
+                  className={styles.socialLink}
+                  aria-label="Instagram"
                 >
                   <Image
                     src="/img/instagram_icon.webp"
                     alt="Instagram"
-                    width={24}
-                    height={24}
+                    width={20}
+                    height={20}
                   />
                 </a>
               </div>
-            </span>
+            </Nav>
 
-            <span className="ms-auto">
-              <div className={styles.contactInp}>
-                <p
+            {/* Social Icons - Always visible on mobile/tablet */}
+            <div className={`${styles.socialIcon} d-lg-none`}>
+              <a
+                href="https://www.facebook.com/people/SK-Global-Services/61573197338873/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.socialLink}
+                aria-label="Facebook"
+              >
+                <Image
+                  src="/img/facebook_icon.webp"
+                  alt="Facebook"
+                  width={20}
+                  height={20}
+                />
+              </a>
+              <a
+                href="https://www.instagram.com/skglobalservices_21?igsh=MXVndHd3czJzOHJoeQ%3D%3D&utm_source=qr"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.socialLink}
+                aria-label="Instagram"
+              >
+                <Image
+                  src="/img/instagram_icon.webp"
+                  alt="Instagram"
+                  width={20}
+                  height={20}
+                />
+              </a>
+            </div>
+
+            {/* Language Selector - Prominent position */}
+            <div className={`${styles.languageSelector} ms-2 me-4`}>
+              <ButtonGroup size="sm">
+                <Button
+                  variant="outline-light"
+                  onClick={() => handleLanguageChange("es")}
+                  disabled={locale === "es"}
+                  className={`${styles.langBtn} ${
+                    locale === "es" ? styles.activeLang : ""
+                  }`}
+                >
+                  ES
+                </Button>
+                <Button
+                  variant="outline-light"
+                  onClick={() => handleLanguageChange("en")}
+                  disabled={locale === "en"}
+                  className={`${styles.langBtn} ${
+                    locale === "en" ? styles.activeLang : ""
+                  }`}
+                >
+                  EN
+                </Button>
+                <Button
+                  variant="outline-light"
+                  onClick={() => handleLanguageChange("nl")}
+                  disabled={locale === "nl"}
+                  className={`${styles.langBtn} ${
+                    locale === "nl" ? styles.activeLang : ""
+                  }`}
+                >
+                  NL
+                </Button>
+              </ButtonGroup>
+            </div>
+
+            {/* Desktop Social Icons and Contact Info */}
+            <div
+              className={`${styles.desktopOnly} d-none d-lg-flex align-items-center`}
+            >
+              <div className={styles.contactInfo}>
+                <div
                   className={styles.copyableText}
                   onClick={() =>
                     copyToClipboard("skglobalservices2024@gmail.com", "email")
@@ -204,8 +261,8 @@ export default function Navbar() {
                   <span className={styles.tooltip}>
                     {copySuccess.email ? t("copy_success") : t("copy_prompt")}
                   </span>
-                </p>
-                <p
+                </div>
+                <div
                   className={styles.copyableText}
                   onClick={() => copyToClipboard("+297 741 5171", "phone")}
                 >
@@ -213,36 +270,31 @@ export default function Navbar() {
                   <span className={styles.tooltip}>
                     {copySuccess.phone ? t("copy_success") : t("copy_prompt")}
                   </span>
-                </p>
+                </div>
               </div>
+            </div>
 
-              <ButtonGroup className="ms-3" aria-busy={isPending}>
-                <Button
-                  variant="outline-light"
-                  size="sm"
-                  onClick={() => changeLanguage("es")}
-                  disabled={isPending || locale === "es"}
+            {/* Language Selector - Always Visible */}
+
+            {/* Mobile Contact Info Only */}
+            <div className={`${styles.mobileOnly} d-lg-none mt-3`}>
+              <div className={styles.mobileContactInfo}>
+                <div
+                  className={styles.mobileContact}
+                  onClick={() =>
+                    copyToClipboard("skglobalservices2024@gmail.com", "email")
+                  }
                 >
-                  ES
-                </Button>
-                <Button
-                  variant="outline-light"
-                  size="sm"
-                  onClick={() => changeLanguage("en")}
-                  disabled={isPending || locale === "en"}
+                  📧 skglobalservices2024@gmail.com
+                </div>
+                <div
+                  className={styles.mobileContact}
+                  onClick={() => copyToClipboard("+297 741 5171", "phone")}
                 >
-                  EN
-                </Button>
-                <Button
-                  variant="outline-light"
-                  size="sm"
-                  onClick={() => changeLanguage("nl")}
-                  disabled={isPending || locale === "nl"}
-                >
-                  NL
-                </Button>
-              </ButtonGroup>
-            </span>
+                  📞 +297 741 5171
+                </div>
+              </div>
+            </div>
           </BsNavbar.Collapse>
         </Container>
       </BsNavbar>

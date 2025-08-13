@@ -1,6 +1,6 @@
 {
   "hero": {
-    "title": "S&K Global Services",
+    "title": "SK Global Services",
     "typed1": "Webontwikkeling",
     "typed2": "Facturatie",
     "typed3": "Digitale reclame",
@@ -31,6 +31,7 @@
   "service_page": {
     "not_found": "Dienst niet gevonden",
     "go_back_home": "Terug naar home",
+    "back_to_services": "Terug naar diensten",
     "start_project_button": "Start uw Project",
     "our_services_title": "Onze Diensten voor",
     "other_services_title": "Ontdek Onze Andere Diensten"
