@@ -39,82 +39,116 @@ export default function Footer() {
   return (
     <footer className={styles.footer} id="footer">
       <Container>
-        <Row className="align-items-center">
-          <Col
-            xs={12}
-            md={4}
-            className="text-center text-md-start mb-4 mb-md-0"
-          >
-            <Image
-              src="/img/logo.webp"
-              alt="Logo"
-              className={styles.footerLogo}
-              width={150}
-              height={45}
-            />
-          </Col>
-
-          <Col
-            xs={12}
-            md={4}
-            className={`${styles.footerLinks} text-center mb-4 mb-md-0`}
-          >
-            <a
-              href="#home"
-              onClick={handleAnchorClick("home")}
-              className={styles.footerLink}
-            >
-              {t("home")}
-            </a>
-            <a
-              href="#services"
-              onClick={handleAnchorClick("services")}
-              className={styles.footerLink}
-            >
-              {t("services")}
-            </a>
-            <a
-              href="#contact"
-              onClick={handleAnchorClick("contact")}
-              className={styles.footerLink}
-            >
-              {t("contact")}
-            </a>
-          </Col>
-
-          <Col xs={12} md={4} className="text-center text-md-end">
-            <div className={styles.socialIcon}>
-              <a
-                href="https://www.facebook.com/people/SK-Global-Services/61573197338873/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Image
-                  src="/img/facebook_icon.webp"
-                  alt="Facebook"
-                  width={24}
-                  height={24}
-                />
-              </a>
-              <a
-                href="https://www.instagram.com/skglobalservices_21?igsh=MXVndHd3czJzOHJoeQ%3D%3D&utm_source=qr"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Image
-                  src="/img/instagram_icon.webp"
-                  alt="Instagram"
-                  width={24}
-                  height={24}
-                />
-              </a>
+        {/* Main Footer Content */}
+        <Row className="g-4">
+          {/* Logo Section */}
+          <Col xs={12} md={6} lg={4} className="text-center text-md-start">
+            <div className={styles.logoContainer}>
+              <Image
+                src="/img/logo.webp"
+                alt="S&K Global Services Logo"
+                className={styles.footerLogo}
+                width={140}
+                height={42}
+                priority={false}
+              />
+              <p className={styles.logoTagline}>
+                {t("services")} profesionales de calidad
+              </p>
             </div>
-            <p className={styles.copy}>
+          </Col>
+
+          {/* Navigation & Contact Section */}
+          <Col xs={12} md={6} lg={4} className="text-center">
+            <div className={styles.navigationSection}>
+              <h5 className={styles.sectionTitle}>Navegación</h5>
+              <nav className={styles.footerNav}>
+                <a
+                  href="#home"
+                  onClick={handleAnchorClick("home")}
+                  className={styles.footerLink}
+                >
+                  {t("home")}
+                </a>
+                <a
+                  href="#services"
+                  onClick={handleAnchorClick("services")}
+                  className={styles.footerLink}
+                >
+                  {t("services")}
+                </a>
+                <a
+                  href="#contact"
+                  onClick={handleAnchorClick("contact")}
+                  className={styles.footerLink}
+                >
+                  {t("contact")}
+                </a>
+              </nav>
+            </div>
+          </Col>
+
+          {/* Contact & Social Section */}
+          <Col xs={12} lg={4} className="text-center text-lg-end">
+            <div className={styles.contactSection}>
+              <h5 className={styles.sectionTitle}>Contacto</h5>
+              <div className={styles.contactInfo}>
+                <a
+                  href="mailto:skglobalservices2024@gmail.com"
+                  className={styles.contactLink}
+                >
+                  skglobalservices2024@gmail.com
+                </a>
+                <a href="tel:+2977415171" className={styles.contactLink}>
+                  +297 741 5171
+                </a>
+              </div>
+              <div className={styles.socialSection}>
+                <div className={styles.socialIcons}>
+                  <a
+                    href="https://www.facebook.com/people/SK-Global-Services/61573197338873/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.socialLink}
+                    aria-label="Facebook"
+                  >
+                    <Image
+                      src="/img/facebook_icon.webp"
+                      alt="Facebook"
+                      width={20}
+                      height={20}
+                    />
+                  </a>
+                  <a
+                    href="https://www.instagram.com/skglobalservices_21?igsh=MXVndHd3czJzOHJoeQ%3D%3D&utm_source=qr"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.socialLink}
+                    aria-label="Instagram"
+                  >
+                    <Image
+                      src="/img/instagram_icon.webp"
+                      alt="Instagram"
+                      width={20}
+                      height={20}
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </Col>
+        </Row>
+
+        {/* Bottom Footer */}
+        <div className={styles.bottomFooter}>
+          <div className={styles.bottomContent}>
+            <p className={styles.copyright}>
               © {new Date().getFullYear()} S&K Global Services. Todos los
               derechos reservados.
             </p>
-          </Col>
-        </Row>
+            <span className={styles.madeWith}>Hecho con ❤️ en Aruba</span>
+          </div>
+        </div>
       </Container>
     </footer>
   );
