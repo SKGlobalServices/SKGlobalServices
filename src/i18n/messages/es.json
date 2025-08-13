@@ -242,13 +242,29 @@
       "success_text": "Gracias por contactarnos. Te responderemos pronto.",
       "error_title": "Error",
       "error_text": "Hubo un problema al enviar el mensaje. Inténtalo de nuevo.",
+      "optional": "opcional",
+      "required": "requerido",
       "validation": {
         "first_name_required": "El nombre es requerido",
         "last_name_required": "El apellido es requerido",
+        "last_name_too_short": "El apellido es muy corto",
         "email_required": "El correo es requerido",
         "email_invalid": "Ingresa un correo válido",
         "phone_required": "El teléfono es requerido",
-        "message_required": "El mensaje es requerido"
+        "phone_invalid": "Formato de teléfono inválido",
+        "message_required": "El mensaje es requerido",
+        "generic_error": "Error de validación"
+      },
+      "security": {
+        "suspicious_activity": "Actividad sospechosa detectada. Por favor, intenta de nuevo.",
+        "spam_detected": "El contenido del mensaje parece spam. Por favor, revisa tu mensaje.",
+        "form_errors": "Por favor, corrige los errores en el formulario.",
+        "send_error": "Error al enviar el mensaje. Por favor, intenta de nuevo.",
+        "cannot_submit": "No se puede enviar el formulario en este momento.",
+        "bot_detected": "Bot detectado",
+        "temporarily_blocked": "Temporalmente bloqueado",
+        "too_many_attempts": "Demasiados intentos. Espera antes de intentar de nuevo.",
+        "please_wait": "Espera {seconds} segundos antes de intentar de nuevo."
       }
     }
   },

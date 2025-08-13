@@ -24,3 +24,26 @@ export type UIService = TranslatedService & {
   img?: string;
   icon?: string;
 };
+
+// Security types
+export interface SecurityState {
+  attemptCount: number;
+  lastSubmissionTime: number;
+  isBlocked: boolean;
+  blockEndTime: number;
+  suspiciousActivity: boolean;
+}
+
+export interface SecurityMetrics {
+  timeOnPage: number;
+  mouseMoves: number;
+  keystrokes: number;
+  focusEvents: number;
+}
+
+export interface FormValidationResult {
+  isValid: boolean;
+  errors: Record<string, string>;
+  warnings: string[];
+  spamScore: number;
+}

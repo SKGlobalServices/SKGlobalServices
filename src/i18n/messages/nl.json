@@ -263,13 +263,29 @@
       "success_text": "Bedankt voor het contact. We nemen snel contact met je op.",
       "error_title": "Fout",
       "error_text": "Er was een probleem bij het verzenden van je bericht. Probeer opnieuw.",
+      "optional": "optioneel",
+      "required": "verplicht",
       "validation": {
         "first_name_required": "Voornaam is verplicht",
         "last_name_required": "Achternaam is verplicht",
+        "last_name_too_short": "Achternaam is te kort",
         "email_required": "E-mail is verplicht",
         "email_invalid": "Voer een geldig e-mailadres in",
         "phone_required": "Telefoon is verplicht",
-        "message_required": "Bericht is verplicht"
+        "phone_invalid": "Ongeldig telefoonformaat",
+        "message_required": "Bericht is verplicht",
+        "generic_error": "Validatiefout"
+      },
+      "security": {
+        "suspicious_activity": "Verdachte activiteit gedetecteerd. Probeer opnieuw.",
+        "spam_detected": "Berichtinhoud lijkt spam te zijn. Controleer uw bericht.",
+        "form_errors": "Corrigeer de fouten in het formulier.",
+        "send_error": "Fout bij het verzenden van bericht. Probeer opnieuw.",
+        "cannot_submit": "Formulier kan momenteel niet worden verzonden.",
+        "bot_detected": "Bot gedetecteerd",
+        "temporarily_blocked": "Tijdelijk geblokkeerd",
+        "too_many_attempts": "Te veel pogingen. Wacht voordat u het opnieuw probeert.",
+        "please_wait": "Wacht {seconds} seconden voordat u het opnieuw probeert."
       }
     }
   },

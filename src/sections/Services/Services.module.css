@@ -26,9 +26,8 @@
 .services {
   position: relative;
   overflow: hidden;
-  margin-top: 0;
-  padding: 110px 0 70px 0;
-  animation: fadeInUp 1.2s ease-in-out;
+  padding: 120px 0 70px 0;
+  z-index: -1;
 }
 
 /* Keep content above decorative shapes */
@@ -43,7 +42,8 @@
   position: absolute;
   pointer-events: none;
   z-index: 0;
-  opacity: 0.15;
+  opacity: 0.08;
+  filter: brightness(1.2) saturate(1.1);
 }
 
 .services::before {
@@ -72,7 +72,7 @@
 
 @media (max-width: 768px) {
   .services {
-    padding: 90px 0 50px 0;
+    margin-top: -10vh;
   }
 
   .services::before {

@@ -242,13 +242,29 @@
       "success_text": "Thank you for contacting us. We'll get back to you soon.",
       "error_title": "Error",
       "error_text": "There was a problem sending your message. Please try again.",
+      "optional": "optional",
+      "required": "required",
       "validation": {
         "first_name_required": "First name is required",
         "last_name_required": "Last name is required",
+        "last_name_too_short": "Last name is too short",
         "email_required": "Email is required",
         "email_invalid": "Please enter a valid email",
         "phone_required": "Phone is required",
-        "message_required": "Message is required"
+        "phone_invalid": "Invalid phone format",
+        "message_required": "Message is required",
+        "generic_error": "Validation error"
+      },
+      "security": {
+        "suspicious_activity": "Suspicious activity detected. Please try again.",
+        "spam_detected": "Message content appears to be spam. Please review your message.",
+        "form_errors": "Please correct the errors in the form.",
+        "send_error": "Error sending message. Please try again.",
+        "cannot_submit": "Cannot submit form at this time.",
+        "bot_detected": "Bot detected",
+        "temporarily_blocked": "Temporarily blocked",
+        "too_many_attempts": "Too many attempts. Please wait before trying again.",
+        "please_wait": "Wait {seconds} seconds before trying again."
       }
     }
   },

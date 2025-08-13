@@ -1,6 +1,6 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useTranslations } from "@/i18n/LanguageContext";
 import styles from "./HeroVideo.module.css";
 
 type Props = {
@@ -18,10 +18,10 @@ export default function HeroVideo({ children }: Props) {
         muted
         loop
         playsInline
-  poster="/img/app_mobile.png"
+        poster="/img/app_mobile.webp"
       >
-  <source src="/img/banner-videoR.mp4" type="video/mp4" />
-        {t("video_fallback", { defaultValue: "Your browser does not support video." })}
+        <source src="/img/banner-videoR.mp4" type="video/mp4" />
+        {t("video_fallback")}
       </video>
       {children}
     </section>
