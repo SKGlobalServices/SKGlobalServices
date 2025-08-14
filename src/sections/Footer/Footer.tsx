@@ -146,7 +146,7 @@ export default function Footer() {
               © {new Date().getFullYear()} S&K Global Services. Todos los
               derechos reservados.
             </p>
-            <span className={styles.madeWith}>Hecho con ❤️ en Aruba</span>
+            <span className={styles.madeWith}>Hecho con ❤️ en Colombia</span>
           </div>
         </div>
       </Container>
