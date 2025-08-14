@@ -4,7 +4,10 @@ export const servicesData: ServiceImage[] = [
   { id: 1, front: { img: "/img/desarrollo_web.webp" } },
   { id: 2, front: { img: "/img/creacion_empresarial.webp" } },
   { id: 3, front: { img: "/img/app_mobile.webp" } },
-  { id: 4, front: { img: "/img/create_logo.webp" } },
+  { id: 4, front: { img: "/img/plataformas_educativas.webp" } },
   { id: 5, front: { img: "/img/facturacion.webp" } },
-  { id: 6, front: { img: "/img/img_ads.webp" } }
+  { id: 6, front: { img: "/img/apis.webp" } },
+  { id: 7, front: { img: "/img/img_ads.webp" } },
+  { id: 8, front: { img: "/img/create_logo.webp" } },
+  { id: 10, front: { img: "/img/automatizacion.webp" } },
 ];

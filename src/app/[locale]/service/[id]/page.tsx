@@ -89,7 +89,6 @@ export default async function ServicePage({
               </p>
               <Button
                 variant="primary"
-                className={styles.buttonPrimary}
                 href={`/${locale}#contact`}
                 size="lg"
               >

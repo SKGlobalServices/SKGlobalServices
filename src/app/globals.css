@@ -50,3 +50,42 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
 }
+
+/* Custom button styling */
+.btn-primary {
+  font-weight: 700 !important;
+  color: #fff !important;
+  background: linear-gradient(135deg, #4a2fbd 0%, #7c4dff 100%) !important;
+  border: none !important;
+  border-radius: 20px !important;
+  padding: 10px 24px !important;
+  transition: all 0.3s ease-in-out !important;
+  box-shadow: 0 4px 15px rgba(74, 47, 189, 0.2) !important;
+}
+
+.btn-primary.btn-lg {
+  padding: 14px 48px !important;
+  font-size: 18px !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  color: #fff !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 25px rgba(74, 47, 189, 0.35) !important;
+  background: linear-gradient(135deg, #5e3fdc 0%, #8e63ff 100%) !important;
+}
+
+.btn-primary:active {
+  transform: translateY(0) !important;
+  box-shadow: 0 4px 15px rgba(74, 47, 189, 0.2) !important;
+}
+
+.btn-primary:disabled {
+  background: #2a2a2a !important;
+  color: #6c6c6c !important;
+  opacity: 1 !important;
+  cursor: not-allowed !important;
+  box-shadow: none !important;
+  transform: none !important;
+}

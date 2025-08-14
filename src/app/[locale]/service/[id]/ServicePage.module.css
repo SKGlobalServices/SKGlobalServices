@@ -111,19 +111,6 @@
   line-height: 1.6;
 }
 
-.buttonPrimary {
-  background: linear-gradient(135deg, #4a2fbd 0%, #7c4dff 100%);
-  border: none;
-  padding: 12px 30px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-
-.buttonPrimary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 26px rgba(74, 47, 189, 0.35);
-}
-
 @media (max-width: 768px) {
   .typographyH1 {
     font-size: 2rem;

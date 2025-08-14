@@ -27,7 +27,6 @@
   position: relative;
   overflow: hidden;
   padding: 120px 0 70px 0;
-  z-index: -1;
 }
 
 /* Keep content above decorative shapes */
