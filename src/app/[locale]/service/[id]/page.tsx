@@ -28,18 +28,28 @@ interface ServicePageProps {
 
 export default async function ServicePage({ params }: ServicePageProps) {
   const { locale, id } = await params;
-  
+
   // Load translations on server
   const messages = await getMessages({ locale });
-  
-  const servicePageMessages = (messages as Record<string, unknown>).service_page as Record<string, string> || {};
-  const servicesDataMessages = (messages as Record<string, unknown>).services_data as TranslatedService[] || [];
-  
+
+  const servicePageMessages =
+    ((messages as Record<string, unknown>).service_page as Record<
+      string,
+      string
+    >) || {};
+  const servicesDataMessages =
+    ((messages as Record<string, unknown>)
+      .services_data as TranslatedService[]) || [];
+
   const translations = {
-    start_project_button: servicePageMessages.start_project_button || "Iniciar proyecto",
-    our_services_title: servicePageMessages.our_services_title || "Nuestros servicios de",
-    other_services_title: servicePageMessages.other_services_title || "Otros servicios",
-    back_to_services: servicePageMessages.back_to_services || "Volver a servicios",
+    start_project_button:
+      servicePageMessages.start_project_button || "Iniciar proyecto",
+    our_services_title:
+      servicePageMessages.our_services_title || "Nuestros servicios de",
+    other_services_title:
+      servicePageMessages.other_services_title || "Otros servicios",
+    back_to_services:
+      servicePageMessages.back_to_services || "Volver a servicios",
   };
 
   // Load service data on server
@@ -50,7 +60,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
 
   const translatedServices: TranslatedService[] = servicesDataMessages;
   const service = translatedServices.find((s) => String(s.id) === String(id));
-  
+
   if (!service) {
     notFound();
   }
@@ -59,7 +69,9 @@ export default async function ServicePage({ params }: ServicePageProps) {
     .filter((s) => String(s.id) !== String(id))
     .map((s) => ({
       ...s,
-      img: servicesData.find((img) => String(img.id) === String(s.id))?.front.img || undefined,
+      img:
+        servicesData.find((img) => String(img.id) === String(s.id))?.front
+          .img || undefined,
     }));
 
   return (
@@ -76,7 +88,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
               <p className={`${styles.typographyBody} mb-4`}>
                 {service.page_description}
               </p>
-              <ServicePageClient 
+              <ServicePageClient
                 buttonText={translations.start_project_button}
               />
             </Col>
