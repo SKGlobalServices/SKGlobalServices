@@ -8,7 +8,7 @@ import { servicesData } from "@/data/services/servicesData";
 import Contact from "@/sections/Contact/Contact";
 import ServiceCarousel from "./ServiceCarousel";
 import styles from "./ServicePage.module.css";
-import type { Locale } from "@/i18n/locales";
+import { locales, type Locale } from "@/i18n/locales";
 import type { TranslatedService, UIService } from "@/types";
 import { CardBody, CardText, CardTitle } from "react-bootstrap";
 import { getMessages } from "next-intl/server";
@@ -16,9 +16,10 @@ import ServicePageClient from "./ServicePageClient";
 
 // Pre-render de rutas estáticas para navegación rápida
 export async function generateStaticParams() {
-  // Only generate params for services that actually exist in our data
-  // This prevents 404s from being generated as static pages
-  return servicesData.map((s) => ({ id: String(s.id) }));
+  // Generate all combinations of locales x service ids
+  return locales.flatMap((locale) =>
+    servicesData.map((s) => ({ locale, id: String(s.id) }))
+  );
 }
 
 interface ServicePageProps {
