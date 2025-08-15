@@ -77,81 +77,81 @@ export default async function ServicePage({ params }: ServicePageProps) {
             .img || undefined,
       }));
 
-  return (
-    <main className={styles.servicePage}>
-      {/* Hero Section */}
-      <section className={styles.heroSection}>
-        <Container>
-          <Row className="align-items-center">
-            <Col md={6}>
-              <a href={`#services`} className={styles.breadcrumbBack}>
-                ← {translations.back_to_services}
-              </a>
-              <h1 className={styles.typographyH1}>{service.page_title}</h1>
-              <p className={`${styles.typographyBody} mb-4`}>
-                {service.page_description}
-              </p>
-              <ServicePageClient
-                buttonText={translations.start_project_button}
-              />
-            </Col>
-            <Col md={6}>
-              <Image
-                src={serviceImage.front.img}
-                alt={service.page_title ?? "Service image"}
-                width={600}
-                height={400}
-                style={{ width: "100%", height: "auto" }}
-                className="rounded shadow-lg"
-                priority
-              />
-            </Col>
-          </Row>
-        </Container>
-      </section>
+    return (
+      <main className={styles.servicePage}>
+        {/* Hero Section */}
+        <section className={styles.heroSection}>
+          <Container>
+            <Row className="align-items-center">
+              <Col md={6}>
+                <a href={`#services`} className={styles.breadcrumbBack}>
+                  ← {translations.back_to_services}
+                </a>
+                <h1 className={styles.typographyH1}>{service.page_title}</h1>
+                <p className={`${styles.typographyBody} mb-4`}>
+                  {service.page_description}
+                </p>
+                <ServicePageClient
+                  buttonText={translations.start_project_button}
+                />
+              </Col>
+              <Col md={6}>
+                <Image
+                  src={serviceImage.front.img}
+                  alt={service.page_title ?? "Service image"}
+                  width={600}
+                  height={400}
+                  style={{ width: "100%", height: "auto" }}
+                  className="rounded shadow-lg"
+                  priority
+                />
+              </Col>
+            </Row>
+          </Container>
+        </section>
 
-      {/* Features Section */}
-      <section className={styles.featuresSection}>
-        <Container>
-          <div className="text-center mb-5">
-            <h2 className={styles.typographyH2}>
-              {translations.our_services_title} {service.front_title}
+        {/* Features Section */}
+        <section className={styles.featuresSection}>
+          <Container>
+            <div className="text-center mb-5">
+              <h2 className={styles.typographyH2}>
+                {translations.our_services_title} {service.front_title}
+              </h2>
+            </div>
+            <Row>
+              {service.features?.map(
+                (
+                  feature: { title: string; description: string },
+                  index: number
+                ) => (
+                  <Col md={4} key={index} className="mb-4">
+                    <Card className={styles.featureCard}>
+                      <CardBody>
+                        <CardTitle>{feature.title}</CardTitle>
+                        <CardText>{feature.description}</CardText>
+                      </CardBody>
+                    </Card>
+                  </Col>
+                )
+              )}
+            </Row>
+          </Container>
+        </section>
+
+        {/* Other Services Carousel */}
+        <section className={styles.carouselSection}>
+          <Container>
+            <h2 className={`text-center ${styles.typographyH2} mb-5`}>
+              {translations.other_services_title}
             </h2>
-          </div>
-          <Row>
-            {service.features?.map(
-              (
-                feature: { title: string; description: string },
-                index: number
-              ) => (
-                <Col md={4} key={index} className="mb-4">
-                  <Card className={styles.featureCard}>
-                    <CardBody>
-                      <CardTitle>{feature.title}</CardTitle>
-                      <CardText>{feature.description}</CardText>
-                    </CardBody>
-                  </Card>
-                </Col>
-              )
-            )}
-          </Row>
-        </Container>
-      </section>
+            <ServiceCarousel services={otherServices} activeId={id} />
+          </Container>
+        </section>
 
-      {/* Other Services Carousel */}
-      <section className={styles.carouselSection}>
-        <Container>
-          <h2 className={`text-center ${styles.typographyH2} mb-5`}>
-            {translations.other_services_title}
-          </h2>
-          <ServiceCarousel services={otherServices} activeId={id} />
-        </Container>
-      </section>
-
-      {/* Contact Section */}
-      <Contact />
-    </main>
-  );
+        {/* Contact Section */}
+        <Contact />
+      </main>
+    );
   } catch (error) {
     console.error(`Error loading service page:`, error);
     notFound();
