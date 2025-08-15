@@ -16,6 +16,8 @@ import ServicePageClient from "./ServicePageClient";
 
 // Pre-render de rutas estáticas para navegación rápida
 export async function generateStaticParams() {
+  // Only generate params for services that actually exist in our data
+  // This prevents 404s from being generated as static pages
   return servicesData.map((s) => ({ id: String(s.id) }));
 }
 
@@ -27,52 +29,53 @@ interface ServicePageProps {
 }
 
 export default async function ServicePage({ params }: ServicePageProps) {
-  const { locale, id } = await params;
+  try {
+    const { locale, id } = await params;
 
-  // Load translations on server
-  const messages = await getMessages({ locale });
+    // Load translations on server
+    const messages = await getMessages({ locale });
 
-  const servicePageMessages =
-    ((messages as Record<string, unknown>).service_page as Record<
-      string,
-      string
-    >) || {};
-  const servicesDataMessages =
-    ((messages as Record<string, unknown>)
-      .services_data as TranslatedService[]) || [];
+    const servicePageMessages =
+      ((messages as Record<string, unknown>).service_page as Record<
+        string,
+        string
+      >) || {};
+    const servicesDataMessages =
+      ((messages as Record<string, unknown>)
+        .services_data as TranslatedService[]) || [];
 
-  const translations = {
-    start_project_button:
-      servicePageMessages.start_project_button || "Iniciar proyecto",
-    our_services_title:
-      servicePageMessages.our_services_title || "Nuestros servicios de",
-    other_services_title:
-      servicePageMessages.other_services_title || "Otros servicios",
-    back_to_services:
-      servicePageMessages.back_to_services || "Volver a servicios",
-  };
+    const translations = {
+      start_project_button:
+        servicePageMessages.start_project_button || "Iniciar proyecto",
+      our_services_title:
+        servicePageMessages.our_services_title || "Nuestros servicios de",
+      other_services_title:
+        servicePageMessages.other_services_title || "Otros servicios",
+      back_to_services:
+        servicePageMessages.back_to_services || "Volver a servicios",
+    };
 
-  // Load service data on server
-  const serviceImage = servicesData.find((s) => String(s.id) === String(id));
-  if (!serviceImage) {
-    notFound();
-  }
+    // Load service data on server
+    const serviceImage = servicesData.find((s) => String(s.id) === String(id));
+    if (!serviceImage) {
+      notFound();
+    }
 
-  const translatedServices: TranslatedService[] = servicesDataMessages;
-  const service = translatedServices.find((s) => String(s.id) === String(id));
+    const translatedServices: TranslatedService[] = servicesDataMessages;
+    const service = translatedServices.find((s) => String(s.id) === String(id));
 
-  if (!service) {
-    notFound();
-  }
+    if (!service) {
+      notFound();
+    }
 
-  const otherServices: UIService[] = translatedServices
-    .filter((s) => String(s.id) !== String(id))
-    .map((s) => ({
-      ...s,
-      img:
-        servicesData.find((img) => String(img.id) === String(s.id))?.front
-          .img || undefined,
-    }));
+    const otherServices: UIService[] = translatedServices
+      .filter((s) => String(s.id) !== String(id))
+      .map((s) => ({
+        ...s,
+        img:
+          servicesData.find((img) => String(img.id) === String(s.id))?.front
+            .img || undefined,
+      }));
 
   return (
     <main className={styles.servicePage}>
@@ -149,4 +152,8 @@ export default async function ServicePage({ params }: ServicePageProps) {
       <Contact />
     </main>
   );
+  } catch (error) {
+    console.error(`Error loading service page:`, error);
+    notFound();
+  }
 }

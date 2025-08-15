@@ -9,9 +9,9 @@ import type { UIService } from "@/types";
 import Image from "next/image";
 
 const responsiveCarousel = {
-  desktop: { breakpoint: { max: 3000, min: 1024 }, items: 3 },
-  tablet: { breakpoint: { max: 1024, min: 464 }, items: 2 },
-  mobile: { breakpoint: { max: 464, min: 0 }, items: 1 },
+  desktop: { breakpoint: { max: 3000, min: 1024 }, items: 3, slidesToSlide: 1 },
+  tablet: { breakpoint: { max: 1024, min: 768 }, items: 2, slidesToSlide: 1 },
+  mobile: { breakpoint: { max: 768, min: 0 }, items: 1, slidesToSlide: 1 },
 };
 
 type Props = {
@@ -25,8 +25,15 @@ export default function ServiceCarousel({ services, activeId }: Props) {
       responsive={responsiveCarousel}
       infinite={true}
       autoPlay={true}
-      autoPlaySpeed={3000}
-      className="pb-4 pt-4"
+      autoPlaySpeed={4000}
+      pauseOnHover={true}
+      showDots={false}
+      arrows={true}
+      swipeable={true}
+      draggable={true}
+      className={`${styles.serviceCarousel} pb-4 pt-4`}
+      containerClass="carousel-container"
+      itemClass="carousel-item-padding"
     >
       {services.map((s) => (
         <div key={s.id} className="px-2">
@@ -41,18 +48,25 @@ export default function ServiceCarousel({ services, activeId }: Props) {
                   : ""
               }`}
             >
-              <Card.Body className="d-flex align-items-center justify-content-center gap-2">
+              <Card.Body className="d-flex flex-column align-items-center justify-content-center gap-3 p-3">
                 {s.img ? (
-                  <span className={styles.serviceCarouselThumb}>
+                  <div className={styles.serviceCarouselImageContainer}>
                     <Image
                       src={s.img}
                       alt={s.front_title}
-                      width={28}
-                      height={28}
+                      width={48}
+                      height={48}
+                      className={styles.serviceCarouselImage}
+                      priority={false}
+                      loading="lazy"
                     />
-                  </span>
-                ) : null}
-                <Card.Title className="mb-0 text-center">
+                  </div>
+                ) : (
+                  <div className={styles.serviceCarouselImagePlaceholder}>
+                    <span className={styles.serviceCarouselIcon}>🚀</span>
+                  </div>
+                )}
+                <Card.Title className={`${styles.serviceCarouselTitle} mb-0 text-center`}>
                   {s.front_title}
                 </Card.Title>
               </Card.Body>
