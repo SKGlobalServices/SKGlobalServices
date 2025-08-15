@@ -5,5 +5,16 @@ export default createMiddleware(routing);
 
 export const config = {
   // Match only internationalized pathnames
-  matcher: ["/", "/(es|en|nl)/:path*"],
+  matcher: [
+    // Enable a redirect to a matching locale at the root
+    "/",
+
+    // Set a cookie to remember the previous locale for
+    // all requests that have a locale prefix
+    "/(es|en|nl)/:path*",
+
+    // Enable redirects that add missing locales
+    // (e.g. `/service/1` -> `/es/service/1`)
+    "/((?!api|_next|_vercel|.*\\..*).*)",
+  ],
 };

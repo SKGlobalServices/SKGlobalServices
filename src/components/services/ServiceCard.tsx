@@ -3,7 +3,7 @@
 import { Card, Col } from "react-bootstrap";
 import { useTranslations } from "@/i18n/LanguageContext";
 import styles from "./ServiceCard.module.css";
-import { Link } from "@/i18n/navigation";
+import OptimizedServiceLink from "@/components/iu/OptimizedServiceLink";
 import Image from "next/image";
 
 type Props = {
@@ -25,13 +25,10 @@ export default function ServiceCard({
 
   return (
     <Col xs={12} sm={6} md={4} className="d-flex">
-      <Link
-        href={{
-          pathname: "/service/[id]",
-          params: { id: String(id) },
-        }}
+      <OptimizedServiceLink
+        serviceId={id}
         className="w-100 text-decoration-none"
-        aria-label={`${title} - ${t("learn_more")}`}
+        ariaLabel={`${title} - ${t("learn_more")}`}
       >
         <Card className={`${styles.card} w-100 h-100`}>
           <Card.Body className="d-flex flex-column text-center">
@@ -60,7 +57,7 @@ export default function ServiceCard({
             </div>
           </Card.Body>
         </Card>
-      </Link>
+      </OptimizedServiceLink>
     </Col>
   );
 }

@@ -246,13 +246,18 @@
       "required": "required",
       "validation": {
         "first_name_required": "First name is required",
+        "first_name_too_short": "First name must be at least 2 characters",
+        "first_name_invalid": "First name can only contain letters",
         "last_name_required": "Last name is required",
-        "last_name_too_short": "Last name is too short",
+        "last_name_too_short": "Last name must be at least 2 characters",
+        "last_name_invalid": "Last name can only contain letters",
         "email_required": "Email is required",
-        "email_invalid": "Please enter a valid email",
+        "email_invalid": "Please enter a valid email address",
         "phone_required": "Phone is required",
-        "phone_invalid": "Invalid phone format",
+        "phone_invalid": "Invalid phone format (e.g., +1234567890)",
         "message_required": "Message is required",
+        "message_too_short": "Message must be at least 10 characters",
+        "message_too_long": "Message must be less than 1000 characters",
         "generic_error": "Validation error"
       },
       "security": {

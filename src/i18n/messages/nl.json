@@ -267,13 +267,18 @@
       "required": "verplicht",
       "validation": {
         "first_name_required": "Voornaam is verplicht",
+        "first_name_too_short": "Voornaam moet minimaal 2 tekens bevatten",
+        "first_name_invalid": "Voornaam mag alleen letters bevatten",
         "last_name_required": "Achternaam is verplicht",
-        "last_name_too_short": "Achternaam is te kort",
+        "last_name_too_short": "Achternaam moet minimaal 2 tekens bevatten",
+        "last_name_invalid": "Achternaam mag alleen letters bevatten",
         "email_required": "E-mail is verplicht",
         "email_invalid": "Voer een geldig e-mailadres in",
         "phone_required": "Telefoon is verplicht",
-        "phone_invalid": "Ongeldig telefoonformaat",
+        "phone_invalid": "Ongeldig telefoonformaat (bijv: +31612345678)",
         "message_required": "Bericht is verplicht",
+        "message_too_short": "Bericht moet minimaal 10 tekens bevatten",
+        "message_too_long": "Bericht moet minder dan 1000 tekens bevatten",
         "generic_error": "Validatiefout"
       },
       "security": {

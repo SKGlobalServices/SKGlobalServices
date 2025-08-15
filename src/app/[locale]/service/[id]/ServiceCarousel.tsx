@@ -1,6 +1,6 @@
 "use client";
 
-import { Link } from "@/i18n/navigation";
+import OptimizedServiceLink from "@/components/iu/OptimizedServiceLink";
 import Card from "react-bootstrap/Card";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
@@ -30,11 +30,8 @@ export default function ServiceCarousel({ services, activeId }: Props) {
     >
       {services.map((s) => (
         <div key={s.id} className="px-2">
-          <Link
-            href={{
-              pathname: "/service/[id]",
-              params: { id: String(s.id) },
-            }}
+          <OptimizedServiceLink
+            serviceId={s.id}
             className="text-decoration-none"
           >
             <Card
@@ -60,7 +57,7 @@ export default function ServiceCarousel({ services, activeId }: Props) {
                 </Card.Title>
               </Card.Body>
             </Card>
-          </Link>
+          </OptimizedServiceLink>
         </div>
       ))}
     </Carousel>

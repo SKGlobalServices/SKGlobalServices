@@ -1,26 +1,22 @@
 import { defineRouting } from "next-intl/routing";
-import { createNavigation } from "next-intl/navigation";
 
 export const routing = defineRouting({
-  // A list of all locales that are supported
-  locales: ["en", "es", "nl"],
+  // Supported locales
+  locales: ["es", "en", "nl"],
 
-  // Used when no locale matches
-  defaultLocale: "en",
+  // Match the app's default locale
+  defaultLocale: "es",
+
+  // Always include locale in URL for consistency
+  localePrefix: "always",
 
   // The `pathnames` object holds pairs of internal and
-  // external paths. Based on the locale, the external
-  // paths are rewritten to the shared, internal ones.
+  // external paths. Keep them identical to the filesystem
+  // routes to avoid mismatches and slow rewrites.
   pathnames: {
-    // If all locales use the same pathname, a single
-    // external path can be provided for all locales
     "/": "/",
-    "/service": "/service",
     "/service/[id]": "/service/[id]",
   },
 });
 
-// Lightweight wrappers around Next.js' navigation APIs
-// that will consider the routing configuration
-export const { Link, redirect, usePathname, useRouter } =
-  createNavigation(routing);
+// Note: Navigation helpers are exported from `@/i18n/navigation`.

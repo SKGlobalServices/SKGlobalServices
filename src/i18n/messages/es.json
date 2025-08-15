@@ -80,7 +80,7 @@
       ]
     },
     {
-      "id": 4,
+      "id": 3,
       "front_title": "Aplicaciones móviles",
       "front_text": "Lleva tu empresa al bolsillo de tus clientes. Apps para Android e iOS con pedidos, notificaciones y pagos.",
       "page_title": "Desarrollo de Aplicaciones Móviles",
@@ -101,7 +101,7 @@
       ]
     },
     {
-      "id": 6,
+      "id": 4,
       "front_title": "Plataformas educativas",
       "front_text": "Aprende y enseña con tecnología. Administración de cursos, usuarios, evaluaciones y certificados automáticos.",
       "page_title": "Plataformas Educativas",
@@ -122,7 +122,7 @@
       ]
     },
     {
-      "id": 3,
+      "id": 5,
       "front_title": "Sistemas de facturación",
       "front_text": "Sistemas que crean y envían cotizaciones, contratos y reportes con un clic, en formato PDF o Excel.",
       "page_title": "Generación Automática de Documentos",
@@ -143,7 +143,7 @@
       ]
     },
     {
-      "id": 5,
+      "id": 6,
       "front_title": "Desarrollo de APIs e integraciones",
       "front_text": "Conecta tus plataformas y simplifica procesos. APIs REST seguras y documentadas para escalar y automatizar.",
       "page_title": "Desarrollo de APIs e Integraciones",
@@ -160,27 +160,6 @@
         {
           "title": "Automatización de Flujos",
           "description": "Conecta sistemas para automatizar tareas y mejorar la eficiencia."
-        }
-      ]
-    },
-    {
-      "id": 10,
-      "front_title": "Automatización de procesos",
-      "front_text": "Bots, scripts y sistemas que trabajan por ti. Ahorra tiempo en tareas repetitivas y optimiza tu flujo de trabajo.",
-      "page_title": "Automatización de Procesos Empresariales",
-      "page_description": "Ahorra tiempo y reduce costos con nuestros bots, scripts y sistemas que trabajan por ti. Automatizamos el envío de correos, la generación de PDFs, la sincronización con Google Sheets y otras tareas repetitivas.",
-      "features": [
-        {
-          "title": "Integración con Google Suite",
-          "description": "Automatiza tareas en Sheets, Docs y Gmail para optimizar tu flujo de trabajo."
-        },
-        {
-          "title": "Bots Personalizados",
-          "description": "Desarrollamos bots que realizan tareas específicas según tus necesidades."
-        },
-        {
-          "title": "Sincronización de Datos",
-          "description": "Mantenemos tus datos sincronizados entre diferentes plataformas de forma automática."
         }
       ]
     },
@@ -225,6 +204,27 @@
           "description": "Te proporcionamos el logo en todos los formatos que necesitarás."
         }
       ]
+    },
+    {
+      "id": 10,
+      "front_title": "Automatización de procesos",
+      "front_text": "Bots, scripts y sistemas que trabajan por ti. Ahorra tiempo en tareas repetitivas y optimiza tu flujo de trabajo.",
+      "page_title": "Automatización de Procesos Empresariales",
+      "page_description": "Ahorra tiempo y reduce costos con nuestros bots, scripts y sistemas que trabajan por ti. Automatizamos el envío de correos, la generación de PDFs, la sincronización con Google Sheets y otras tareas repetitivas.",
+      "features": [
+        {
+          "title": "Integración con Google Suite",
+          "description": "Automatiza tareas en Sheets, Docs y Gmail para optimizar tu flujo de trabajo."
+        },
+        {
+          "title": "Bots Personalizados",
+          "description": "Desarrollamos bots que realizan tareas específicas según tus necesidades."
+        },
+        {
+          "title": "Sincronización de Datos",
+          "description": "Mantenemos tus datos sincronizados entre diferentes plataformas de forma automática."
+        }
+      ]
     }
   ],
   "contact": {
@@ -246,13 +246,18 @@
       "required": "requerido",
       "validation": {
         "first_name_required": "El nombre es requerido",
+        "first_name_too_short": "El nombre debe tener al menos 2 caracteres",
+        "first_name_invalid": "El nombre solo puede contener letras",
         "last_name_required": "El apellido es requerido",
-        "last_name_too_short": "El apellido es muy corto",
+        "last_name_too_short": "El apellido debe tener al menos 2 caracteres",
+        "last_name_invalid": "El apellido solo puede contener letras",
         "email_required": "El correo es requerido",
         "email_invalid": "Ingresa un correo válido",
         "phone_required": "El teléfono es requerido",
-        "phone_invalid": "Formato de teléfono inválido",
+        "phone_invalid": "Formato de teléfono inválido (ej: +1234567890)",
         "message_required": "El mensaje es requerido",
+        "message_too_short": "El mensaje debe tener al menos 10 caracteres",
+        "message_too_long": "El mensaje debe tener menos de 1000 caracteres",
         "generic_error": "Error de validación"
       },
       "security": {

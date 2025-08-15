@@ -90,22 +90,30 @@
 
 .contactForm input:focus::placeholder,
 .contactForm textarea:focus::placeholder {
-  color: #121212;
+  color: #ffffff;
   opacity: 0.8;
 }
 
 .contactForm :global(.is-invalid),
 .contactForm :global(.is-invalid:focus) {
-  border-color: #dc3545 !important;
-  box-shadow: none !important;
+  border-color: #ff6b6b !important;
+  box-shadow: 0 0 8px rgba(255, 107, 107, 0.3) !important;
+  background: rgba(255, 107, 107, 0.05) !important;
 }
 
 .contactForm :global(.invalid-feedback) {
-  color: #ff8e8e;
-  text-align: left;
-  margin-top: 2px;
-  margin-left: 5px;
-  font-size: 14px;
+  color: #ff6b6b !important;
+  text-align: left !important;
+  margin-top: 5px !important;
+  margin-left: 5px !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  display: block !important;
+  opacity: 1 !important;
+  background: rgba(255, 107, 107, 0.1);
+  padding: 4px 8px;
+  border-radius: 6px;
+  border-left: 3px solid #ff6b6b;
 }
 
 @media (max-width: 767px) {
@@ -121,6 +129,12 @@
   .contactForm textarea {
     padding: 15px 20px;
     font-size: 16px;
+  }
+
+  .contactForm :global(.invalid-feedback) {
+    font-size: 13px !important;
+    margin-top: 3px !important;
+    padding: 3px 6px !important;
   }
 
   .contact::before {
@@ -142,4 +156,71 @@
   width: 100%;
   height: auto;
   display: block;
+}
+
+/* Custom alert styling */
+.contactForm :global(.alert) {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  color: #fff;
+  backdrop-filter: blur(10px);
+}
+
+.contactForm :global(.alert-success) {
+  background: rgba(40, 167, 69, 0.2);
+  border-color: rgba(40, 167, 69, 0.4);
+}
+
+.contactForm :global(.alert-danger) {
+  background: rgba(220, 53, 69, 0.2);
+  border-color: rgba(220, 53, 69, 0.4);
+}
+
+.contactForm :global(.alert-warning) {
+  background: rgba(255, 193, 7, 0.2);
+  border-color: rgba(255, 193, 7, 0.4);
+  color: #212529;
+}
+
+.contactForm :global(.alert-heading) {
+  color: inherit;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.contactForm :global(.btn-close) {
+  filter: invert(1);
+  opacity: 0.7;
+}
+
+.contactForm :global(.btn-close:hover) {
+  opacity: 1;
+}
+
+/* Character counter styling */
+.contactForm .text-muted {
+  color: #b6b6b6 !important;
+  font-size: 12px;
+}
+
+/* Enhanced button styling */
+.contactForm :global(.btn-primary) {
+  background: linear-gradient(90.21deg, #aa367c -5.91%, #4a2fbd 111.58%);
+  border: none;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  transition: all 0.3s ease-in-out;
+}
+
+.contactForm :global(.btn-primary:hover) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(170, 54, 124, 0.3);
+}
+
+.contactForm :global(.btn-primary:disabled) {
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.5);
+  transform: none;
+  box-shadow: none;
 }
