@@ -7,7 +7,6 @@ import "react-multi-carousel/lib/styles.css";
 import { useTranslations } from "@/i18n/LanguageContext";
 import styles from "./ServicePage.module.css";
 import type { UIService } from "@/types";
-import Image from "next/image";
 
 const responsiveCarousel = {
   desktop: { 

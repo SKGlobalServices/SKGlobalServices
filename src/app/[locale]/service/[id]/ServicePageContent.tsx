@@ -6,9 +6,11 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button";
 import { CardBody, CardText, CardTitle } from "react-bootstrap";
 import { useMessages } from "next-intl";
 import { useTranslations, useLocale } from "@/i18n/LanguageContext";
+import { Link } from "@/i18n/navigation";
 import { servicesData, servicesImages } from "@/data/services/servicesData";
 import Contact from "@/sections/Contact/Contact";
 import ServiceCarousel from "./ServiceCarousel";
@@ -62,9 +64,11 @@ export default function ServicePageContent({ serviceId }: ServicePageContentProp
             <p className="text-white">
               {locale === 'en' ? 'The service you are looking for does not exist.' : locale === 'nl' ? 'De dienst die u zoekt bestaat niet.' : 'El servicio que buscas no existe.'}
             </p>
-            <a href="/" className="btn btn-primary">
-              {locale === 'en' ? 'Go back home' : locale === 'nl' ? 'Terug naar home' : 'Volver al inicio'}
-            </a>
+            <Link href="/">
+              <Button variant="primary">
+                {locale === 'en' ? 'Go back home' : locale === 'nl' ? 'Terug naar home' : 'Volver al inicio'}
+              </Button>
+            </Link>
           </div>
         </Container>
       </main>

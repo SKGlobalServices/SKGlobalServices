@@ -20,7 +20,7 @@ interface ServicePageProps {
 
 export default async function ServicePage({ params }: ServicePageProps) {
   try {
-    const { locale, id } = await params;
+    const { id } = await params;
 
     // Validate that the service exists
     const serviceExists = servicesData.find((s) => String(s.id) === String(id));
