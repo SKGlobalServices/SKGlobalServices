@@ -18,6 +18,39 @@
   min-height: 280px;
 }
 
+.cardWithBackground {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: local;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* Improve image quality on high-DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .cardWithBackground {
+    image-rendering: auto;
+  }
+}
+
+/* Performance optimization for background images */
+.cardWithBackground::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: inherit;
+  background-size: inherit;
+  background-position: inherit;
+  background-repeat: inherit;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
 .card:hover {
   transform: translateY(-8px);
   box-shadow: 0 14px 28px rgba(74, 47, 189, 0.28);
@@ -89,10 +122,11 @@
   bottom: 0;
   background: linear-gradient(
     135deg,
-    rgba(0, 0, 0, 0.85) 0%,
-    rgba(0, 0, 0, 0.75) 100%
+    rgba(0, 0, 0, 0.75) 0%,
+    rgba(0, 0, 0, 0.65) 50%,
+    rgba(0, 0, 0, 0.8) 100%
   );
-  backdrop-filter: blur(3px);
+  backdrop-filter: blur(2px);
   border-radius: 16px;
   transition: all 0.3s ease;
 }
@@ -100,8 +134,28 @@
 .card:hover .serviceCardOverlay {
   background: linear-gradient(
     135deg,
-    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.65) 0%,
+    rgba(0, 0, 0, 0.55) 50%,
     rgba(0, 0, 0, 0.7) 100%
+  );
+  backdrop-filter: blur(1px);
+}
+
+.serviceCardOverlayWithBackground {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.85) 0%,
+    rgba(0, 0, 0, 0.75) 50%,
+    rgba(0, 0, 0, 0.9) 100%
+  );
+}
+
+.card:hover .serviceCardOverlayWithBackground {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.75) 0%,
+    rgba(0, 0, 0, 0.65) 50%,
+    rgba(0, 0, 0, 0.8) 100%
   );
 }
 

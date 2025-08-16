@@ -42,19 +42,16 @@ export default function ServiceCarousel({ services, activeId }: Props) {
             className="text-decoration-none"
           >
             <Card
-              className={`${styles.serviceCarouselCard} ${
+              className={`${styles.serviceCarouselCard} ${s.carouselImg ? styles.serviceCarouselCardWithBackground : ''} ${
                 String(s.id) === String(activeId ?? "")
                   ? styles.serviceCarouselCardActive
                   : ""
               }`}
               style={{
                 backgroundImage: s.carouselImg ? `url(${s.carouselImg})` : undefined,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                backgroundRepeat: 'no-repeat'
               }}
             >
-              <div className={styles.serviceCarouselOverlay}>
+              <div className={`${styles.serviceCarouselOverlay} ${s.carouselImg ? styles.serviceCarouselOverlayWithBackground : ''}`}>
                 <Card.Body className="d-flex flex-column align-items-center justify-content-center gap-3 p-3 position-relative">
                   <Card.Title className={`${styles.serviceCarouselTitle} mb-0 text-center`}>
                     {s.front_title}

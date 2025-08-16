@@ -113,6 +113,42 @@ export default function Navbar() {
             />
           </BsNavbar.Brand>
 
+          {/* Language Selector - Always Visible on Mobile */}
+          <div className={`${styles.mobileLanguageSelector} d-lg-none`}>
+            <ButtonGroup size="sm">
+              <Button
+                variant="outline-light"
+                onClick={() => handleLanguageChange("es")}
+                disabled={locale === "es"}
+                className={`${styles.langBtn} ${
+                  locale === "es" ? styles.activeLang : ""
+                }`}
+              >
+                ES
+              </Button>
+              <Button
+                variant="outline-light"
+                onClick={() => handleLanguageChange("en")}
+                disabled={locale === "en"}
+                className={`${styles.langBtn} ${
+                  locale === "en" ? styles.activeLang : ""
+                }`}
+              >
+                EN
+              </Button>
+              <Button
+                variant="outline-light"
+                onClick={() => handleLanguageChange("nl")}
+                disabled={locale === "nl"}
+                className={`${styles.langBtn} ${
+                  locale === "nl" ? styles.activeLang : ""
+                }`}
+              >
+                NL
+              </Button>
+            </ButtonGroup>
+          </div>
+
           <BsNavbar.Toggle
             aria-controls="basic-navbar-nav"
             className={styles.navbarToggler}
@@ -210,8 +246,8 @@ export default function Navbar() {
               </a>
             </div>
 
-            {/* Language Selector - Prominent position */}
-            <div className={`${styles.languageSelector} ms-2 me-4`}>
+            {/* Language Selector - Desktop Only */}
+            <div className={`${styles.languageSelector} ms-2 me-4 d-none d-lg-flex`}>
               <ButtonGroup size="sm">
                 <Button
                   variant="outline-light"

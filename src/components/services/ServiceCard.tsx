@@ -33,15 +33,12 @@ export default function ServiceCard({
         ariaLabel={`${title} - ${t("learn_more")}`}
       >
         <Card 
-          className={`${styles.card} w-100 h-100`}
+          className={`${styles.card} ${cardImg ? styles.cardWithBackground : ''} w-100 h-100`}
           style={{
             backgroundImage: cardImg ? `url(${cardImg})` : undefined,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat'
           }}
         >
-          <div className={styles.serviceCardOverlay}>
+          <div className={`${styles.serviceCardOverlay} ${cardImg ? styles.serviceCardOverlayWithBackground : ''}`}>
             <Card.Body className="d-flex flex-column text-center position-relative">
             <div className="d-flex flex-column align-items-center">
               {icon ? (

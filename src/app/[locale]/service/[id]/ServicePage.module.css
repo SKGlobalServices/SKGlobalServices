@@ -79,6 +79,22 @@
   overflow: hidden;
 }
 
+.serviceCarouselCardWithBackground {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: local;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* Improve image quality on high-DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .serviceCarouselCardWithBackground {
+    image-rendering: auto;
+  }
+}
+
 .serviceCarouselCard::before {
   content: "";
   position: absolute;
@@ -220,11 +236,29 @@
   justify-content: center;
 }
 
+.serviceCarouselOverlayWithBackground {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.7) 50%,
+    rgba(0, 0, 0, 0.85) 100%
+  );
+}
+
 .serviceCarouselCard:hover .serviceCarouselOverlay {
   background: linear-gradient(
     135deg,
     rgba(0, 0, 0, 0.5) 0%,
     rgba(0, 0, 0, 0.3) 100%
+  );
+}
+
+.serviceCarouselCard:hover .serviceCarouselOverlayWithBackground {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0.6) 50%,
+    rgba(0, 0, 0, 0.75) 100%
   );
 }
 

@@ -172,6 +172,14 @@
   align-items: center;
 }
 
+/* Mobile Language Selector - Always Visible */
+.mobileLanguageSelector {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  margin-right: 15px;
+}
+
 .langBtn {
   border: 2px solid rgba(255, 255, 255, 0.4) !important;
   color: white !important;
@@ -310,6 +318,10 @@
     margin-top: 10px;
   }
 
+  .mobileLanguageSelector {
+    margin-right: 10px;
+  }
+
   .navbar :global(.navbar-collapse) {
     background: rgba(12, 12, 12, 0.95);
     border-radius: 12px;
@@ -340,6 +352,10 @@
     height: 40px;
   }
 
+  .mobileLanguageSelector {
+    margin-right: 8px;
+  }
+
   .langBtn {
     min-width: 38px !important;
     font-size: 12px !important;
@@ -364,8 +380,13 @@
     font-size: 15px;
   }
 
+  .mobileLanguageSelector {
+    margin-right: 5px;
+  }
+
   .langBtn {
-    min-width: 36px !important;
-    font-size: 11px !important;
+    min-width: 34px !important;
+    font-size: 10px !important;
+    padding: 4px 6px !important;
   }
 }
