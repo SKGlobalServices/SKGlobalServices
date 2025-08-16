@@ -3,7 +3,7 @@
 import { Row } from "react-bootstrap";
 import { useMessages } from "next-intl";
 import ServiceCard from "./ServiceCard";
-import { servicesData } from "@/data/services/servicesData";
+import { servicesData, servicesImages } from "@/data/services/servicesData";
 import type { TranslatedService, ServiceImage } from "@/types";
 
 const icons: string[] = [
@@ -24,28 +24,29 @@ export default function ServicesList() {
   };
   const translatedServices: TranslatedService[] = services_data ?? [];
 
-  const services: Array<TranslatedService & ServiceImage & { icon: string }> =
-    servicesData
-      .map((service: ServiceImage) => {
-        const translated = translatedServices.find(
-          (t) => String(t.id) === String(service.id)
-        );
-        if (!translated) return null;
-
-        const iconIndex = servicesData.findIndex(
-          (s) => String(s.id) === String(service.id)
-        );
-
-        return {
-          ...service,
-          ...translated,
-          icon: icons[iconIndex % icons.length],
-        };
-      })
-      .filter(
-        (s): s is TranslatedService & ServiceImage & { icon: string } =>
-          s !== null
+  const services = servicesData
+    .map((service: ServiceImage) => {
+      const translated = translatedServices.find(
+        (t) => String(t.id) === String(service.id)
       );
+      if (!translated) return null;
+
+      const iconIndex = servicesData.findIndex(
+        (s) => String(s.id) === String(service.id)
+      );
+
+      const serviceImage = servicesImages.find(
+        (img) => String(img.id) === String(service.id)
+      );
+
+      return {
+        ...service,
+        ...translated,
+        icon: icons[iconIndex % icons.length],
+        cardImg: serviceImage?.cardImg,
+      };
+    })
+    .filter((s) => s !== null);
 
   return (
     <Row className="g-4">
@@ -57,6 +58,7 @@ export default function ServicesList() {
           title={s.front_title}
           description={s.front_text}
           image={s.front?.img}
+          cardImg={s.cardImg}
         />
       ))}
     </Row>

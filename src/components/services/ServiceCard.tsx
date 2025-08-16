@@ -12,6 +12,7 @@ type Props = {
   title: string;
   description: string;
   image?: string; // optional image path from public (e.g., /img/xxx.png)
+  cardImg?: string; // background image for card
 };
 
 export default function ServiceCard({
@@ -20,6 +21,7 @@ export default function ServiceCard({
   title,
   description,
   image,
+  cardImg,
 }: Props) {
   const t = useTranslations("services_section");
 
@@ -30,8 +32,17 @@ export default function ServiceCard({
         className="w-100 text-decoration-none"
         ariaLabel={`${title} - ${t("learn_more")}`}
       >
-        <Card className={`${styles.card} w-100 h-100`}>
-          <Card.Body className="d-flex flex-column text-center">
+        <Card 
+          className={`${styles.card} w-100 h-100`}
+          style={{
+            backgroundImage: cardImg ? `url(${cardImg})` : undefined,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat'
+          }}
+        >
+          <div className={styles.serviceCardOverlay}>
+            <Card.Body className="d-flex flex-column text-center position-relative">
             <div className="d-flex flex-column align-items-center">
               {icon ? (
                 <div
@@ -55,7 +66,8 @@ export default function ServiceCard({
               <span>{t("learn_more")}</span>
               <span className={styles.arrow}>→</span>
             </div>
-          </Card.Body>
+            </Card.Body>
+          </div>
         </Card>
       </OptimizedServiceLink>
     </Col>

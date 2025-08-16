@@ -10,12 +10,16 @@
   position: absolute;
   pointer-events: none;
   z-index: 0;
-  opacity: 0.25;
+  border-radius: 50%;
 }
 
 .contact::before {
-  background: url("/img/color-sharp.webp") no-repeat;
-  background-size: contain;
+  background: radial-gradient(
+    circle,
+    rgba(128, 54, 170, 0.2) 0%,
+    rgba(128, 54, 170, 0.1) 35%,
+    rgba(128, 54, 170, 0) 65%
+  );
   width: 520px;
   height: 520px;
   top: -120px;
@@ -23,8 +27,12 @@
 }
 
 .contact::after {
-  background: url("/img/color-sharp2.webp") no-repeat;
-  background-size: contain;
+  background: radial-gradient(
+    circle,
+    rgba(74, 47, 189, 0.18) 0%,
+    rgba(74, 47, 189, 0.09) 35%,
+    rgba(74, 47, 189, 0) 65%
+  );
   width: 560px;
   height: 560px;
   right: -160px;

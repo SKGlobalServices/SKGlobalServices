@@ -105,7 +105,7 @@ export default function Navbar() {
         <Container>
           <BsNavbar.Brand as={Link} href="/" className={styles.brand}>
             <Image
-              src="/img/logo.webp"
+              src="/images/logo.webp"
               alt="Logo"
               width={120}
               height={36}
@@ -155,7 +155,7 @@ export default function Navbar() {
                   aria-label="Facebook"
                 >
                   <Image
-                    src="/img/facebook_icon.webp"
+                    src="/icons/facebook_icon.webp"
                     alt="Facebook"
                     width={20}
                     height={20}
@@ -169,7 +169,7 @@ export default function Navbar() {
                   aria-label="Instagram"
                 >
                   <Image
-                    src="/img/instagram_icon.webp"
+                    src="/icons/instagram_icon.webp"
                     alt="Instagram"
                     width={20}
                     height={20}
@@ -188,7 +188,7 @@ export default function Navbar() {
                 aria-label="Facebook"
               >
                 <Image
-                  src="/img/facebook_icon.webp"
+                  src="/icons/facebook_icon.webp"
                   alt="Facebook"
                   width={20}
                   height={20}
@@ -202,7 +202,7 @@ export default function Navbar() {
                 aria-label="Instagram"
               >
                 <Image
-                  src="/img/instagram_icon.webp"
+                  src="/icons/instagram_icon.webp"
                   alt="Instagram"
                   width={20}
                   height={20}

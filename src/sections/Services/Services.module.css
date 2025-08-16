@@ -41,13 +41,16 @@
   position: absolute;
   pointer-events: none;
   z-index: 0;
-  opacity: 0.08;
-  filter: brightness(1.2) saturate(1.1);
+  border-radius: 50%;
 }
 
 .services::before {
-  background: url("/img/color-sharp.webp") no-repeat;
-  background-size: contain;
+  background: radial-gradient(
+    circle,
+    rgba(128, 54, 170, 0.15) 0%,
+    rgba(128, 54, 170, 0.08) 40%,
+    rgba(128, 54, 170, 0) 70%
+  );
   width: 520px;
   height: 520px;
   top: -140px;
@@ -55,8 +58,12 @@
 }
 
 .services::after {
-  background: url("/img/color-sharp2.webp") no-repeat;
-  background-size: contain;
+  background: radial-gradient(
+    circle,
+    rgba(74, 47, 189, 0.12) 0%,
+    rgba(74, 47, 189, 0.06) 40%,
+    rgba(74, 47, 189, 0) 70%
+  );
   width: 560px;
   height: 560px;
   right: -180px;

@@ -47,29 +47,20 @@ export default function ServiceCarousel({ services, activeId }: Props) {
                   ? styles.serviceCarouselCardActive
                   : ""
               }`}
+              style={{
+                backgroundImage: s.carouselImg ? `url(${s.carouselImg})` : undefined,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat'
+              }}
             >
-              <Card.Body className="d-flex flex-column align-items-center justify-content-center gap-3 p-3">
-                {s.img ? (
-                  <div className={styles.serviceCarouselImageContainer}>
-                    <Image
-                      src={s.img}
-                      alt={s.front_title}
-                      width={48}
-                      height={48}
-                      className={styles.serviceCarouselImage}
-                      priority={false}
-                      loading="lazy"
-                    />
-                  </div>
-                ) : (
-                  <div className={styles.serviceCarouselImagePlaceholder}>
-                    <span className={styles.serviceCarouselIcon}>🚀</span>
-                  </div>
-                )}
-                <Card.Title className={`${styles.serviceCarouselTitle} mb-0 text-center`}>
-                  {s.front_title}
-                </Card.Title>
-              </Card.Body>
+              <div className={styles.serviceCarouselOverlay}>
+                <Card.Body className="d-flex flex-column align-items-center justify-content-center gap-3 p-3 position-relative">
+                  <Card.Title className={`${styles.serviceCarouselTitle} mb-0 text-center`}>
+                    {s.front_title}
+                  </Card.Title>
+                </Card.Body>
+              </div>
             </Card>
           </OptimizedServiceLink>
         </div>

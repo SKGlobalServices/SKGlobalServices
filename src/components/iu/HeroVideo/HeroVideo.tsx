@@ -18,9 +18,9 @@ export default function HeroVideo({ children }: Props) {
         muted
         loop
         playsInline
-        poster="/img/app_mobile.webp"
+        poster="/images/app_mobile.webp"
       >
-        <source src="/img/banner-videoR.mp4" type="video/mp4" />
+        <source src="/videos/banner-videoR.mp4" type="video/mp4" />
         {t("video_fallback")}
       </video>
       {children}

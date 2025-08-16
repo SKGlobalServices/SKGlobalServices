@@ -19,10 +19,18 @@ export type ServiceImage = {
   front: { img: string };
 };
 
+export type ServiceImages = {
+  id: string | number;
+  cardImg: string;
+  carouselImg: string;
+};
+
 // UI helper type for components that need to render images/icons along with translated data
 export type UIService = TranslatedService & {
   img?: string;
   icon?: string;
+  cardImg?: string;
+  carouselImg?: string;
 };
 
 // Security types

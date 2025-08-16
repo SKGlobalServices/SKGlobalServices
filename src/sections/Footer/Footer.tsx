@@ -45,7 +45,7 @@ export default function Footer() {
           <Col xs={12} md={6} lg={4} className="text-center text-md-start">
             <div className={styles.logoContainer}>
               <Image
-                src="/img/logo.webp"
+                src="/images/logo.webp"
                 alt="S&K Global Services Logo"
                 className={styles.footerLogo}
                 width={140}
@@ -113,7 +113,7 @@ export default function Footer() {
                     aria-label="Facebook"
                   >
                     <Image
-                      src="/img/facebook_icon.webp"
+                      src="/icons/facebook_icon.webp"
                       alt="Facebook"
                       width={20}
                       height={20}
@@ -127,7 +127,7 @@ export default function Footer() {
                     aria-label="Instagram"
                   >
                     <Image
-                      src="/img/instagram_icon.webp"
+                      src="/icons/instagram_icon.webp"
                       alt="Instagram"
                       width={20}
                       height={20}

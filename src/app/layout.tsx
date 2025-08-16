@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "SK Global Services",
   description: "Professional services company",
   icons: {
-    icon: "./img/favicon.ico",
+    icon: "./images/favicon.ico",
   }
 };
 

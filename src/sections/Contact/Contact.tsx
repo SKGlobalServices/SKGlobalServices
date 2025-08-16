@@ -200,7 +200,7 @@ export default function Contact() {
                 <Col lg={6}>
                   <Image
                     className={styles.contactImage}
-                    src="/img/contact-img.svg"
+                    src="/icons/contact-img.svg"
                     alt="Contact Us"
                     width={640}
                     height={640}

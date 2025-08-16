@@ -13,7 +13,7 @@ export default function ScrollDownPrompt() {
     <div className={styles.scrollDownPrompt}>
       <Image
         className={styles.promptLogo}
-        src="/img/logo.webp"
+        src="/images/logo.webp"
         alt="Logo"
         width={200}
         height={60}

@@ -18,7 +18,7 @@ export default function Whatsappbutton() {
         aria-label="WhatsApp"
       >
         <Image
-          src="/img/WhatsApp_icon.webp"
+          src="/icons/WhatsApp_icon.webp"
           alt="WhatsApp"
           width={40}
           height={40}
