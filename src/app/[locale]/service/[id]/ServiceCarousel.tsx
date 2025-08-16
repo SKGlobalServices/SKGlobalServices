@@ -4,14 +4,30 @@ import OptimizedServiceLink from "@/components/iu/OptimizedServiceLink";
 import Card from "react-bootstrap/Card";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import { useTranslations } from "@/i18n/LanguageContext";
 import styles from "./ServicePage.module.css";
 import type { UIService } from "@/types";
 import Image from "next/image";
 
 const responsiveCarousel = {
-  desktop: { breakpoint: { max: 3000, min: 1024 }, items: 3, slidesToSlide: 1 },
-  tablet: { breakpoint: { max: 1024, min: 768 }, items: 2, slidesToSlide: 1 },
-  mobile: { breakpoint: { max: 768, min: 0 }, items: 1, slidesToSlide: 1 },
+  desktop: { 
+    breakpoint: { max: 3000, min: 1024 }, 
+    items: 3, 
+    slidesToSlide: 1,
+    partialVisibilityGutter: 40 
+  },
+  tablet: { 
+    breakpoint: { max: 1024, min: 768 }, 
+    items: 2, 
+    slidesToSlide: 1,
+    partialVisibilityGutter: 30 
+  },
+  mobile: { 
+    breakpoint: { max: 768, min: 0 }, 
+    items: 1, 
+    slidesToSlide: 1,
+    partialVisibilityGutter: 20 
+  },
 };
 
 type Props = {
@@ -20,18 +36,26 @@ type Props = {
 };
 
 export default function ServiceCarousel({ services, activeId }: Props) {
+  const t = useTranslations("services_section");
+  
   return (
     <Carousel
       responsive={responsiveCarousel}
       infinite={true}
       autoPlay={true}
-      autoPlaySpeed={4000}
+      autoPlaySpeed={5000}
       pauseOnHover={true}
       showDots={false}
       arrows={true}
       swipeable={true}
       draggable={true}
-      className={`${styles.serviceCarousel} pb-4 pt-4`}
+      removeArrowOnDeviceType={[]}
+      partialVisible={false}
+      centerMode={false}
+      keyBoardControl={true}
+      customTransition="all 0.5s cubic-bezier(0.4, 0, 0.2, 1)"
+      transitionDuration={500}
+      className={`${styles.serviceCarousel}`}
       containerClass="carousel-container"
       itemClass="carousel-item-padding"
     >
@@ -52,10 +76,16 @@ export default function ServiceCarousel({ services, activeId }: Props) {
               }}
             >
               <div className={`${styles.serviceCarouselOverlay} ${s.carouselImg ? styles.serviceCarouselOverlayWithBackground : ''}`}>
-                <Card.Body className="d-flex flex-column align-items-center justify-content-center gap-3 p-3 position-relative">
-                  <Card.Title className={`${styles.serviceCarouselTitle} mb-0 text-center`}>
-                    {s.front_title}
-                  </Card.Title>
+                <Card.Body className="d-flex flex-column align-items-center justify-content-center h-100 p-4 position-relative">
+                  <div className="text-center">
+                    <Card.Title className={`${styles.serviceCarouselTitle} mb-2`}>
+                      {s.front_title}
+                    </Card.Title>
+                    <div className={styles.serviceCarouselLearnMore}>
+                      <span>{t("learn_more")}</span>
+                      <span className={styles.serviceCarouselArrow}>→</span>
+                    </div>
+                  </div>
                 </Card.Body>
               </div>
             </Card>
