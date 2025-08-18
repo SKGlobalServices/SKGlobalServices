@@ -190,6 +190,7 @@ export default function Contact() {
     }
   };
 
+  // TODO: cambiar imagen
   return (
     <section className={styles.contact} id="contact">
       <Container>

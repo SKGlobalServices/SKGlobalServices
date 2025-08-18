@@ -21,7 +21,6 @@ import type { TranslatedService, UIService } from "@/types";
 interface ServicePageContentProps {
   serviceId: string;
 }
-
 export default function ServicePageContent({ serviceId }: ServicePageContentProps) {
   const { services_data, service_page } = useMessages() as {
     services_data?: TranslatedService[];
@@ -52,7 +51,7 @@ export default function ServicePageContent({ serviceId }: ServicePageContentProp
   // Find the service data
   const serviceImage = servicesData.find((s) => String(s.id) === String(serviceId));
   const service = translatedServices.find((s) => String(s.id) === String(serviceId));
-
+  // TODO: no sirve el boton de regresar
   if (!serviceImage || !service) {
     return (
       <main className={styles.servicePage}>

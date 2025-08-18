@@ -42,7 +42,7 @@ export default function Navbar() {
 
   const onUpdateActiveLink = (value: "home" | "services" | "contact") =>
     setActiveLink(value);
-
+// TODO: no funcionan los links de regresar al estar en la página de servicio individual
   const copyToClipboard = async (text: string, type: "email" | "phone") => {
     try {
       if (copyTimeout.current) clearTimeout(copyTimeout.current);
