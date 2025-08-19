@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+// ...existing code...
 import Image from "next/image";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -22,51 +22,31 @@ interface ServicePageContentProps {
   serviceId: string;
 }
 export default function ServicePageContent({ serviceId }: ServicePageContentProps) {
-  const { services_data, service_page } = useMessages() as {
-    services_data?: TranslatedService[];
-    service_page?: Record<string, string>;
-  };
-  
+  // Usar solo useTranslations para las traducciones
   const locale = useLocale();
   const t = useTranslations("service_page");
-  const [currentLocale, setCurrentLocale] = useState(locale);
+  // ...existing code...
 
-  // Force re-render when locale changes
-  useEffect(() => {
-    if (currentLocale !== locale) {
-      setCurrentLocale(locale);
-    }
-  }, [locale, currentLocale]);
-
-  // Fallback translations if not loaded
-  const translations = {
-    start_project_button: service_page?.start_project_button || t("start_project_button"),
-    our_services_title: service_page?.our_services_title || t("our_services_title"),
-    other_services_title: service_page?.other_services_title || t("other_services_title"),
-    back_to_services: service_page?.back_to_services || t("back_to_services"),
+  // Obtener los servicios traducidos
+  const { services_data } = useMessages() as {
+    services_data?: TranslatedService[];
   };
-
   const translatedServices: TranslatedService[] = services_data ?? [];
-  
-  // Find the service data
+
+  // Buscar el servicio actual
   const serviceImage = servicesData.find((s) => String(s.id) === String(serviceId));
   const service = translatedServices.find((s) => String(s.id) === String(serviceId));
-  // TODO: no sirve el boton de regresar
+
+  // Si no existe el servicio, mostrar mensaje traducido
   if (!serviceImage || !service) {
     return (
       <main className={styles.servicePage}>
         <Container>
           <div className="text-center py-5">
-            <h2 className="text-white">
-              {locale === 'en' ? 'Service not found' : locale === 'nl' ? 'Dienst niet gevonden' : 'Servicio no encontrado'}
-            </h2>
-            <p className="text-white">
-              {locale === 'en' ? 'The service you are looking for does not exist.' : locale === 'nl' ? 'De dienst die u zoekt bestaat niet.' : 'El servicio que buscas no existe.'}
-            </p>
+            <h2 className="text-white">{t("not_found_title")}</h2>
+            <p className="text-white">{t("not_found_description")}</p>
             <Link href="/">
-              <Button variant="primary">
-                {locale === 'en' ? 'Go back home' : locale === 'nl' ? 'Terug naar home' : 'Volver al inicio'}
-              </Button>
+              <Button variant="primary">{t("go_back_home")}</Button>
             </Link>
           </div>
         </Container>
@@ -74,6 +54,7 @@ export default function ServicePageContent({ serviceId }: ServicePageContentProp
     );
   }
 
+  // Otros servicios para el carrusel
   const otherServices: UIService[] = translatedServices
     .filter((s) => String(s.id) !== String(serviceId))
     .map((s) => {
@@ -85,6 +66,12 @@ export default function ServicePageContent({ serviceId }: ServicePageContentProp
       };
     });
 
+  // Botón de regreso funcional usando Link
+  function handleBackClick(e: React.MouseEvent<HTMLAnchorElement>) {
+    e.preventDefault();
+    window.history.back();
+  }
+
   return (
     <main key={`service-page-${locale}-${serviceId}`} className={styles.servicePage}>
       {/* Hero Section */}
@@ -92,23 +79,27 @@ export default function ServicePageContent({ serviceId }: ServicePageContentProp
         <Container>
           <Row className="align-items-center">
             <Col md={6}>
-              <a href={`#services`} className={styles.breadcrumbBack}>
-                ← {translations.back_to_services}
+              <a
+                href="#"
+                className={styles.breadcrumbBack}
+                onClick={handleBackClick}
+                role="button"
+                tabIndex={0}
+              >
+                ← {t("back_to_services")}
               </a>
               <h1 className={styles.typographyH1}>{service.page_title}</h1>
               <p className={`${styles.typographyBody} mb-4`}>
                 {service.page_description}
               </p>
-              <ServicePageClient
-                buttonText={translations.start_project_button}
-              />
+              <ServicePageClient buttonText={t("start_project_button")} />
             </Col>
             <Col md={6}>
               <Image
                 src={serviceImage.front.img}
                 alt={service.page_title ?? "Service image"}
                 width={600}
-                height={400}
+                height={250}
                 style={{ width: "100%", height: "auto" }}
                 className="rounded shadow-lg"
                 priority
@@ -123,7 +114,7 @@ export default function ServicePageContent({ serviceId }: ServicePageContentProp
         <Container>
           <div className="text-center mb-5">
             <h2 className={styles.typographyH2}>
-              {translations.our_services_title} {service.front_title}
+              {t("our_services_title")} {service.front_title}
             </h2>
           </div>
           <Row>
@@ -150,7 +141,7 @@ export default function ServicePageContent({ serviceId }: ServicePageContentProp
       <section className={styles.carouselSection}>
         <Container>
           <h2 className={`text-center ${styles.typographyH2} mb-5`}>
-            {translations.other_services_title}
+            {t("other_services_title")}
           </h2>
           <ServiceCarousel services={otherServices} activeId={serviceId} />
         </Container>

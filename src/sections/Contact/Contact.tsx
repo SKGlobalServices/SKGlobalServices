@@ -198,44 +198,72 @@ export default function Contact() {
           <Col xs={12}>
             <div className={styles.contactBx}>
               <Row>
-                <Col lg={6}>
-                  <Image
-                    className={styles.contactImage}
-                    src="/icons/contact-img.svg"
-                    alt="Contact Us"
-                    width={640}
-                    height={640}
-                    priority={false}
-                  />
+                <Col lg={6} className={styles.imageCol}>
+                  <div className={styles.contactImageWrapper}>
+                    <div className={styles.contactImageContainer}>
+                      <Image
+                        className={styles.contactImage}
+                        src="/icons/contact-img.svg"
+                        alt="Contact Us"
+                        width={640}
+                        height={640}
+                        priority={false}
+                      />
+                    </div>
+                    <div className={styles.decorativeElements}>
+                      <div className={styles.decorativeCircle1}></div>
+                      <div className={styles.decorativeCircle2}></div>
+                      <div className={styles.decorativeCircle3}></div>
+                    </div>
+                  </div>
                 </Col>
-                <Col lg={6}>
+                <Col lg={6} className={styles.formCol}>
                   <div className={styles.contactForm}>
-                    <h2>{t("title")}</h2>
-                    <p>{t("subtitle")}</p>
+                    <div className={styles.formHeader}>
+                      <h2>{t("title")}</h2>
+                      <p>{t("subtitle")}</p>
+                    </div>
                     
-                    {/* Success Alert */}
-                    {showSuccess && (
-                      <Alert variant="success" className="mb-3" dismissible onClose={() => setShowSuccess(false)}>
-                        <Alert.Heading>{t("form.success_title")}</Alert.Heading>
-                        <p className="mb-0">{t("form.success_text")}</p>
-                      </Alert>
-                    )}
-                    
-                    {/* Error Alert */}
-                    {showError && (
-                      <Alert variant="danger" className="mb-3" dismissible onClose={() => setShowError(false)}>
-                        <Alert.Heading>{t("form.error_title")}</Alert.Heading>
-                        {errorMessage && <p className="mb-0">{errorMessage}</p>}
-                      </Alert>
-                    )}
-                    
-                    {/* Security Block Alert */}
-                    {securityState.isBlocked && (
-                      <Alert variant="warning" className="mb-3">
-                        <Alert.Heading>{t("form.security.temporarily_blocked")}</Alert.Heading>
-                        <p className="mb-0">{t("form.security.too_many_attempts")}</p>
-                      </Alert>
-                    )}
+                    <div className={styles.alertsContainer}>
+                      {/* Success Alert */}
+                      {showSuccess && (
+                        <Alert variant="success" className={`mb-3 ${styles.customAlert} ${styles.successAlert}`} dismissible onClose={() => setShowSuccess(false)}>
+                          <div className={styles.alertContent}>
+                            <div className={styles.alertIcon}>✓</div>
+                            <div className={styles.alertText}>
+                              <Alert.Heading>{t("form.success_title")}</Alert.Heading>
+                              <p className="mb-0">{t("form.success_text")}</p>
+                            </div>
+                          </div>
+                        </Alert>
+                      )}
+                      
+                      {/* Error Alert */}
+                      {showError && (
+                        <Alert variant="danger" className={`mb-3 ${styles.customAlert} ${styles.errorAlert}`} dismissible onClose={() => setShowError(false)}>
+                          <div className={styles.alertContent}>
+                            <div className={styles.alertIcon}>⚠</div>
+                            <div className={styles.alertText}>
+                              <Alert.Heading>{t("form.error_title")}</Alert.Heading>
+                              {errorMessage && <p className="mb-0">{errorMessage}</p>}
+                            </div>
+                          </div>
+                        </Alert>
+                      )}
+                      
+                      {/* Security Block Alert */}
+                      {securityState.isBlocked && (
+                        <Alert variant="warning" className={`mb-3 ${styles.customAlert} ${styles.warningAlert}`}>
+                          <div className={styles.alertContent}>
+                            <div className={styles.alertIcon}>🔒</div>
+                            <div className={styles.alertText}>
+                              <Alert.Heading>{t("form.security.temporarily_blocked")}</Alert.Heading>
+                              <p className="mb-0">{t("form.security.too_many_attempts")}</p>
+                            </div>
+                          </div>
+                        </Alert>
+                      )}
+                    </div>
                     
                     <Formik
                       initialValues={initialValues}
@@ -254,126 +282,138 @@ export default function Contact() {
                         isValid,
                         dirty
                       }: FormikProps<FormData>) => (
-                        <Form ref={form} onSubmit={formikSubmit} noValidate>
-                          <Row>
-                            <Col sm={6} className="px-2">
-                              <Form.Control
-                                type="text"
-                                name="firstName"
-                                value={values.firstName}
-                                placeholder={t("form.first_name")}
-                                onChange={(e) => {
-                                  handleChange(e);
-                                  if (showSuccess) setShowSuccess(false);
-                                  if (showError) setShowError(false);
-                                }}
-                                onBlur={handleBlur}
-                                autoComplete="given-name"
-                                autoCapitalize="words"
-                                required
-                                isInvalid={!!(errors.firstName && touched.firstName)}
-                                className="rounded-3"
-                              />
-                              {errors.firstName && touched.firstName && (
-                                <Form.Control.Feedback type="invalid">
-                                  {errors.firstName}
-                                </Form.Control.Feedback>
-                              )}
+                        <Form ref={form} onSubmit={formikSubmit} noValidate className={styles.contactFormElement}>
+                          <Row className={styles.formRow}>
+                            <Col sm={6} className={`px-2 ${styles.inputCol}`}>
+                              <div className={styles.inputWrapper}>
+                                <Form.Control
+                                  type="text"
+                                  name="firstName"
+                                  value={values.firstName}
+                                  placeholder={t("form.first_name")}
+                                  onChange={(e) => {
+                                    handleChange(e);
+                                    if (showSuccess) setShowSuccess(false);
+                                    if (showError) setShowError(false);
+                                  }}
+                                  onBlur={handleBlur}
+                                  autoComplete="given-name"
+                                  autoCapitalize="words"
+                                  required
+                                  isInvalid={!!(errors.firstName && touched.firstName)}
+                                  className={`${styles.formInput} ${styles.inputField}`}
+                                />
+                                {errors.firstName && touched.firstName && (
+                                  <Form.Control.Feedback type="invalid" className={styles.errorFeedback}>
+                                    {errors.firstName}
+                                  </Form.Control.Feedback>
+                                )}
+                              </div>
                             </Col>
-                            <Col sm={6} className="px-2">
-                              <Form.Control
-                                type="text"
-                                name="lastName"
-                                value={values.lastName}
-                                placeholder={t("form.last_name")}
-                                onChange={(e) => {
-                                  handleChange(e);
-                                  if (showSuccess) setShowSuccess(false);
-                                  if (showError) setShowError(false);
-                                }}
-                                onBlur={handleBlur}
-                                autoComplete="family-name"
-                                autoCapitalize="words"
-                                required
-                                isInvalid={!!(errors.lastName && touched.lastName)}
-                                className="rounded-3"
-                              />
-                              {errors.lastName && touched.lastName && (
-                                <Form.Control.Feedback type="invalid">
-                                  {errors.lastName}
-                                </Form.Control.Feedback>
-                              )}
+                            <Col sm={6} className={`px-2 ${styles.inputCol}`}>
+                              <div className={styles.inputWrapper}>
+                                <Form.Control
+                                  type="text"
+                                  name="lastName"
+                                  value={values.lastName}
+                                  placeholder={t("form.last_name")}
+                                  onChange={(e) => {
+                                    handleChange(e);
+                                    if (showSuccess) setShowSuccess(false);
+                                    if (showError) setShowError(false);
+                                  }}
+                                  onBlur={handleBlur}
+                                  autoComplete="family-name"
+                                  autoCapitalize="words"
+                                  required
+                                  isInvalid={!!(errors.lastName && touched.lastName)}
+                                  className={`${styles.formInput} ${styles.inputField}`}
+                                />
+                                {errors.lastName && touched.lastName && (
+                                  <Form.Control.Feedback type="invalid" className={styles.errorFeedback}>
+                                    {errors.lastName}
+                                  </Form.Control.Feedback>
+                                )}
+                              </div>
                             </Col>
-                            <Col sm={6} className="px-2">
-                              <Form.Control
-                                type="email"
-                                name="email"
-                                value={values.email}
-                                placeholder={t("form.email")}
-                                onChange={(e) => {
-                                  handleChange(e);
-                                  if (showSuccess) setShowSuccess(false);
-                                  if (showError) setShowError(false);
-                                }}
-                                onBlur={handleBlur}
-                                autoComplete="email"
-                                required
-                                isInvalid={!!(errors.email && touched.email)}
-                                className="rounded-3"
-                              />
-                              {errors.email && touched.email && (
-                                <Form.Control.Feedback type="invalid">
-                                  {errors.email}
-                                </Form.Control.Feedback>
-                              )}
+                            <Col sm={6} className={`px-2 ${styles.inputCol}`}>
+                              <div className={styles.inputWrapper}>
+                                <Form.Control
+                                  type="email"
+                                  name="email"
+                                  value={values.email}
+                                  placeholder={t("form.email")}
+                                  onChange={(e) => {
+                                    handleChange(e);
+                                    if (showSuccess) setShowSuccess(false);
+                                    if (showError) setShowError(false);
+                                  }}
+                                  onBlur={handleBlur}
+                                  autoComplete="email"
+                                  required
+                                  isInvalid={!!(errors.email && touched.email)}
+                                  className={`${styles.formInput} ${styles.inputField}`}
+                                />
+                                {errors.email && touched.email && (
+                                  <Form.Control.Feedback type="invalid" className={styles.errorFeedback}>
+                                    {errors.email}
+                                  </Form.Control.Feedback>
+                                )}
+                              </div>
                             </Col>
-                            <Col sm={6} className="px-2">
-                              <Form.Control
-                                type="tel"
-                                name="phone"
-                                value={values.phone}
-                                placeholder={`${t("form.phone")} (${t("form.optional")})`}
-                                onChange={(e) => {
-                                  handleChange(e);
-                                  if (showSuccess) setShowSuccess(false);
-                                  if (showError) setShowError(false);
-                                }}
-                                onBlur={handleBlur}
-                                autoComplete="tel"
-                                inputMode="tel"
-                                isInvalid={!!(errors.phone && touched.phone)}
-                                className="rounded-3"
-                              />
-                              {errors.phone && touched.phone && (
-                                <Form.Control.Feedback type="invalid">
-                                  {errors.phone}
-                                </Form.Control.Feedback>
-                              )}
+                            <Col sm={6} className={`px-2 ${styles.inputCol}`}>
+                              <div className={styles.inputWrapper}>
+                                <Form.Control
+                                  type="tel"
+                                  name="phone"
+                                  value={values.phone}
+                                  placeholder={`${t("form.phone")} (${t("form.optional")})`}
+                                  onChange={(e) => {
+                                    handleChange(e);
+                                    if (showSuccess) setShowSuccess(false);
+                                    if (showError) setShowError(false);
+                                  }}
+                                  onBlur={handleBlur}
+                                  autoComplete="tel"
+                                  inputMode="tel"
+                                  isInvalid={!!(errors.phone && touched.phone)}
+                                  className={`${styles.formInput} ${styles.inputField}`}
+                                />
+                                {errors.phone && touched.phone && (
+                                  <Form.Control.Feedback type="invalid" className={styles.errorFeedback}>
+                                    {errors.phone}
+                                  </Form.Control.Feedback>
+                                )}
+                              </div>
                             </Col>
-                            <Col xs={12} className="px-2">
-                              <Form.Control
-                                as="textarea"
-                                rows={6}
-                                name="message"
-                                value={values.message}
-                                placeholder={t("form.message")}
-                                onChange={(e) => {
-                                  handleChange(e);
-                                  if (showSuccess) setShowSuccess(false);
-                                  if (showError) setShowError(false);
-                                }}
-                                onBlur={handleBlur}
-                                required
-                                isInvalid={!!(errors.message && touched.message)}
-                                className="rounded-3"
-                              />
-                              {errors.message && touched.message && (
-                                <Form.Control.Feedback type="invalid">
-                                  {errors.message}
-                                </Form.Control.Feedback>
-                              )}
-                              <div className="text-muted small mt-1">
-                                {values.message.length}/1000 characters
+                            <Col xs={12} className={`px-2 ${styles.inputCol} ${styles.textareaCol}`}>
+                              <div className={styles.inputWrapper}>
+                                <Form.Control
+                                  as="textarea"
+                                  rows={6}
+                                  name="message"
+                                  value={values.message}
+                                  placeholder={t("form.message")}
+                                  onChange={(e) => {
+                                    handleChange(e);
+                                    if (showSuccess) setShowSuccess(false);
+                                    if (showError) setShowError(false);
+                                  }}
+                                  onBlur={handleBlur}
+                                  required
+                                  isInvalid={!!(errors.message && touched.message)}
+                                  className={`${styles.formInput} ${styles.textareaField}`}
+                                />
+                                {errors.message && touched.message && (
+                                  <Form.Control.Feedback type="invalid" className={styles.errorFeedback}>
+                                    {errors.message}
+                                  </Form.Control.Feedback>
+                                )}
+                                <div className={styles.characterCounter}>
+                                  <span className={values.message.length > 800 ? styles.counterWarning : ''}>
+                                    {values.message.length}/1000 caracteres
+                                  </span>
+                                </div>
                               </div>
                             </Col>
                             
@@ -415,13 +455,13 @@ export default function Contact() {
                               name="mensaje"
                               value={values.message}
                             />
-                            <Col xs={12} className="text-center mt-4">
+                            <Col xs={12} className={`text-center mt-4 ${styles.submitCol}`}>
                               <Button
                                 variant="primary"
                                 size="lg"
                                 type="submit"
                                 disabled={!isValid || !dirty || isLoading || securityState.isBlocked}
-                                className="px-5 py-3"
+                                className={`${styles.submitButton} ${isLoading ? styles.loading : ''}`}
                               >
                                 {isLoading && (
                                   <Spinner
@@ -430,7 +470,7 @@ export default function Contact() {
                                     size="sm"
                                     role="status"
                                     aria-hidden="true"
-                                    className="me-2"
+                                    className={`me-2 ${styles.spinner}`}
                                   />
                                 )}
                                 <span>
@@ -444,8 +484,10 @@ export default function Contact() {
                               
                               {/* Security info */}
                               {securityState.attempts > 0 && !securityState.isBlocked && (
-                                <div className="text-warning small mt-2">
-                                  {t("form.security.too_many_attempts")} ({securityState.attempts}/3)
+                                <div className={styles.securityInfo}>
+                                  <div className={styles.securityWarning}>
+                                    ⚠ {t("form.security.too_many_attempts")} ({securityState.attempts}/3)
+                                  </div>
                                 </div>
                               )}
                             </Col>
